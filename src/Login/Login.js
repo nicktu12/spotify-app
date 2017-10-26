@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import firebase from '../firebase.js';
+import { testClickAction } from './Login-actions.js'; 
 
 class Login extends React.Component {
   constructor() {
@@ -56,6 +57,11 @@ class Login extends React.Component {
     itemsRef.remove();
   }
 
+  testClick = () => {
+    console.log('test click');
+    this.props.handleTestClick('help');
+  }
+
   render(){
     return(
       <div>
@@ -69,7 +75,7 @@ class Login extends React.Component {
 	    </div>
 	    <div id="oauth">
 	    </div>
-	    <button className="btn btn-default" id="obtain-new-token">Obtain new token using the refresh token THIS DOES NOTHING</button>
+	    <button className="btn btn-default" id="obtain-new-token" onClick={()=>this.testClick()}>Obtain new token using the refresh token THIS DOES NOTHING</button>
 	  </div>
 	</div>
 	<div>
@@ -83,8 +89,8 @@ class Login extends React.Component {
         <section className="display-item">
           <div className="wrapper">
 	    <ul>
-	      {this.state.items.map( item => (
-		<li>
+	      {this.state.items.map( (item, index)  => (
+		<li key={index}>
 		  <h2>{item.title}</h2>
 		  <p>{item.user}</p>
 		  <button onClick={() => this.removeItem(item.id)}>Go away</button>
@@ -98,4 +104,10 @@ class Login extends React.Component {
   }
 }
 
-export default Login;
+const mapDispatchToProps = dispatch => ({
+  handleTestClick: (string) => {
+    dispatch(testClickAction(string));
+  }
+})
+
+export default connect(null, mapDispatchToProps)(Login);

@@ -1,14 +1,13 @@
 import { createStore, applyMiddleware, compose } from 'redux';
-import { routerMiddleware } from 'react-router-redux';
-import createHistory from 'history/createBrowserHistory';
 import rootReducer from './rootReducer';
+import createSagaMiddleware from 'redux-saga';
+import mySaga from './sagas';
 
-export const history = createHistory();
-
+const sagaMiddleware = createSagaMiddleware();
 const initialState = {};
 const enhancers = [];
 const middleware = [
-  routerMiddleware(history)
+  sagaMiddleware
 ];
 
 if (process.env.NODE_ENV === 'development') {
@@ -29,5 +28,7 @@ const store = createStore(
   initialState,
   composedEnhancers
 );
+
+sagaMiddleware.run(mySaga);
 	
 export default store
