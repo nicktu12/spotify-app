@@ -3,11 +3,11 @@ import { Route, Link } from 'react-router-dom';
 import Home from '../Home/Home';
 import AnotherComp from '../AnotherComp/AnotherComp';
 import Login from '../Login/Login';
-import './App.css';
+import './App.scss';
 
 const App = () => (
   <div className="App">
-    <header className="App-header">
+    <header>
       <Link to="/">Home</Link>
       <Link to="/another-page">EDGARTHECAT...</Link>
       <Link to="/login">Login</Link>

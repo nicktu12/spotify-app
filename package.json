@@ -6,6 +6,7 @@
     "cookie-parser": "^1.4.3",
     "express": "^4.16.2",
     "firebase": "^4.6.0",
+    "node-sass-chokidar": "0.0.3",
     "querystring": "^0.2.0",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
@@ -14,9 +15,12 @@
     "react-router-redux": "^4.0.8",
     "react-scripts": "1.0.14",
     "redux": "^3.7.2",
-    "request": "^2.83.0"
+    "request": "^2.83.0",
+    "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive"
   },
   "scripts": {
+    "build-css": "node-sass-chokidar src/ -o src/",
+    "watch-css": "npm run build-css && node-sass-chokidar src/ -o /src --watch --recursive",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
