@@ -8,8 +8,27 @@ class Login extends React.Component {
 
     this.state = {
       username: '',
-      song: ''      
+      song: '',
+      items: []
     }
+  }
+
+  componentDidMount() {
+    const itemsRef = firebase.database().ref('items');
+    itemsRef.on('value', (snapshot) => {
+      let items = snapshot.val();
+      let newState = [];
+      for (let item in items) {
+	newState.push({
+	  id: item, 
+	  title: items[item].song,
+	  user: items[item].user
+	});
+      }
+      this.setState({
+	items: newState
+      })
+    })
   }
 
   handleInput = (e) => {
@@ -30,6 +49,11 @@ class Login extends React.Component {
       username: '',
       song: ''
     });
+  }
+
+  removeItem = (itemId) => {
+    const itemsRef = firebase.database().ref(`/items/${itemId}`);
+    itemsRef.remove();
   }
 
   render(){
@@ -59,6 +83,13 @@ class Login extends React.Component {
         <section className="display-item">
           <div className="wrapper">
 	    <ul>
+	      {this.state.items.map( item => (
+		<li>
+		  <h2>{item.title}</h2>
+		  <p>{item.user}</p>
+		  <button onClick={() => this.removeItem(item.id)}>Go away</button>
+		</li>
+	      ))}
 	    </ul>
           </div>
         </section>
