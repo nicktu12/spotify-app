@@ -23,6 +23,10 @@ yarn-error.log*
 # ignore client secret ID for Spotify registered app
 apiKey.js
 
-#ignore swap files
+# ignore swap files
 
 *.swp
+
+# ignore css files (will be written on startup)
+
+src/**/*.css
