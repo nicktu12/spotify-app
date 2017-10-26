@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import '../firebase.js';
+import firebase from '../firebase.js';
 
 class Login extends React.Component {
   constructor() {
@@ -20,6 +20,16 @@ class Login extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
+    const itemsRef = firebase.database().ref('items');
+    const item = {
+      song: this.state.song,
+      user: this.state.username
+    }
+    itemsRef.push(item);
+    this.setState({
+      username: '',
+      song: ''
+    });
   }
 
   render(){
