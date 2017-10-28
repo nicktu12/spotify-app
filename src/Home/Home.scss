@@ -5,7 +5,7 @@
   position: relative;
 }
 
-h1 {
+.home-div h1 {
   @include linear-grad($dark-bg-o, $dark-bg);
   color: white;
   text-align: left;
