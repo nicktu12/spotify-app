@@ -13,6 +13,10 @@ header {
   position: fixed;
   width: 200px; }
 
+header a {
+  display: block;
+  text-align: left; }
+
 main {
   margin-left: 240px; }
 

@@ -5,7 +5,7 @@ import { BrowserRouter } from 'react-router-dom';
 import store from './Utilities/store';
 import registerServiceWorker from './Utilities/registerServiceWorker';
 import App from './App/App';
-import './index.css';
+import './Styles/index.css';
 
 const target = document.getElementById('root');
 
