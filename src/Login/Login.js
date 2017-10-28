@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import firebase from '../firebase.js';
-import { testClickAction } from './Login-actions.js'; 
+import { testClickAction, handleLoginAction } from './Login-actions.js'; 
 
 class Login extends React.Component {
   constructor() {
@@ -62,8 +62,9 @@ class Login extends React.Component {
     this.props.handleTestClick('help');
   }
 
-  handleLogin = () => {
+  loginClick = () => {
     console.log('handle login');
+    this.props.handleLogin();
   }
 
   render(){
@@ -78,7 +79,7 @@ class Login extends React.Component {
 	  </div>
 	</div>
 	<div className="login-div">
-	  <button onClick={()=>this.handleLogin()}>LOGIN</button>
+	  <button onClick={()=>this.loginClick()}>LOGIN</button>
 	</div>
 	<div>
 	  <form onSubmit={this.handleSubmit}>
@@ -106,10 +107,11 @@ class Login extends React.Component {
   }
 }
 
-const mapDispatchToProps = dispatch => ({
-  handleTestClick: (string) => {
-    dispatch(testClickAction(string));
+const mapDispatchToProps = dispatch => {
+  return {    
+    handleTestClick: () => dispatch(testClickAction()),
+    handleLogin: () => dispatch(handleLoginAction())
   }
-})
+}
 
 export default connect(null, mapDispatchToProps)(Login);
