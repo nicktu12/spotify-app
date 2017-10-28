@@ -1,6 +1,7 @@
 export const fetchSwapi = (url) => (
+
   fetch(url)
     .then(res => res.json())
-    .then(JSONres => JSONres)
-    .catch(()=>console.log('FUCK'))
+    .then(JSONres => console.log(JSONres, url))
+    .catch((e)=>console.log(e, url, 'FUCK'))
 )

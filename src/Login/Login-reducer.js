@@ -10,7 +10,7 @@ export function testClickAction(state = {}, action){
 export function apiStuffAction(state={}, action){
   switch(action.type) {
     case 'SAGAS_TEST_SUCCESS':
-	    return action.stuff
+	    return action
     default: 
 	   return state;
   }
