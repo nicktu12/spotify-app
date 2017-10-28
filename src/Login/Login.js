@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import firebase from '../firebase.js';
-import { testClickAction } from './Login-actions.js'; 
+import { testClickAction, handleLoginAction } from './Login-actions.js'; 
 
 class Login extends React.Component {
   constructor() {
@@ -30,6 +30,7 @@ class Login extends React.Component {
 	items: newState
       })
     })
+    console.log(window.location.href)
   }
 
   handleInput = (e) => {
@@ -62,25 +63,30 @@ class Login extends React.Component {
     this.props.handleTestClick('help');
   }
 
+  loginClick = () => {
+    console.log('handle login');
+    this.props.handleLogin();
+  }
+
   render(){
     return(
       <div>
         <div className="container">
 	  <div id="login">
 	    <h1>Heyo this is nick's super crazy spotify application test login yo</h1>
-	    <a href="/login" className="btn btn-primary">Log in with Spotify THIS WILL REFRESH PAGE</a> 
 	  </div>
 	  <div id="loggedin">
-	    <div id="user-profile">
-	    </div>
-	    <div id="oauth">
-	    </div>
-	    <button className="btn btn-default" id="obtain-new-token" onClick={()=>this.testClick()}>Obtain new token using the refresh token THIS DOES NOTHING</button>
+	    <button className="btn btn-default" id="obtain-new-token" onClick={()=>this.testClick()}>Triggers TestClick()</button>
 	  </div>
+	</div>
+	<div className="login-div">
+			  <a href='https://accounts.spotify.com/authorize/?client_id=6f67e11fa50a413f9bf17697789322aa&response_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&scope=user-read-private%20user-read-email%20user-top-read&state=34fFs29kd09'> 
+			<button>LOGIN</button>
+			  </a>
 	</div>
 	<div>
 	  <form onSubmit={this.handleSubmit}>
-	    <p>FORM</p>
+	    <p>FORM this is all firebase stuff</p>
 	    <input type="text" name="username" placeholder="What yo name?" onChange={this.handleInput} value={this.state.username} />
 	    <input type="text" name="song" placeholder="song?" onChange={this.handleInput} value={this.state.song} />
 	    <button>IMABUTTON</button>
@@ -104,10 +110,11 @@ class Login extends React.Component {
   }
 }
 
-const mapDispatchToProps = dispatch => ({
-  handleTestClick: (string) => {
-    dispatch(testClickAction(string));
+const mapDispatchToProps = dispatch => {
+  return {    
+    handleTestClick: () => dispatch(testClickAction()),
+    handleLogin: () => dispatch(handleLoginAction())
   }
-})
+}
 
 export default connect(null, mapDispatchToProps)(Login);

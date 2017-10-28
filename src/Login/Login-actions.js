@@ -12,4 +12,8 @@ export const apiStuffAction = (stuff) => {
   }
 }
 
-
+export const handleLoginAction = () => {
+  return {
+    type: 'INIT_LOGIN'
+  }
+}
