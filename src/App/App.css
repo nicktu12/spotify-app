@@ -1,12 +1,16 @@
 .App {
-  text-align: center; }
+  text-align: center;
+  background-image: url("../Assets/bg1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  /*  background-position-x: 239px; */ }
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px; }
 
 header {
-  background-color: #222;
+  background-color: rgba(0, 0, 0, 0.8);
   height: 100vh;
   padding: 20px;
   color: white;

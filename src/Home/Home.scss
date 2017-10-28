@@ -1,4 +1,30 @@
+@import '../Styles/Variables.scss';
+
 .hero-banner {
-  height: 100px;
-  width: 100px;
+  height: 55vh;
+  position: relative;
+}
+
+h1 {
+  @include linear-grad($dark-bg-o, $dark-bg);
+  color: white;
+  text-align: left;
+  position: absolute;
+  bottom: 0;
+  width: calc(100% - 10px);
+  padding-left: 10px;
+  padding-top: 7vh;
+}
+
+.home-div ul {
+  height: 45vh;
+  background-color: $dark-bg;
+  color: white;
+  text-align: left;
+  padding-left: 10px;
+  list-style: none;
+}
+
+.home-div li {
+  line-height: 50px;
 }

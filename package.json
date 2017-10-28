@@ -16,8 +16,7 @@
     "react-scripts": "1.0.14",
     "redux": "^3.7.2",
     "redux-saga": "^0.16.0",
-    "request": "^2.83.0",
-    "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive"
+    "request": "^2.83.0"
   },
   "scripts": {
     "build-css": "node-sass-chokidar src/ -o src/",
