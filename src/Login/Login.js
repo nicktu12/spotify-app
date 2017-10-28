@@ -30,6 +30,7 @@ class Login extends React.Component {
 	items: newState
       })
     })
+    console.log(window.location.href)
   }
 
   handleInput = (e) => {
@@ -79,7 +80,9 @@ class Login extends React.Component {
 	  </div>
 	</div>
 	<div className="login-div">
-	  <button onClick={()=>this.loginClick()}>LOGIN</button>
+			  <a href='https://accounts.spotify.com/authorize/?client_id=6f67e11fa50a413f9bf17697789322aa&response_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&scope=user-read-private%20user-read-email%20user-top-read&state=34fFs29kd09'> 
+			<button>LOGIN</button>
+			  </a>
 	</div>
 	<div>
 	  <form onSubmit={this.handleSubmit}>
