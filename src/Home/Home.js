@@ -2,12 +2,16 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 const Home = props => (
-  <div>
+  <div className='home-div'>
     <div className='hero-banner'>
-      <div>Top Artists</div>
+      <h1>Top Artists</h1>
     </div>
-    <h1>Hey yall</h1>
-    <p>Dis da homepage</p>
+    <ul>
+      <li>Top Artist 1</li>
+      <li>Top Artist 2</li>
+      <li>Top Artist 3</li>
+      <li>Top Artist 4</li>
+    </ul>
   </div>
 );
 

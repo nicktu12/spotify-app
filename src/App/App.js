@@ -8,8 +8,8 @@ import './App.scss';
 const App = () => (
   <div className="App">
     <header>
-      <Link to="/">Home</Link>
-      <Link to="/another-page">EDGARTHECAT...</Link>
+      <Link to="/">Top Artists</Link>
+      <Link to="/another-page">Your Top 40</Link>
       <Link to="/login">Login</Link>
     </header>
     <main>

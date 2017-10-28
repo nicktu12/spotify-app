@@ -1,0 +1,12 @@
+$dark-bg: rgba(0,0,0,0.8);
+$dark-bg-o: rgba(0,0,0,0);
+
+@mixin linear-grad($top, $bottom) {
+  background: $top;
+  background: -webkit-linear-gradient($top, $bottom);
+  background: -o-linear-gradient($top, $bottom);
+  background: -moz-linear-gradient($top, $bottom);
+  background: linear-gradient($top, $bottom); 
+}
+
+

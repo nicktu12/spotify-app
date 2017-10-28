@@ -1,5 +1,11 @@
+@import '../Styles/Variables.scss';
+
 .App {
   text-align: center;
+  background-image: url('../Assets/bg1.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+/*  background-position-x: 239px; */
 }
 
 .App-logo {
@@ -8,7 +14,7 @@
 }
 
 header {
-  background-color: #222;
+  background-color: $dark-bg;
   height: 100vh;
   padding: 20px;
   color: white;
