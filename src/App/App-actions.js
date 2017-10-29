@@ -18,3 +18,4 @@ export const apiSuccess = (res) => {
     res
   }
 }
+
