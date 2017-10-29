@@ -1,5 +1,5 @@
 import { call, put, takeEvery, takeLatest } from 'redux-saga/effects';
-import { fetchSwapi } from './test-helper';
+import { fetchSwapi } from './helpers.js';
 
 function* testSagas (action) {
   try {
