@@ -17,3 +17,10 @@ export const handleLoginAction = () => {
     type: 'INIT_LOGIN'
   }
 }
+
+export const accessTokenAction = (accessToken) => {
+  return {
+	  type: 'ACCESS_TOKENS',
+    accessToken
+	}
+}

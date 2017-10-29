@@ -15,3 +15,12 @@ export function apiStuffAction(state={}, action){
 	   return state;
   }
 }
+
+export function accessTokenAction(state={}, action){
+  switch(action.type) {
+		case 'ACCESS_TOKENS':
+			return action
+		default:
+			return state;
+	}
+}

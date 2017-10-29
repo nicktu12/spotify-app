@@ -1,6 +1,6 @@
-export const saveAccessTokenAction = (token) => {
+export const saveAuthCodeAction = (code) => {
 	return {
-		type: 'ACCESS_TOKEN',
-		token
+		type: 'AUTH_CODE',
+		code
 	}
 }

@@ -1,13 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { accessTokenCleaner } from '../Utilities/helpers';
-import { saveAccessTokenAction } from './Home-actions'; 
+import { authCodeCleaner } from '../Utilities/helpers';
+import { saveAuthCodeAction } from './Home-actions'; 
 
 class Home extends React.Component{
 	componentDidMount(){
 		const url = window.location.href
 		if (url.includes('code')) {
-			this.props.saveAccessToken(accessTokenCleaner(url))			
+			this.props.saveAuthCode(authCodeCleaner(url))			
 		}
 		if (url.includes('error')) {
 			console.log('error')
@@ -34,7 +34,7 @@ class Home extends React.Component{
 
 const mapDispatchToProps = dispatch => {
 	return {
-		saveAccessToken: (token) => dispatch(saveAccessTokenAction(token))
+		saveAuthCode: (token) => dispatch(saveAuthCodeAction(token))
 	}
 }
 

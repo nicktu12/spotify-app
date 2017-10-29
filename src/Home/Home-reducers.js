@@ -1,6 +1,6 @@
-export function accessToken(state='', action) {
+export function authCode(state='', action) {
 	switch(action.type) {
-		case 'ACCESS_TOKEN':
+		case 'AUTH_CODE':
 			return action
 		default:
 			return state

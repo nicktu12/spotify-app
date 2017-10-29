@@ -1,5 +1,5 @@
 import { call, put, takeEvery, takeLatest } from 'redux-saga/effects';
-import { fetchSwapi } from './helpers.js';
+import { fetchSwapi, getAccessToken } from './helpers.js';
 
 function* testSagas (action) {
   try {
@@ -20,9 +20,19 @@ function* loginSagas (action) {
   } 
 }
 
+function* getAccess (action) {
+	try {
+		const accessToken = yield call(getAccessToken, action.code);	
+		yield put({type: 'ACCESS_TOKENS', accessToken});
+	} catch (e) {
+		yield put({type: 'ACCESS_ERROR', message: e.message});
+	}
+}
+
 function* mySaga() {
-  yield takeLatest('TEST_CLICK', testSagas)
-  yield takeLatest('INIT_LOGIN', loginSagas)
+				//  yield takeLatest('TEST_CLICK', testSagas)
+				//  yield takeLatest('INIT_LOGIN', loginSagas)
+	yield takeLatest('AUTH_CODE', getAccess)
 }
 
 export default mySaga;
