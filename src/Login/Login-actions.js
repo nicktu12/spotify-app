@@ -24,3 +24,10 @@ export const accessTokenAction = (accessToken) => {
     accessToken
 	}
 }
+
+export const topArtistsAction = (topArtists) => {
+	return {
+		type: 'TOP_ARTISTS',
+		topArtists
+	}
+}

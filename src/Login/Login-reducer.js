@@ -24,3 +24,12 @@ export function accessTokenAction(state={}, action){
 			return state;
 	}
 }
+
+export function topArtistsAction(state=[], action){
+	switch(action.type) {
+		case 'TOP_ARTISTS':
+			return action
+		default:
+			return state;
+	}
+}

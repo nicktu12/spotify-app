@@ -1,5 +1,5 @@
 import { call, put, takeEvery, takeLatest } from 'redux-saga/effects';
-import { fetchSwapi, getAccessToken } from './helpers.js';
+import { fetchSwapi, getAccessToken, getTopArtists } from './helpers.js';
 
 function* testSagas (action) {
   try {
@@ -24,6 +24,8 @@ function* getAccess (action) {
 	try {
 		const accessToken = yield call(getAccessToken, action.code);	
 		yield put({type: 'ACCESS_TOKENS', accessToken});
+		const topArtists = yield call(getTopArtists, accessToken);
+		yield put({type: 'TOP_ARTISTS', topArtists});
 	} catch (e) {
 		yield put({type: 'ACCESS_ERROR', message: e.message});
 	}

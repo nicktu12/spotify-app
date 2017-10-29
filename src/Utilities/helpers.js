@@ -35,3 +35,19 @@ export const getAccessToken = (authCode) => {
 		body: formBody
 	}).then(res => res.json()).then(jsonRes => jsonRes)
 }
+
+export const getTopArtists = ({ access_token }) => {
+				return fetch('https://galvanize-cors-proxy.herokuapp.com/https://api.spotify.com/v1/me/top/artists', {
+					headers: {
+						'Content-Type': 'application/json',
+						'Authorization': `Bearer ${access_token}`
+					}
+				}).then(res => res.json()).then(jsonRes => cleanArtistRes(jsonRes))
+}
+
+const cleanArtistRes = (json)  => {
+	console.log('topArtistsResponse:', json.items)
+	return json.items.map(item => 
+		Object.assign({}, {name: item.name})	
+	)
+}

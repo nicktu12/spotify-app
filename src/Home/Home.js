@@ -4,6 +4,10 @@ import { authCodeCleaner } from '../Utilities/helpers';
 import { saveAuthCodeAction } from './Home-actions'; 
 
 class Home extends React.Component{
+  constructor(){
+		super();
+	}
+
 	componentDidMount(){
 		const url = window.location.href
 		if (url.includes('code')) {
@@ -14,23 +18,32 @@ class Home extends React.Component{
 		}
 	}
 
+
+	renderTopArtists = (array) => (
+					array.map((artist, index) => (
+						<li key={'top artists ' + index}>{artist.name}</li>
+					))			
+	) 
+
 	render(){
 		return(
+		
  			<div className='home-div'>
 				<div className='hero-banner'>
-					<h1>Top Artists</h1>
+			    <h1>Top Artists</h1>
 				</div>
 				<ul>
-					<li>Top Artist 1</li>
-					<li>Top Artist 2</li>
-					<li>Top Artist 3</li>
-					<li>Top Artist 4</li>
-			</ul>
+					{this.props.topArtists && this.renderTopArtists(this.props.topArtists)}
+			  </ul>
 			</div>
 		)
 	}
 
 }
+
+const mapStateToProps = store => ({
+	topArtists: store.topArtistsAction.topArtists
+})
 
 const mapDispatchToProps = dispatch => {
 	return {
@@ -38,4 +51,4 @@ const mapDispatchToProps = dispatch => {
 	}
 }
 
-export default connect(null, mapDispatchToProps)(Home);
+export default connect(mapStateToProps, mapDispatchToProps)(Home);
