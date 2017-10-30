@@ -12,8 +12,9 @@
   text-align: left;
   padding-left: 10px;
   padding-top: 50px;
-	height: 80px;
+	height: 90px;
 	box-sizing: border-box;
+	font-family: $header-font;
 }
 
 .home-div ul {		
@@ -23,9 +24,11 @@
   padding-left: 10px;
   list-style: none;
 	overflow: scroll;
-	height: calc(99vh - 90px);
+	height: calc(99vh - 100px);
+	border-radius: 0px 0px $border-rad $border-rad;
 }
 
 .home-div li {
   line-height: 50px;
+	font-family: $body-font;
 }
