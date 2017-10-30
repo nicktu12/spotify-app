@@ -11,4 +11,20 @@
   width: calc(100% - 10px);
   padding-left: 10px;
   padding-top: 7vh;
+	height: 11vh;
+	box-sizing: border-box;
+}
+
+.playlist-div ul {
+  background-color: $dark-bg;
+  color: white;
+  text-align: left;
+  padding-left: 10px;
+  list-style: none;
+	overflow: scroll;
+	height: 89vh;
+}
+
+.playlist-div li {
+  line-height: 50px;
 }
