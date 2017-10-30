@@ -1,5 +1,7 @@
 $dark-bg: rgba(0,0,0,0.8);
 $dark-bg-o: rgba(0,0,0,0);
+$border-rad: 10px;
+$spotify-green: rgba(30, 215, 96, 1);
 
 @mixin linear-grad($top, $bottom) {
   background: $top;

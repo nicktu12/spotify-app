@@ -1,5 +1,29 @@
+@import '../Styles/Variables.scss';
+
+.login-div {
+	height: 100vh;
+}
+
 .login-div button {
-  background-color: green;
+  background-color: $spotify-green;
+	border-radius: $border-rad * 5;
+	border: none;
+	padding: 25px;
   color: white;
   font-size: 2em;
+	margin: 20px;
+}
+
+.login-div div {
+	width: 80%;
+	background-color: $dark-bg;
+	margin: auto;
+	margin-top: 100px;
+	height: 40%;
+	border-radius: $border-rad;
+	color: white;
+}
+
+.login-div p {
+	padding-top: 10%;
 }
