@@ -1,0 +1,14 @@
+@import '../Styles/Variables.scss';
+
+.playlist-div {
+	height: 100vh;
+}
+
+.playlist-div h2 {
+  @include linear-grad($dark-bg-o, $dark-bg);
+  color: white;
+  text-align: left;
+  width: calc(100% - 10px);
+  padding-left: 10px;
+  padding-top: 7vh;
+}
