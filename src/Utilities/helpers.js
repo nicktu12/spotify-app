@@ -33,14 +33,19 @@ export const getAccessToken = (authCode) => {
 						'Accept': 'application/json'
 		},
 		body: formBody
-	}).then(res => res.json()).then(jsonRes => jsonRes)
+	}).then(res => res.json()).then(jsonRes => accessTokenCleaner(jsonRes))
 }
 
-export const getTopArtists = ({ access_token }) => {
+const accessTokenCleaner = (token) => {
+	console.log('access token res:', token)
+	return token.access_token
+}
+
+export const getTopArtists = (token) => {
 				return fetch('https://galvanize-cors-proxy.herokuapp.com/https://api.spotify.com/v1/me/top/artists', {
 					headers: {
 						'Content-Type': 'application/json',
-						'Authorization': `Bearer ${access_token}`
+						'Authorization': `Bearer ${token}`
 					}
 				}).then(res => res.json()).then(jsonRes => cleanArtistRes(jsonRes))
 }
@@ -50,4 +55,25 @@ const cleanArtistRes = (json)  => {
 	return json.items.map(item => 
 		Object.assign({}, {name: item.name})	
 	)
+}
+
+export const getTopSongs = (token) => {
+	console.log(token)
+	return fetch('https://galvanize-cors-proxy.herokuapp.com/https://api.spotify.com/v1/me/top/tracks?limit=40', {
+		headers: {
+			'Content-Type': 'application/json',
+			'Authorization': `Bearer ${token}`
+		}
+		}).then(res => res.json()).then(jsonRes => cleanSongRes(jsonRes))
+}
+
+const cleanSongRes = (json) => {
+	console.log('top songs res:', json)
+	return json.items.map(song => 
+		Object.assign({}, {title: song.name, artists: cleanSongArtist(song.artists)})
+	)
+}
+
+const cleanSongArtist = (array) => {
+	return array.map(artist => artist.name)
 }
