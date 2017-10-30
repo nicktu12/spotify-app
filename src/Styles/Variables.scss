@@ -1,12 +1,14 @@
 $dark-bg: rgba(0,0,0,0.8);
 $dark-bg-o: rgba(0,0,0,0);
+$border-rad: 10px;
+$spotify-green: rgba(30, 215, 96, 1);
+$body-font: 'Roboto', sans-serif; 
+$header-font: 'Work Sans', sans-serif;
 
 @mixin linear-grad($top, $bottom) {
   background: $top;
   background: -webkit-linear-gradient($top, $bottom);
   background: -o-linear-gradient($top, $bottom);
   background: -moz-linear-gradient($top, $bottom);
-  background: linear-gradient($top, $bottom); 
+  background: linear-gradient($top, $bottom);
 }
-
-

@@ -2,17 +2,20 @@
 
 .playlist-div {
 	height: 100vh;
+	box-sizing: border-box;
+	padding: 10px;	
+	border-radius: 0px 0px $border-rad $border-rad;
 }
 
 .playlist-div h2 {
   @include linear-grad($dark-bg-o, $dark-bg);
   color: white;
   text-align: left;
-  width: calc(100% - 10px);
   padding-left: 10px;
-  padding-top: 7vh;
-	height: 11vh;
+  padding-top: 50px;
+	height: 90px;
 	box-sizing: border-box;
+	font-family: $header-font;
 }
 
 .playlist-div ul {
@@ -22,9 +25,11 @@
   padding-left: 10px;
   list-style: none;
 	overflow: scroll;
-	height: 89vh;
+	height: calc(99vh - 100px);
+	border-radius: 0px 0px $border-rad $border-rad;
 }
 
 .playlist-div li {
   line-height: 50px;
+	font-family: $body-font;
 }

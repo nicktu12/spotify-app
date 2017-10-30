@@ -70,42 +70,15 @@ class Login extends React.Component {
 
   render(){
     return(
-      <div>
-        <div className="container">
-	  <div id="login">
-	    <h1>Heyo this is nick's super crazy spotify application test login yo</h1>
-	  </div>
-	  <div id="loggedin">
-	    <button className="btn btn-default" id="obtain-new-token" onClick={()=>this.testClick()}>Triggers TestClick()</button>
-	  </div>
-	</div>
-	<div className="login-div">
-			  <a href='https://accounts.spotify.com/authorize/?client_id=6f67e11fa50a413f9bf17697789322aa&response_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&scope=user-read-private%20user-read-email%20user-top-read&state=34fFs29kd09'> 
-			<button>LOGIN</button>
-			  </a>
-	</div>
-	<div>
-	  <form onSubmit={this.handleSubmit}>
-	    <p>FORM this is all firebase stuff</p>
-	    <input type="text" name="username" placeholder="What yo name?" onChange={this.handleInput} value={this.state.username} />
-	    <input type="text" name="song" placeholder="song?" onChange={this.handleInput} value={this.state.song} />
-	    <button>IMABUTTON</button>
-	  </form>
-        </div>
-        <section className="display-item">
-          <div className="wrapper">
-	    <ul>
-	      {this.state.items.map( (item, index)  => (
-		<li key={index}>
-		  <h2>{item.title}</h2>
-		  <p>{item.user}</p>
-		  <button onClick={() => this.removeItem(item.id)}>Go away</button>
-		</li>
-	      ))}
-	    </ul>
-          </div>
-        </section>
-      </div>
+			<div className='login-div'>
+				<h2>Statify</h2>
+				<div>
+					<p>To see your Spotify listening statistics, please sign in to Spotify belew</p>
+		  		<a href='https://accounts.spotify.com/authorize/?client_id=6f67e11fa50a413f9bf17697789322aa&response_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&scope=user-read-private%20user-read-email%20user-top-read&state=34fFs29kd09'> 
+						<button>LOGIN</button>
+				 	</a>
+			 	</div>
+			</div>
     )
   }
 }

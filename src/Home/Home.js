@@ -29,9 +29,7 @@ class Home extends React.Component{
 		return(
 		
  			<div className='home-div'>
-				<div className='hero-banner'>
-			    <h1>Top Artists</h1>
-				</div>
+			  <h2>Top Artists</h2>
 				<ul>
 					{this.props.topArtists && this.renderTopArtists(this.props.topArtists)}
 			  </ul>
