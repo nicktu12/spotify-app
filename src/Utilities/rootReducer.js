@@ -1,12 +1,11 @@
 import { combineReducers } from 'redux';
 import { routerReducer} from 'react-router-redux';
-import { testClickAction, apiStuffAction, accessToken, topArtistsAction } from '../Login/Login-reducer';
+import { apiStuffAction, accessToken, topArtistsAction } from '../Login/Login-reducer';
 import { authCode } from '../Home/Home-reducer';
 import { topSongs } from '../Playlist/Playlist-reducer';
 
 export default combineReducers({
 	routing: routerReducer,
-	testClick: testClickAction,
 	apiShit: apiStuffAction,
 	authCode, 
 	accessToken, 

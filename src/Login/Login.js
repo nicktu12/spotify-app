@@ -4,69 +4,6 @@ import firebase from '../firebase.js';
 import { testClickAction, handleLoginAction } from './Login-actions.js'; 
 
 class Login extends React.Component {
-  constructor() {
-    super();
-
-    this.state = {
-      username: '',
-      song: '',
-      items: []
-    }
-  }
-
-  componentDidMount() {
-    const itemsRef = firebase.database().ref('items');
-    itemsRef.on('value', (snapshot) => {
-      let items = snapshot.val();
-      let newState = [];
-      for (let item in items) {
-	newState.push({
-	  id: item, 
-	  title: items[item].song,
-	  user: items[item].user
-	});
-      }
-      this.setState({
-	items: newState
-      })
-    })
-    console.log(window.location.href)
-  }
-
-  handleInput = (e) => {
-    this.setState({
-	[e.target.name]: e.target.value
-    })
-  }
-
-  handleSubmit = (e) => {
-    e.preventDefault();
-    const itemsRef = firebase.database().ref('items');
-    const item = {
-      song: this.state.song,
-      user: this.state.username
-    }
-    itemsRef.push(item);
-    this.setState({
-      username: '',
-      song: ''
-    });
-  }
-
-  removeItem = (itemId) => {
-    const itemsRef = firebase.database().ref(`/items/${itemId}`);
-    itemsRef.remove();
-  }
-
-  testClick = () => {
-    console.log('test click');
-    this.props.handleTestClick('help');
-  }
-
-  loginClick = () => {
-    console.log('handle login');
-    this.props.handleLogin();
-  }
 
   render(){
     return(
@@ -83,11 +20,4 @@ class Login extends React.Component {
   }
 }
 
-const mapDispatchToProps = dispatch => {
-  return {    
-    handleTestClick: () => dispatch(testClickAction()),
-    handleLogin: () => dispatch(handleLoginAction())
-  }
-}
-
-export default connect(null, mapDispatchToProps)(Login);
+export default connect(null, null)(Login);
