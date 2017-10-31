@@ -3,9 +3,6 @@ import { connect } from 'react-redux';
 import { loadSongsAction } from './Playlist-actions';
 
 class Playlist extends React.Component{
-	constructor(){
-		super()
-	}
 	componentDidMount(){
 		this.props.loadSongs(this.props.accessToken);	
 	}

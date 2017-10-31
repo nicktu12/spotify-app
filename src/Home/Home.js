@@ -4,10 +4,6 @@ import { authCodeCleaner } from '../Utilities/helpers';
 import { saveAuthCodeAction } from './Home-actions'; 
 
 class Home extends React.Component{
-  constructor(){
-		super();
-	}
-
 	componentDidMount(){
 		const url = window.location.href
 		if (url.includes('code')) {
