@@ -9,9 +9,10 @@
 	border-radius: $border-rad * 5;
 	border: none;
 	padding: 25px;
-  color: white;
+  color: $white;
   font-size: 2em;
 	margin: 20px;
+	font-family: $header-font;
 }
 
 .login-div div {
@@ -26,4 +27,5 @@
 
 .login-div p {
 	padding-top: 10%;
+	font-family: $body-font;
 }
