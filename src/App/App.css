@@ -19,7 +19,18 @@ header {
 
 header a {
   display: block;
-  text-align: left; }
+  text-align: left;
+  text-decoration: none;
+  line-height: 50px;
+  color: rgba(255, 255, 255, 0.9); }
+
+header a:visited {
+  color: rgba(255, 255, 255, 0.9); }
+
+h1 {
+  font-family: "Work Sans", sans-serif;
+  text-align: left;
+  font-size: 40px; }
 
 main {
   margin-left: 240px; }

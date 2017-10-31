@@ -25,6 +25,19 @@ header {
 header a {
   display: block;
   text-align: left;
+	text-decoration: none;
+	line-height: 50px;
+	color: $white;
+}
+
+header a:visited {
+	color: $white;
+}
+
+h1 {
+	font-family: $header-font;
+	text-align: left;
+	font-size: 40px;
 }
 
 main {
