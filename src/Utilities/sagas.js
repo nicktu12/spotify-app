@@ -21,9 +21,15 @@ function* getSongs (action) {
 	}
 }
 
-function* mySaga() {
+function* listenForAuth() {
 	yield takeLatest('AUTH_CODE', getAccess)
+}
+
+function* listenForLoadSongs() {
 	yield takeLatest('LOAD_SONGS', getSongs)
 }
 
-export default mySaga;
+export default [
+	listenForAuth,
+	listenForLoadSongs,
+];

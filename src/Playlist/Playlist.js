@@ -7,9 +7,13 @@ class Playlist extends React.Component{
 		this.props.loadSongs(this.props.accessToken);	
 	}
 	
+				// map state to props
+				// last updated at...
+				// for not calling api every time component mounts
+
   renderSongs = (array) => (
   	array.map((song, index) => (
-						<li key={'top songs ' + index}><span>{song.title}</span> {song.artists}</li>
+						<pre><li key={'top songs ' + index}><span>{song.title}</span> {song.artists}</li></pre>
   	))
   )
 
