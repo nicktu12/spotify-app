@@ -3,12 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "cookie-parser": "^1.4.3",
-    "express": "^4.16.2",
-    "firebase": "^4.6.0",
     "node-sass-chokidar": "0.0.3",
     "prop-types": "^15.6.0",
-    "querystring": "^0.2.0",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-redux": "^5.0.6",
@@ -16,8 +12,7 @@
     "react-router-redux": "^4.0.8",
     "react-scripts": "1.0.14",
     "redux": "^3.7.2",
-    "redux-saga": "^0.16.0",
-    "request": "^2.83.0"
+    "redux-saga": "^0.16.0"
   },
   "scripts": {
     "build-css": "node-sass-chokidar src/ -o src/",

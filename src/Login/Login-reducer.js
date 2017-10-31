@@ -1,12 +1,3 @@
-export function apiStuffAction(state={}, action){
-  switch(action.type) {
-    case 'SAGAS_TEST_SUCCESS':
-	    return action
-    default: 
-	   return state;
-  }
-}
-
 export function accessToken(state='', action){
   switch(action.type) {
 		case 'ACCESS_TOKENS':
