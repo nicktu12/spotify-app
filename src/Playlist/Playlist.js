@@ -9,7 +9,7 @@ class Playlist extends React.Component{
 	
   renderSongs = (array) => (
   	array.map((song, index) => (
-  		<li key={'top songs ' + index}>{song.title} - {song.artists}</li>
+						<li key={'top songs ' + index}><span>{song.title}</span> {song.artists}</li>
   	))
   )
 
@@ -17,9 +17,9 @@ class Playlist extends React.Component{
 		return(		
 	    <div className='playlist-div'>
     		<h2>Your Top 40</h2>
-				<ul>
+				<ol>
 					{this.props.topSongs && this.renderSongs(this.props.topSongs)}
-				</ul>
+				</ol>
       </div>
   	)
 	}

@@ -26,9 +26,9 @@ class Home extends React.Component{
 		
  			<div className='home-div'>
 			  <h2>Top Artists</h2>
-				<ul>
+				<ol>
 					{this.props.topArtists && this.renderTopArtists(this.props.topArtists)}
-			  </ul>
+			  </ol>
 			</div>
 		)
 	}
