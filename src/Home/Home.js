@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Redirect } from 'react-router';
 import { authCodeCleaner } from '../Utilities/helpers';
 import { saveAuthCodeAction } from './Home-actions'; 
 
@@ -9,12 +8,12 @@ class Home extends React.Component{
 		const url = window.location.href
 		if (url.includes('code')) {
 			this.props.saveAuthCode(authCodeCleaner(url))			
-		}
-		if (url.includes('error')) {
-			console.log('error')
+		} else if (url.includes('error')){
+			console.log('error with url')
+		} else {
+			this.renderRedirect();
 		}
 	}
-
 
 	renderTopArtists = (array) => (
 		array.map((artist, index) => (
@@ -24,7 +23,7 @@ class Home extends React.Component{
 
 	renderRedirect = () => {
 		if (!this.props.token.length) {
-			return (<div> <Redirect to='/login' /> </div>)
+				this.props.history.push('/login')
 		}			
 	} 
 
@@ -32,7 +31,6 @@ class Home extends React.Component{
 		return(
 		
  			<div className='home-div'>
-				{this.renderRedirect()}
 			  <h2>Top Artists</h2>
 				<ol>
 					{this.props.topArtists && this.renderTopArtists(this.props.topArtists)}
