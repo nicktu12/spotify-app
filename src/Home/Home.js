@@ -17,7 +17,7 @@ class Home extends React.Component{
 
 	renderTopArtists = (array) => (
 					array.map((artist, index) => (
-						<li key={'top artists ' + index}>{artist.name}</li>
+									<li key={'top artists ' + index}><span>{artist.name}</span></li>
 					))			
 	) 
 

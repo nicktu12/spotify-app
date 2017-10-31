@@ -21,11 +21,12 @@
 .home-div ol {		
   background-color: $dark-bg;
   text-align: left;
-	color: $white;
+	color: $light-3;
   padding-left: 35px;
 	overflow: scroll;
 	height: calc(99vh - 100px);
 	border-radius: 0px 0px $border-rad $border-rad;
+	font-family: $body-font;
 }
 
 .home-div li {
