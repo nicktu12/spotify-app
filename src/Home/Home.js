@@ -27,7 +27,7 @@ class Home extends React.Component{
 		}			
 	} 
 
-				showLoading = () => ( !this.props.topArtists && <img src={require('../Assets/bars.svg')}  /> )
+	showLoading = () => ( !this.props.topArtists && <img src={require('../Assets/bars.svg')}  /> )
 
 	render(){
 		return(
