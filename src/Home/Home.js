@@ -27,11 +27,13 @@ class Home extends React.Component{
 		}			
 	} 
 
+				showLoading = () => ( !this.props.topArtists && <img src={require('../Assets/bars.svg')}  /> )
+
 	render(){
 		return(
 		
  			<div className='home-div'>
-			  <h2>Top Artists</h2>
+			  <h2>Top Artists {this.showLoading()}</h2>
 				<ol>
 					{this.props.topArtists && this.renderTopArtists(this.props.topArtists)}
 			  </ol>
