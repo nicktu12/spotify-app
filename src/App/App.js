@@ -9,7 +9,7 @@ const App = () => (
   <div className="App">
     <header>
 			<h1>Statify</h1>
-      <Link to="/">Top Artists</Link>
+      <Link to="/">Your Top Artists</Link>
       <Link to="/top40">Your Top 40</Link>
       <Link to="/login">Login</Link>
     </header>

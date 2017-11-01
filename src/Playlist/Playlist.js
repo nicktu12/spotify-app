@@ -23,7 +23,7 @@ class Playlist extends React.Component{
 	render(){
 		return(		
 	    <div className='playlist-div'>
-    		<h2>Your Top 40 {this.showLoading()}</h2>
+    		<h2>Top 40 {this.showLoading()}</h2>
 				<ol>
 					{this.props.topSongs && this.renderSongs(this.props.topSongs)}
 				</ol>
