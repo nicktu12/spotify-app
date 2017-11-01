@@ -35,6 +35,75 @@ h2 img {
 }
 
 .home-div li {
-  line-height: 50px;
+  line-height: 42px;
+	margin: 4px 0px;
 	font-family: $header-font;
+	border-radius: 1px;
+}
+
+.artists .plus-icon, .artists .minus-icon {
+	display: none;
+	color: $light-3;
+}
+
+.home-div li:hover {
+	background-color: $dark;
+}
+
+.unselected:hover .plus-icon {
+	display: inline;
+}
+
+.selected:hover .minus-icon {
+	display: inline;
+}
+
+.artists span {
+	display: block;
+	padding-left: 10px;
+}
+
+.unselected {
+	img {
+		display: none;
+	}
+	p {
+		display: none;
+	}
+}
+
+.selected {
+	background-color: $dark;
+}
+
+.selected {
+	img {
+		padding-left: 10px;
+		height: 208px;
+	}
+	div {
+		display: inline-flex;
+		padding-left: 10px;
+		vertical-align: top;
+		flex-direction: column;
+		justify-content: space-around;
+		width: 50vw;
+	}
+	div p {
+		font-family: $body-font;
+	}
+	div p span {
+		font-family: $body-font;
+		display: initial;
+		font-size: 16px;
+		color: $white;
+	}
+	.indent {
+		color: $light-3;
+		display: inherit;
+		width: calc(100vw - 700px);
+		padding-left: 20px;
+		margin-top: -14px;
+		line-height: normal;
+	}
 }

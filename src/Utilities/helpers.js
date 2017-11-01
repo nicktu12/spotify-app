@@ -45,7 +45,13 @@ export const getTopArtists = (token) => {
 const cleanArtistRes = (json)  => {
 	console.log('top artists res: ', json.items)
 	return json.items.map(item => 
-		Object.assign({}, {name: item.name})	
+		Object.assign({}, {
+			name: item.name, 
+			photo: item.images[0], 
+			followers: item.followers.total, 
+			popularity: item.popularity,
+			genres: cleanArtistsArray(item.genres)
+		})	
 	)
 }
 
