@@ -29,8 +29,6 @@ const store = createStore(
   composedEnhancers
 );
 
-console.log(mySagas)
-
 mySagas.forEach(saga=> sagaMiddleware.run(saga))
 
 export default store

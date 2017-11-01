@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { loadSongsAction } from './Playlist-actions';
+import { cleanArtistsArray } from '../Utilities/helpers';
 
 class Playlist extends React.Component{
 	componentDidMount(){
@@ -13,14 +14,16 @@ class Playlist extends React.Component{
 
   renderSongs = (array) => (
   	array.map((song, index) => (
-						<pre><li key={'top songs ' + index}><span>{song.title}</span> {song.artists}</li></pre>
+			<li key={'top songs ' + index}><span>{song.title}</span> {cleanArtistsArray(song.artists)}</li>
   	))
   )
+
+	showLoading = () => ( !this.props.topSongs.length && <img src={require('../Assets/bars.svg')}  /> )
 
 	render(){
 		return(		
 	    <div className='playlist-div'>
-    		<h2>Your Top 40</h2>
+    		<h2>Your Top 40 {this.showLoading()}</h2>
 				<ol>
 					{this.props.topSongs && this.renderSongs(this.props.topSongs)}
 				</ol>

@@ -68,3 +68,5 @@ const cleanSongRes = (json) => {
 const cleanSongArtist = (array) => {
 	return array.map(artist => artist.name)
 }
+
+export const cleanArtistsArray = (array) => array.join(', ');

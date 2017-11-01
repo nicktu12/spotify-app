@@ -1,4 +1,4 @@
-import { call, put, takeEvery, takeLatest } from 'redux-saga/effects';
+import { call, put, takeLatest } from 'redux-saga/effects';
 import { getAccessToken, getTopArtists, getTopSongs } from './helpers.js';
 
 function* getAccess (action) {
