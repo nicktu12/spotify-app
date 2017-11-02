@@ -71,7 +71,7 @@ class Home extends React.Component{
 }
 
 const mapStateToProps = store => ({
-	topArtists: store.topArtistsAction.topArtists,
+	topArtists: store.topArtists,
 	token: store.accessToken
 })
 

@@ -7,10 +7,10 @@ export function accessToken(state='', action){
 	}
 }
 
-export function topArtistsAction(state=[], action){
+export function topArtists(state=[], action){
 	switch(action.type) {
 		case 'TOP_ARTISTS':
-			return action
+			return action.topArtists
 		default:
 			return state;
 	}
