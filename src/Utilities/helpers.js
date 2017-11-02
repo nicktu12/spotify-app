@@ -50,7 +50,7 @@ const cleanArtistRes = (json)  => {
       photo: item.images[0], 
       followers: item.followers.total, 
       popularity: item.popularity,
-      genres: cleanArtistsArray(item.genres)
+      genres: cleanStringArray(item.genres)
     })  
   );
 };
@@ -75,7 +75,7 @@ const cleanSongRes = (json) => {
 };
 
 const cleanSongArtist = (array) => {
-  return array.map(artist => artist.name);
+  return cleanStringArray(array.map(artist => artist.name));
 };
 
-export const cleanArtistsArray = (array) => array.join(', ');
+const cleanStringArray = (array) => array.join(', ');
