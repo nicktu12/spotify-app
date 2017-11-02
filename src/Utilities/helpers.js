@@ -26,7 +26,9 @@ export const getAccessToken = (authCode) => {
       'Accept': 'application/json'
     },
     body: formBody
-  }).then(res => res.json()).then(jsonRes => accessTokenCleaner(jsonRes));
+  }).then(res => res.json())
+    .then(jsonRes => accessTokenCleaner(jsonRes))
+    .catch(error => alert(error));
 };
 
 const accessTokenCleaner = (token) => {
@@ -39,7 +41,9 @@ export const getTopArtists = (token) => {
       'Content-Type': 'application/json',
       'Authorization': `Bearer ${token}`
     }
-  }).then(res => res.json()).then(jsonRes => cleanArtistRes(jsonRes));
+  }).then(res => res.json())
+    .then(jsonRes => cleanArtistRes(jsonRes))
+    .catch(error => alert(error));
 };
 
 const cleanArtistRes = (json)  => {
@@ -61,7 +65,9 @@ export const getTopSongs = (token) => {
       'Content-Type': 'application/json',
       'Authorization': `Bearer ${token}`
     }
-    }).then(res => res.json()).then(jsonRes => cleanSongRes(jsonRes));
+  }).then(res => res.json())
+    .then(jsonRes => cleanSongRes(jsonRes))
+    .catch(error => alert(error));
 };
 
 const cleanSongRes = (json) => {
