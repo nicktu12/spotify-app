@@ -4,8 +4,8 @@ import { authCode } from '../Home/Home-reducer';
 import { topSongs } from '../Playlist/Playlist-reducer';
 
 export default combineReducers({
-	authCode, 
-	accessToken, 
+  authCode, 
+  accessToken, 
   topArtists,
-	topSongs
+  topSongs
 });
