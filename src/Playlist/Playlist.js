@@ -13,8 +13,7 @@ class Playlist extends React.Component{
   renderSongs = (array) => (
     array.map((song, index) => (
       <li key={'top songs ' + index}>
-        <span>{song.title}</span> 
-        {song.artists}
+        <span>{song.title}</span> {song.artists}
       </li>
     ))
   )

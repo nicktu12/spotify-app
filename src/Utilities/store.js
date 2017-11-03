@@ -11,16 +11,16 @@ const middleware = [
 ];
 
 if (process.env.NODE_ENV === 'development') {
-  const devToolsExtension = window.devToolsExtension
+  const devToolsExtension = window.devToolsExtension;
 
   if (typeof devToolsExtension === 'function') {
-    enhancers.push(devToolsExtension())
+    enhancers.push(devToolsExtension());
   }
-};
+}
 
 const composedEnhancers = compose(
   applyMiddleware(...middleware),
-    ...enhancers
+  ...enhancers
 );
 
 const store = createStore(
@@ -29,6 +29,6 @@ const store = createStore(
   composedEnhancers
 );
 
-mySagas.forEach(saga=> sagaMiddleware.run(saga))
+mySagas.forEach(saga=> sagaMiddleware.run(saga));
 
-export default store
+export default store;
