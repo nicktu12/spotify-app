@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Meter = (props) => {
   var {
@@ -11,16 +12,41 @@ const Meter = (props) => {
     label = null         // a label to describe the contents (for accessibility)
   } = props;
 
-  var r = rounded ? Math.ceil(height / 2) : 0;
-  var w = percent ? Math.max(height, width * Math.min(percent, 1)) : 0;
+  var round =  rounded ? Math.ceil(height / 2) : 0;
+  var otherWidth =  percent ? 
+    Math.max(height, width * Math.min(percent, 1)) :
+    0;
   var style = animate ? { "transition": "width 500ms, fill 250ms" } : null;
 
   return (
     <svg width={width} height={height} aria-label={label}>
-      <rect width={width} height={height} fill="rgb(22,21,21)" rx={r} ry={r}/>
-      <rect width={w} height={height} fill={color} rx={r} ry={r} style={style}/>
+      <rect 
+        width={width} 
+        height={height} 
+        fill="rgb(22,21,21)" 
+        rx={round} 
+        ry={round}
+      />
+      <rect 
+        width={otherWidth} 
+        height={height} 
+        fill={color} 
+        rx={round} 
+        ry={round} 
+        style={style}
+      />
     </svg>
   );
+};
+
+Meter.propTypes = {
+  percent: PropTypes.number,
+  width: PropTypes.number,
+  height: PropTypes.number,
+  rounded: PropTypes.bool,
+  color: PropTypes.string,
+  animate: PropTypes.bool,
+  label: PropTypes.number,
 };
 
 export default Meter;

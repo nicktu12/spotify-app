@@ -1,6 +1,6 @@
 export const saveAuthCodeAction = (code) => {
-	return {
-		type: 'AUTH_CODE',
-		code
-	}
-}
+  return {
+    type: 'AUTH_CODE',
+    code
+  };
+};

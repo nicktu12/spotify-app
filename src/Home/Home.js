@@ -67,7 +67,9 @@ class Home extends React.Component{
       <div className='home-div'>
         <h2>Top Artists {this.showLoading()}</h2>
         <ol>
-          {this.props.topArtists && this.renderTopArtists(this.props.topArtists)}
+          { this.props.topArtists && 
+            this.renderTopArtists(this.props.topArtists)
+          }
         </ol>
       </div>
     );
