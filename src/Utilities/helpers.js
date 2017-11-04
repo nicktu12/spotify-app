@@ -107,3 +107,7 @@ const cleanSongArtist = (array) => {
 };
 
 const cleanStringArray = (array) => array.join(', ');
+
+export const getUserInfo = (token) => {
+  console.log(token)
+}

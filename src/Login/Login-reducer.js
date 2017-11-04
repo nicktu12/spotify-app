@@ -15,3 +15,12 @@ export function topArtists(state=[], action){
     return state;
   }
 }
+
+export function userInfo(state={}, action){
+  switch (action.type) {
+  case 'USER_INFO':
+    return action.userInfo;
+  default:
+    return state;
+  }
+}

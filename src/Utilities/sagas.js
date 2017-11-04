@@ -1,9 +1,11 @@
 import { call, put, takeLatest } from 'redux-saga/effects';
-import { getAccessToken, getTopArtists, getTopSongs, getTopSongsShortTerm, getTopSongsAllTime } from './helpers.js';
+import { getAccessToken, getTopArtists, getTopSongs, getTopSongsShortTerm, getTopSongsAllTime, getUserInfo } from './helpers.js';
 
 function* getAccess (action) {
   try {
     const accessToken = yield call(getAccessToken, action.code);  
+    const userInfo = yield call(getUserInfo, accessToken);
+    yield put({type: 'USER_INFO', userInfo})
     yield put({type: 'ACCESS_TOKENS', accessToken});
     const topArtists = yield call(getTopArtists, accessToken);
     yield put({type: 'TOP_ARTISTS', topArtists});
