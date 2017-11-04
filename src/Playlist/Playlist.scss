@@ -1,7 +1,7 @@
 @import '../Styles/Variables.scss';
 
 .playlist-div {
-	height: 100vh;
+	height: calc(100vh - 90px);
 	box-sizing: border-box;
 	padding: 10px;	
 	border-radius: 0px 0px $border-rad $border-rad;
@@ -25,7 +25,7 @@
   text-align: left;
   padding-left: 35px;
 	overflow: scroll;
-	height: calc(99vh - 100px);
+	height: calc(99vh - 191px);
 	border-radius: 0px 0px $border-rad $border-rad;
   line-height: 32px;
 	font-family: $body-font;
