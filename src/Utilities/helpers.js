@@ -81,6 +81,17 @@ export const getTopSongsShortTerm = (token) => {
     .catch(error => alert(error));
 };
 
+export const getTopSongsAllTime = (token) => {
+  return fetch('https://galvanize-cors-proxy.herokuapp.com/https://api.spotify.com/v1/me/top/tracks?limit=40&time_range=long_term', {
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`
+    }
+  }).then(res => res.json())
+    .then(jsonRes => cleanSongRes(jsonRes))
+    .catch(error => alert(error));
+};
+
 const cleanSongRes = (json) => {
   console.log('top songs res: ', json)
   return json.items.map(song => 

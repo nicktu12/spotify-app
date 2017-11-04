@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { loadSongsAction, loadSongsShortTerm } from './Playlist-actions';
+import { loadSongsAction, loadSongsShortTerm, loadSongsAllTime } from './Playlist-actions';
 
 class Playlist extends React.Component{
   componentDidMount(){
@@ -16,15 +16,36 @@ class Playlist extends React.Component{
         null : 
         this.props.loadSongs(this.props.accessToken); 
     }
+    if (this.props.match.path === '/top40/alltime') {
+      return this.props.topSongsAllTime.length ?
+        null : 
+        this.props.loadSongsAllTime(this.props.accessToken); 
+    }
   }
 
-  renderSongs = (array) => (
-    array.map((song, index) => (
-      <li key={'top songs ' + index}>
-        <span>{song.title}</span> {song.artists}
-      </li>
-    ))
-  )
+  renderSongs = () => {
+    if (this.props.match.path === '/top40') {
+        return this.props.topSongs.map((song, index) => (
+          <li key={'top songs ' + index}>
+            <span>{song.title}</span> {song.artists}
+          </li>
+      ))
+    }
+    if (this.props.match.path === '/top40/month') {
+        return this.props.topSongsShortTerm.map((song, index) => (
+          <li key={'top songs ' + index}>
+            <span>{song.title}</span> {song.artists}
+          </li>
+      ))
+    }
+    if (this.props.match.path === '/top40/alltime') {
+        return this.props.topSongsAllTime.map((song, index) => (
+          <li key={'top songs ' + index}>
+            <span>{song.title}</span> {song.artists}
+          </li>
+      ))
+    }
+  }
 
   showLoading = () => ( 
     !this.props.topSongs.length && 
@@ -35,9 +56,10 @@ class Playlist extends React.Component{
     return (   
       <div className='playlist-div'>
         <h2>Top 40 {this.showLoading()}</h2>
-        <button onClick={()=>this.props.history.push('/top40/month')}>Next page</button>
+        <button onClick={()=>this.props.history.push('/top40/month')}>This month</button>
+        <button onClick={()=>this.props.history.push('/top40/alltime')}>All Time</button>
         <ol>
-          {this.props.topSongs && this.renderSongs(this.props.topSongs)}
+          {this.props.topSongs && this.renderSongs()}
         </ol>
       </div>
     );
@@ -48,12 +70,14 @@ const mapStateToProps = store => ({
   accessToken: store.accessToken,
   topSongs: store.topSongs,
   topSongsShortTerm: store.topSongsShortTerm,
+  topSongsAllTime: store.topSongsAllTime,
 });
 
 const mapDispatchToProps = dispatch => {
   return {
     loadSongs: (token) => dispatch(loadSongsAction(token)),
-    loadSongsShortTerm: (token) => dispatch(loadSongsShortTerm(token))
+    loadSongsShortTerm: (token) => dispatch(loadSongsShortTerm(token)),
+    loadSongsAllTime: (token) => dispatch(loadSongsAllTime(token)),
   };
 };
 

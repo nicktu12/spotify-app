@@ -11,3 +11,10 @@ export const loadSongsShortTerm = (token) => {
     token
   }
 }
+
+export const loadSongsAllTime = (token) => {
+  return {
+    type: 'LOAD_SONGS_ALL_TIME',
+    token
+  }
+}

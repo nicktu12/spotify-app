@@ -1,5 +1,5 @@
 import { call, put, takeLatest } from 'redux-saga/effects';
-import { getAccessToken, getTopArtists, getTopSongs, getTopSongsShortTerm } from './helpers.js';
+import { getAccessToken, getTopArtists, getTopSongs, getTopSongsShortTerm, getTopSongsAllTime } from './helpers.js';
 
 function* getAccess (action) {
   try {
@@ -30,6 +30,15 @@ function* getSongsShortTerm (action) {
   }
 }
 
+function* getSongsAllTime (action) {
+  try {
+    const topSongsAllTime = yield call(getTopSongsAllTime, action.token);
+    yield put({type: 'TOP_SONGS_ALL_TIME', topSongsAllTime})
+  } catch (error) {
+    yield put({type: 'GET_SONGS_ALL_TIME_ERROR', message: error.message});
+  } 
+}
+
 function* listenForAuth() {
   yield takeLatest('AUTH_CODE', getAccess);
 }
@@ -42,8 +51,13 @@ function* listenForLoadSongsShortTerm() {
   yield takeLatest('LOAD_SONGS_SHORT_TERM', getSongsShortTerm);
 }
 
+function* listenForLoadSongsAllTime() {
+  yield takeLatest('LOAD_SONGS_ALL_TIME', getSongsAllTime);
+}
+
 export default [
   listenForAuth,
   listenForLoadSongs,
   listenForLoadSongsShortTerm,
+  listenForLoadSongsAllTime
 ];
