@@ -76,7 +76,13 @@ h2 img {
 	background-color: $dark;
 }
 
-.selected {
+section {
+  position: absolute;
+  height: calc(99vh - 100px);
+  width: 30vw;
+}
+
+section {
 	img {
 		padding-left: 10px;
 		height: 208px;
@@ -108,9 +114,3 @@ h2 img {
 	}
 }
 
-section {
-  background-color: red;
-  position: absolute;
-  height: calc(99vh - 100px);
-  width: 30vw;
-}

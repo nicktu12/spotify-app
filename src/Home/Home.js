@@ -33,12 +33,6 @@ class Home extends React.Component{
           <span className='plus-icon'>+</span>
           <span className='minus-icon'>-</span>
         </span>
-        <img src={artist.photo.url} alt={artist.name + ' photo'} />
-        <div>
-          <p><span>Followers:</span> <span className='indent'>{artist.followers}</span></p>
-          <p><span>Popularity:</span> <span className='indent'><Meter percent={artist.popularity / 100} rounded={false} /></span></p>
-          <p><span>Genres:</span> <span className='genres indent'>{artist.genres}</span></p>
-        </div>
       </li>
     ))      
   ) 
