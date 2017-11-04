@@ -65,6 +65,9 @@ class Home extends React.Component{
   render(){
     return (
       <div className='home-div'>
+        <section>
+          <p>hey</p>
+        </section>
         <h2>Top Artists {this.showLoading()}</h2>
         <ol>
           { this.props.topArtists && 
