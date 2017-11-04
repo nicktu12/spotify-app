@@ -16,6 +16,8 @@ const App = () => (
     <main>
       <Route exact path="/" component={Home} />
       <Route exact path="/top40" component={Playlist} />
+      <Route exact path="/top40/month" component={Playlist} />
+      <Route exact path="/top40/alltime" component={Playlist} />
       <Route exact path="/login" component={Login} />
     </main>
   </div>
