@@ -18,11 +18,11 @@ class Home extends React.Component{
   componentDidMount(){
     const url = window.location.href;
     if (url.includes('code')) {
-      this.props.saveAuthCode(authCodeCleaner(url));
+      this.props.authCodeToSagas(authCodeCleaner(url));
     } else if (url.includes('error')){
       console.log('error with url')
     } else {
-      this.renderRedirect();
+      this.redirectToLogin();
     }
   }
 
@@ -51,7 +51,7 @@ class Home extends React.Component{
         this.setState({ selected: [index] })
   )
 
-  renderRedirect = () => {
+  redirectToLogin = () => {
     if (!this.props.token.length) {
       this.props.history.push('/login');
     }     
@@ -84,12 +84,12 @@ const mapStateToProps = store => ({
 
 const mapDispatchToProps = dispatch => {
   return {
-    saveAuthCode: (token) => dispatch(saveAuthCodeAction(token))
+    authCodeToSagas: (token) => dispatch(saveAuthCodeAction(token))
   };
 };
 
 Home.propTypes = {
-  saveAuthCode: PropTypes.func,
+  authCodeToSagas: PropTypes.func,
   token: PropTypes.string,
   history: PropTypes.object,
   topArtists: PropTypes.arrayOf(PropTypes.object),
