@@ -1,5 +1,5 @@
 import { call, put, takeLatest } from 'redux-saga/effects';
-import { getAccessToken, getTopArtists, getTopSongs } from './helpers.js';
+import { getAccessToken, getTopArtists, getTopSongs, getTopSongsShortTerm } from './helpers.js';
 
 function* getAccess (action) {
   try {
@@ -23,7 +23,8 @@ function* getSongs (action) {
 
 function* getSongsShortTerm (action) {
   try {
-    console.log('in sagas!')
+    const topSongsShortTerm = yield call(getTopSongsShortTerm, action.token)
+    yield put({type: 'TOP_SONGS_SHORT_TERM', topSongsShortTerm})
   } catch (error) {
     yield put({type: 'GET_SONGS_SHORT_TERM_ERROR', message: error.message});  
   }
