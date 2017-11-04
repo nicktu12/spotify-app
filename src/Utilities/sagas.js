@@ -21,6 +21,14 @@ function* getSongs (action) {
   }
 }
 
+function* getSongsShortTerm (action) {
+  try {
+    console.log('in sagas!')
+  } catch (error) {
+    yield put({type: 'GET_SONGS_SHORT_TERM_ERROR', message: error.message});  
+  }
+}
+
 function* listenForAuth() {
   yield takeLatest('AUTH_CODE', getAccess);
 }
@@ -29,7 +37,12 @@ function* listenForLoadSongs() {
   yield takeLatest('LOAD_SONGS', getSongs);
 }
 
+function* listenForLoadSongsShortTerm() {
+  yield takeLatest('LOAD_SONGS_SHORT_TERM', getSongsShortTerm);
+}
+
 export default [
   listenForAuth,
   listenForLoadSongs,
+  listenForLoadSongsShortTerm,
 ];

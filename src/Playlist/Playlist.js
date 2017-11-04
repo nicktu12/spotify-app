@@ -1,13 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { loadSongsAction } from './Playlist-actions';
+import { loadSongsAction, loadSongsShortTerm } from './Playlist-actions';
 
 class Playlist extends React.Component{
   componentDidMount(){
-    return this.props.topSongs.length ?
-      null : 
-      this.props.loadSongs(this.props.accessToken); 
+    if (this.props.match.path === '/top40/month') {
+      console.log(this.props.topSongsShortTerm.length)
+      return this.props.topSongsShortTerm.length ?
+        null :
+        this.props.loadSongsShortTerm(this.props.accessToken)
+    }
+    if (this.props.match.path === '/top40') {
+      return this.props.topSongs.length ?
+        null : 
+        this.props.loadSongs(this.props.accessToken); 
+    }
   }
 
   renderSongs = (array) => (
@@ -27,6 +35,7 @@ class Playlist extends React.Component{
     return (   
       <div className='playlist-div'>
         <h2>Top 40 {this.showLoading()}</h2>
+        <button onClick={()=>this.props.history.push('/top40/month')}>Next page</button>
         <ol>
           {this.props.topSongs && this.renderSongs(this.props.topSongs)}
         </ol>
@@ -37,12 +46,14 @@ class Playlist extends React.Component{
 
 const mapStateToProps = store => ({
   accessToken: store.accessToken,
-  topSongs: store.topSongs
+  topSongs: store.topSongs,
+  topSongsShortTerm: store.topSongsShortTerm,
 });
 
 const mapDispatchToProps = dispatch => {
   return {
-    loadSongs: (token) => dispatch(loadSongsAction(token))
+    loadSongs: (token) => dispatch(loadSongsAction(token)),
+    loadSongsShortTerm: (token) => dispatch(loadSongsShortTerm(token))
   };
 };
 
