@@ -11,7 +11,7 @@ class Home extends React.Component{
     super();
 
     this.state = {
-      selected: [],
+      selected: null,
     };
   }
 
@@ -28,7 +28,7 @@ class Home extends React.Component{
 
   renderTopArtists = (array) => (
     array.map((artist, index) => (
-      <li key={'top artists ' + index} onClick={()=>this.addSelected(index)} className={ this.state.selected.includes(index) ? 'selected artists' : 'unselected artists' }>
+      <li key={'top artists ' + index} onClick={()=>this.addSelected(index)} className={ this.state.selected === index ? 'selected artists' : 'unselected artists' }>
         <span>{artist.name} 
           <span className='plus-icon'>+</span>
           <span className='minus-icon'>-</span>
@@ -44,12 +44,16 @@ class Home extends React.Component{
   ) 
 
   addSelected = (index) => (
-    !this.state.selected.length ? 
-      this.setState({ selected: [index]}) : 
-      this.state.selected.includes(index) ? 
-        this.setState({ selected: [] }) : 
-        this.setState({ selected: [index] })
+    this.state.selected === null ? 
+      this.setState({ selected: index}) : 
+      this.updateSelected(index)
   )
+
+  updateSelected = (index) => {
+    this.state.selected === index ?
+      this.setState({ selected: null }) :
+      this.setState({ selected: index })
+  }
 
   redirectToLogin = () => {
     if (!this.props.token.length) {
@@ -62,12 +66,16 @@ class Home extends React.Component{
     <img src={require('../Assets/bars.svg')} alt="loading icon"  />
   )
 
+  renderInfoCard = (info) => (
+    info === undefined ?
+      <section><p>heyyy</p></section> :
+      console.log(info)
+  )
+
   render(){
     return (
       <div className='home-div'>
-        <section>
-          <p>hey</p>
-        </section>
+        { this.renderInfoCard(this.props.topArtists[this.state.selected]) }
         <h2>Top Artists {this.showLoading()}</h2>
         <ol>
           { this.props.topArtists && 
