@@ -46,17 +46,33 @@ class Playlist extends React.Component{
     }
   }
 
-  showLoading = () => ( 
-    !this.props.topSongs.length && 
-    <img src={require('../Assets/bars.svg')} alt="loading icon" />
-  )
+  showLoading = () => { 
+    if (this.props.match.path === '/top40/month') {
+      return this.props.topSongsShortTerm.length ?
+        null :
+        <img src={require('../Assets/bars.svg')} alt="loading icon" />
+    }
+    if (this.props.match.path === '/top40') {
+      return this.props.topSongs.length ?
+        null : 
+        <img src={require('../Assets/bars.svg')} alt="loading icon" /> 
+    }
+    if (this.props.match.path === '/top40/alltime') {
+      return this.props.topSongsAllTime.length ?
+        null : 
+        <img src={require('../Assets/bars.svg')} alt="loading icon" />
+    }
+  }
 
   render(){
     return (   
       <div className='playlist-div'>
-        <h2>Top 40 {this.showLoading()}</h2>
-        <button onClick={()=>this.props.history.push('/top40/month')}>This month</button>
-        <button onClick={()=>this.props.history.push('/top40/alltime')}>All Time</button>
+        <h2>
+          Top 40 {this.showLoading()}
+          <p onClick={()=>this.props.history.push('/top40/month')}>This month</p>
+          <p onClick={()=>this.props.history.push('/top40')}>This year</p>
+          <p onClick={()=>this.props.history.push('/top40/alltime')}>All Time</p>
+        </h2>
         <ol>
           {this.props.topSongs && this.renderSongs()}
         </ol>
