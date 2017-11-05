@@ -6,7 +6,6 @@ import { loadSongsAction, loadSongsShortTerm, loadSongsAllTime } from './Playlis
 class Playlist extends React.Component{
   componentDidMount(){
     if (this.props.match.path === '/top40/month') {
-      console.log(this.props.topSongsShortTerm.length)
       return this.props.topSongsShortTerm.length ?
         null :
         this.props.loadSongsShortTerm(this.props.accessToken)
