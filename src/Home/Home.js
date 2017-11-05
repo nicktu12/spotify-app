@@ -69,12 +69,12 @@ class Home extends React.Component{
     </section>
     :
     <section>
-      <p>{info.name}</p>
+      <h4>{info.name}</h4>
       <img src={info.photo.url} alt={info.name + ' photo'} />
       <div>
-        <p><span>Followers:</span> <span className='indent'>{info.followers}</span></p>
-        <p><span>Popularity:</span> <span className='indent'><Meter percent={info.popularity / 100} rounded={false} /></span></p>
-        <p><span>Genres:</span> <span className='genres indent'>{info.genres}</span></p>
+        <p><span>Followers:</span> <span className='alt-text'>{info.followers}</span></p>
+        <p><span>Popularity:</span> <span className='alt-text'><Meter percent={info.popularity / 100} rounded={false} /></span></p>
+        <p><span>Genres:</span> <span className='genres alt-text'>{info.genres}</span></p>
       </div>
     </section>
   )
