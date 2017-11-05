@@ -1,7 +1,7 @@
 @import '../Styles/Variables.scss';
 
 .home-div {
-	height: 100vh;
+	height: calc(100vh - 90px);
 	box-sizing: border-box;
 	padding: 10px;
 }
@@ -10,7 +10,7 @@
   @include linear-grad($dark-bg-o, $dark-bg);
   color: $white;
   text-align: left;
-  padding-left: 10px;
+  padding-left: calc(30vw + 10px);
   padding-top: 50px;
 	height: 91px;
 	box-sizing: border-box;
@@ -22,9 +22,9 @@
   background-color: $dark-bg;
   text-align: left;
 	color: $light-3;
-  padding-left: 35px;
+  padding-left: calc(30vw + 35px);
 	overflow: scroll;
-	height: calc(99vh - 100px);
+	height: calc(99vh - 191px);
 	border-radius: 0px 0px $border-rad $border-rad;
 	font-family: $body-font;
 }
@@ -76,18 +76,31 @@ h2 img {
 	background-color: $dark;
 }
 
-.selected {
+section {
+  position: absolute;
+  height: calc(99vh - 100px);
+  width: 30vw;
+}
+
+section {
+  h4 {
+    font-family: $header-font;
+    font-size: 24px;
+    color: $white;
+  }
 	img {
-		padding-left: 10px;
-		height: 208px;
+		width: 95%;
 	}
+  p {
+    color: $white;
+    font-family: $body-font;
+  }
 	div {
 		display: inline-flex;
 		padding-left: 10px;
 		vertical-align: top;
 		flex-direction: column;
 		justify-content: space-around;
-		width: 50vw;
 	}
 	div p {
 		font-family: $body-font;
@@ -98,12 +111,10 @@ h2 img {
 		font-size: 16px;
 		color: $white;
 	}
-	.indent {
+	.alt-text {
 		color: $light-3;
-		display: inherit;
 		width: calc(100vw - 700px);
-		padding-left: 20px;
-		margin-top: -14px;
 		line-height: normal;
 	}
 }
+

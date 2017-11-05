@@ -11,47 +11,45 @@ class Home extends React.Component{
     super();
 
     this.state = {
-      selected: [],
+      selected: null,
     };
   }
 
   componentDidMount(){
     const url = window.location.href;
     if (url.includes('code')) {
-      this.props.saveAuthCode(authCodeCleaner(url));
+      this.props.authCodeToSagas(authCodeCleaner(url));
     } else if (url.includes('error')){
       console.log('error with url')
     } else {
-      this.renderRedirect();
+      this.redirectToLogin();
     }
   }
 
   renderTopArtists = (array) => (
     array.map((artist, index) => (
-      <li key={'top artists ' + index} onClick={()=>this.addSelected(index)} className={ this.state.selected.includes(index) ? 'selected artists' : 'unselected artists' }>
+      <li key={'top artists ' + index} onClick={()=>this.addSelected(index)} className={ this.state.selected === index ? 'selected artists' : 'unselected artists' }>
         <span>{artist.name} 
           <span className='plus-icon'>+</span>
           <span className='minus-icon'>-</span>
         </span>
-        <img src={artist.photo.url} alt={artist.name + ' photo'} />
-        <div>
-          <p><span>Followers:</span> <span className='indent'>{artist.followers}</span></p>
-          <p><span>Popularity:</span> <span className='indent'><Meter percent={artist.popularity / 100} rounded={false} /></span></p>
-          <p><span>Genres:</span> <span className='genres indent'>{artist.genres}</span></p>
-        </div>
       </li>
     ))      
   ) 
 
   addSelected = (index) => (
-    !this.state.selected.length ? 
-      this.setState({ selected: [index]}) : 
-      this.state.selected.includes(index) ? 
-        this.setState({ selected: [] }) : 
-        this.setState({ selected: [index] })
+    this.state.selected === null ? 
+      this.setState({ selected: index}) : 
+      this.updateSelected(index)
   )
 
-  renderRedirect = () => {
+  updateSelected = (index) => {
+    this.state.selected === index ?
+      this.setState({ selected: null }) :
+      this.setState({ selected: index })
+  }
+
+  redirectToLogin = () => {
     if (!this.props.token.length) {
       this.props.history.push('/login');
     }     
@@ -62,9 +60,29 @@ class Home extends React.Component{
     <img src={require('../Assets/bars.svg')} alt="loading icon"  />
   )
 
+  renderInfoCard = (info) => (
+    info === undefined ?
+    <section>
+      <h4>{this.props.userInfo.name}</h4>
+      <img src={this.props.userInfo.image} />
+      <p>{this.props.userInfo.email}</p>
+    </section>
+    :
+    <section>
+      <h4>{info.name}</h4>
+      <img src={info.photo.url} alt={info.name + ' photo'} />
+      <div>
+        <p><span>Followers:</span> <span className='alt-text'>{info.followers}</span></p>
+        <p><span>Popularity:</span> <span className='alt-text'><Meter percent={info.popularity / 100} rounded={false} /></span></p>
+        <p><span>Genres:</span> <span className='genres alt-text'>{info.genres}</span></p>
+      </div>
+    </section>
+  )
+
   render(){
     return (
       <div className='home-div'>
+        { this.renderInfoCard(this.props.topArtists[this.state.selected]) }
         <h2>Top Artists {this.showLoading()}</h2>
         <ol>
           { this.props.topArtists && 
@@ -79,17 +97,18 @@ class Home extends React.Component{
 
 const mapStateToProps = store => ({
   topArtists: store.topArtists,
-  token: store.accessToken
+  userInfo: store.userInfo,
+  token: store.accessToken,
 });
 
 const mapDispatchToProps = dispatch => {
   return {
-    saveAuthCode: (token) => dispatch(saveAuthCodeAction(token))
+    authCodeToSagas: (token) => dispatch(saveAuthCodeAction(token))
   };
 };
 
 Home.propTypes = {
-  saveAuthCode: PropTypes.func,
+  authCodeToSagas: PropTypes.func,
   token: PropTypes.string,
   history: PropTypes.object,
   topArtists: PropTypes.arrayOf(PropTypes.object),

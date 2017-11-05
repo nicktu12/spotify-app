@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import { accessToken, topArtists } from '../Login/Login-reducer';
+import { accessToken, topArtists, userInfo } from '../Login/Login-reducer';
 import { topSongs, topSongsShortTerm, topSongsAllTime } from '../Playlist/Playlist-reducer';
 
 export default combineReducers({
@@ -8,4 +8,5 @@ export default combineReducers({
   topSongs,
   topSongsShortTerm,
   topSongsAllTime,
+  userInfo,
 });

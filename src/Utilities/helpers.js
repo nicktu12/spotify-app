@@ -107,3 +107,19 @@ const cleanSongArtist = (array) => {
 };
 
 const cleanStringArray = (array) => array.join(', ');
+
+export const getUserInfo = (token) => {
+  return fetch('https://galvanize-cors-proxy.herokuapp.com/https://api.spotify.com/v1/me/', {
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`
+    }
+  }).then(res => res.json())
+    .then(jsonRes => cleanUserRes(jsonRes))
+    .catch(error => alert(error));
+}
+
+const cleanUserRes = (json) => {
+  console.log('user res: ', json)
+  return Object.assign({}, {name: json.display_name, email: json.email, image: json.images[0].url})
+}
