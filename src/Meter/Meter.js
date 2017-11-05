@@ -7,7 +7,7 @@ const Meter = (props) => {
     width = 100,         // the overall width
     height = 10,         // the overall height
     rounded = true,      // if true, use rounded corners
-    color = "#0078bc",   // the fill color
+    color = "rgb(255,150,36)",   // the fill color
     animate = false,     // if true, animate when the percent changes
     label = null         // a label to describe the contents (for accessibility)
   } = props;

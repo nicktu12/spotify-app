@@ -19,6 +19,26 @@
 	font-size: 32px;
 }
 
+h2 p {
+  display: inline-block;
+  font-family: $body-font;
+  color: $light-3;
+  vertical-align: middle;
+  font-size: 16px;
+  padding-left: 30px;
+  transition: all 200ms ease-in;
+}
+
+h2 p:hover {
+  cursor: pointer;
+  color: $pop-accent;
+  transition: all 200ms ease-in;
+}
+
+.playlist-path-active {
+  color: $pop-accent;
+}
+
 .playlist-div ol {
   background-color: $dark-bg;
   color: $light-3;

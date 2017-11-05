@@ -5,9 +5,9 @@ function* getAccess (action) {
   try {
     const accessToken = yield call(getAccessToken, action.code);  
     const userInfo = yield call(getUserInfo, accessToken);
-    yield put({type: 'USER_INFO', userInfo})
     yield put({type: 'ACCESS_TOKENS', accessToken});
     const topArtists = yield call(getTopArtists, accessToken);
+    yield put({type: 'USER_INFO', userInfo})
     yield put({type: 'TOP_ARTISTS', topArtists});
   } catch (error) {
     yield put({type: 'ACCESS_ERROR', message: error.message});

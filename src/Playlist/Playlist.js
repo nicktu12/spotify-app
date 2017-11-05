@@ -6,7 +6,6 @@ import { loadSongsAction, loadSongsShortTerm, loadSongsAllTime } from './Playlis
 class Playlist extends React.Component{
   componentDidMount(){
     if (this.props.match.path === '/top40/month') {
-      console.log(this.props.topSongsShortTerm.length)
       return this.props.topSongsShortTerm.length ?
         null :
         this.props.loadSongsShortTerm(this.props.accessToken)
@@ -47,17 +46,40 @@ class Playlist extends React.Component{
     }
   }
 
-  showLoading = () => ( 
-    !this.props.topSongs.length && 
-    <img src={require('../Assets/bars.svg')} alt="loading icon" />
-  )
+  showLoading = () => { 
+    if (this.props.match.path === '/top40/month') {
+      return this.props.topSongsShortTerm.length ?
+        null :
+        <img src={require('../Assets/bars.svg')} alt="loading icon" />
+    }
+    if (this.props.match.path === '/top40') {
+      return this.props.topSongs.length ?
+        null : 
+        <img src={require('../Assets/bars.svg')} alt="loading icon" /> 
+    }
+    if (this.props.match.path === '/top40/alltime') {
+      return this.props.topSongsAllTime.length ?
+        null : 
+        <img src={require('../Assets/bars.svg')} alt="loading icon" />
+    }
+  }
+
+  determineClass = (path) =>  {
+    if (path === null) {
+      return window.location.href === "http://localhost:3000/top40"
+    }
+    return window.location.href.includes(path) 
+  }
 
   render(){
     return (   
       <div className='playlist-div'>
-        <h2>Top 40 {this.showLoading()}</h2>
-        <button onClick={()=>this.props.history.push('/top40/month')}>This month</button>
-        <button onClick={()=>this.props.history.push('/top40/alltime')}>All Time</button>
+        <h2>
+          Top 40 {this.showLoading()}
+          <p className={this.determineClass('month') ? 'playlist-path-active' : null} onClick={()=>this.props.history.push('/top40/month')}>This month</p>
+          <p className={this.determineClass(null) ? 'playlist-path-active' : null} onClick={()=>this.props.history.push('/top40')}>This year</p>
+          <p className={this.determineClass('alltime') ? 'playlist-path-active' : null} onClick={()=>this.props.history.push('/top40/alltime')}>All Time</p>
+        </h2>
         <ol>
           {this.props.topSongs && this.renderSongs()}
         </ol>

@@ -25,12 +25,15 @@ header a {
   text-align: left;
 	text-decoration: none;
 	line-height: 50px;
-  padding-right: 20px;
-	color: $white;
+  padding-right: 30px;
+	color: $light-3;
+  font-family: $body-font;
+  transition: all 200ms ease-in;
 }
 
-header a:visited {
-	color: $white;
+header a:hover {
+  color: $pop-accent; 
+  transition: all 200ms ease-in;
 }
 
 h1 {
