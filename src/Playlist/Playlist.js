@@ -64,14 +64,21 @@ class Playlist extends React.Component{
     }
   }
 
+  determineClass = (path) =>  {
+    if (path === null) {
+      return window.location.href === "http://localhost:3000/top40"
+    }
+    return window.location.href.includes(path) 
+  }
+
   render(){
     return (   
       <div className='playlist-div'>
         <h2>
           Top 40 {this.showLoading()}
-          <p onClick={()=>this.props.history.push('/top40/month')}>This month</p>
-          <p onClick={()=>this.props.history.push('/top40')}>This year</p>
-          <p onClick={()=>this.props.history.push('/top40/alltime')}>All Time</p>
+          <p className={this.determineClass('month') ? 'playlist-path-active' : null} onClick={()=>this.props.history.push('/top40/month')}>This month</p>
+          <p className={this.determineClass(null) ? 'playlist-path-active' : null} onClick={()=>this.props.history.push('/top40')}>This year</p>
+          <p className={this.determineClass('alltime') ? 'playlist-path-active' : null} onClick={()=>this.props.history.push('/top40/alltime')}>All Time</p>
         </h2>
         <ol>
           {this.props.topSongs && this.renderSongs()}

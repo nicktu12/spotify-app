@@ -35,6 +35,10 @@ h2 p:hover {
   transition: all 200ms ease-in;
 }
 
+.playlist-path-active {
+  color: $pop-accent;
+}
+
 .playlist-div ol {
   background-color: $dark-bg;
   color: $light-3;

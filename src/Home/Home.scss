@@ -41,18 +41,21 @@ h2 img {
 
 .home-div li {
   line-height: 42px;
+  height: 42px;
 	margin: 4px 0px;
 	font-family: $header-font;
 	border-radius: 1px;
+  box-sizing: border-box;
 }
 
 .artists .plus-icon, .artists .minus-icon {
 	display: none;
-	color: $light-3;
+	color: $pop-accent;
 }
 
 .home-div li:hover {
 	background-color: $dark;
+  border-bottom: 2px solid $pop-accent;
 }
 
 .unselected:hover .plus-icon {
@@ -79,6 +82,7 @@ h2 img {
 
 .selected {
 	background-color: $dark;
+  border-bottom: 2px solid $pop-accent;
 }
 
 section {
