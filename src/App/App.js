@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, Link } from 'react-router-dom';
 import Home from '../Home/Home';
 import Playlist from '../Playlist/Playlist';
-import Login from '../Login/Login';
+import { Login } from '../Login/Login';
 import './App.scss';
 
 const App = () => (
