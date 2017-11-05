@@ -64,7 +64,10 @@ class Home extends React.Component{
     info === undefined ?
     <section>
       <h4>{this.props.userInfo.name}</h4>
-      <img src={this.props.userInfo.image} />
+      {
+        this.props.userInfo.image &&
+        <img src={this.props.userInfo.image} />
+      }
       <p>{this.props.userInfo.email}</p>
     </section>
     :
