@@ -13,3 +13,9 @@ export const mockTopSongs = [
   { title: 'Cranes In The Sky', artists: ['Solange'] },
   { title: 'Huron River Drive', artists: ['Shigeto'] }
 ];
+
+export const mockUserInfo = {
+  name: 'Edgar the Cat',
+  email: 'edgarthecat@cats.com',
+  image: 'https://scontent.xx.fbcdn.net/v/t1.0-1/aaaaaaaaaaaaaa558a1aaaaa0aaaaaa5063aaaa4aaaa12218136501_n.jpg?oh=53ef504a0ba139726593f4497886fa16&oe=5A721441',
+};

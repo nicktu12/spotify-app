@@ -1,5 +1,5 @@
-import { accessToken, topArtistsAction } from './Login-reducer';
-import { mockAccessToken, mockTopArtists } from '../Utilities/mockData';
+import { accessToken, topArtists, userInfo } from './Login-reducer';
+import { mockAccessToken, mockTopArtists, mockUserInfo } from '../Utilities/mockData';
 
 describe('Login reducers', ()=> {
   it('should have a default state for access token reducer', ()=>{
@@ -13,12 +13,23 @@ describe('Login reducers', ()=> {
   });
 
   it('should have a default state for top artists reducer', ()=>{
-    expect(topArtistsAction(undefined, [])).toEqual([]);      
+    expect(topArtists(undefined, [])).toEqual([]);      
   });
 
   it('should return a top artists array when passed an action', ()=>{
-    const expectedResult = { type: 'TOP_ARTISTS', topArtists: mockTopArtists };
+    const action = { type: 'TOP_ARTISTS', topArtists: mockTopArtists };
 
-    expect(topArtistsAction(undefined, expectedResult)).toEqual(expectedResult);
+    expect(topArtists(undefined, action)).toEqual(mockTopArtists);
   });
+
+  it('should have a default state for user info reducer', ()=> {
+    expect(userInfo(undefined, {})).toEqual({});
+  });
+
+  it('should return user info when passed an action', ()=>{
+    const action = { type: 'USER_INFO', userInfo: mockUserInfo };
+
+    expect(userInfo(undefined, action)).toEqual(mockUserInfo);
+  })
+
 });
