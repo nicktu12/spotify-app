@@ -6,7 +6,6 @@ describe('Login component tests', ()=>{
   it('should match snapshot render', ()=>{
     const wrapper = shallow(<Login />);
 
-    console.log(wrapper.debug())
     expect(wrapper).toMatchSnapshot();
   })
 })
