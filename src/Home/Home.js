@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { authCodeCleaner } from '../Utilities/helpers';
 import { saveAuthCodeAction } from './Home-actions'; 
-import Meter from '../Meter/Meter';
+import { Meter } from '../Meter/Meter';
 
 class Home extends React.Component{
 

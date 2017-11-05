@@ -1,0 +1,143 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home component tests should match snapshot render 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Connect(Home)
+    authCodeToSagas={[Function]}
+    history={Array []}
+    store={
+      Object {
+        "clearActions": [Function],
+        "dispatch": [Function],
+        "getActions": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      }
+    }
+    token="BxxxxxxxU8xxxxxxxvK5xxxxxxxxxsBrtbsaM_37uIB1yaFCPApS0Iczif6KIKq8EXAwXtoQyG8FduappKkTi0JYNO-a4E7ioKBNlpMmCI9zf4KiMd9_ZN3YpFXv0TRUhCuxq_WXHLoRn-M-cSPJ5AYZdRFrB7_dwkwtLsOr"
+    topArtists={
+      Array [
+        Object {
+          "name": "Snoop Dogg",
+        },
+        Object {
+          "name": "The Grateful Dead",
+        },
+        Object {
+          "name": "Solange",
+        },
+      ]
+    }
+    userInfo={
+      Object {
+        "email": "edgarthecat@cats.com",
+        "image": "https://scontent.xx.fbcdn.net/v/t1.0-1/aaaaaaaaaaaaaa558a1aaaaa0aaaaaa5063aaaa4aaaa12218136501_n.jpg?oh=53ef504a0ba139726593f4497886fa16&oe=5A721441",
+        "name": "Edgar the Cat",
+      }
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "authCodeToSagas": [Function],
+      "history": Array [],
+      "store": Object {
+        "clearActions": [Function],
+        "dispatch": [Function],
+        "getActions": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      },
+      "storeSubscription": Subscription {
+        "listeners": Object {
+          "clear": [Function],
+          "get": [Function],
+          "notify": [Function],
+          "subscribe": [Function],
+        },
+        "onStateChange": [Function],
+        "parentSub": undefined,
+        "store": Object {
+          "clearActions": [Function],
+          "dispatch": [Function],
+          "getActions": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+        },
+        "unsubscribe": [Function],
+      },
+      "token": "",
+      "topArtists": Array [],
+      "userInfo": Object {},
+    },
+    "ref": null,
+    "rendered": null,
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "authCodeToSagas": [Function],
+        "history": Array [],
+        "store": Object {
+          "clearActions": [Function],
+          "dispatch": [Function],
+          "getActions": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+        },
+        "storeSubscription": Subscription {
+          "listeners": Object {
+            "clear": [Function],
+            "get": [Function],
+            "notify": [Function],
+            "subscribe": [Function],
+          },
+          "onStateChange": [Function],
+          "parentSub": undefined,
+          "store": Object {
+            "clearActions": [Function],
+            "dispatch": [Function],
+            "getActions": [Function],
+            "getState": [Function],
+            "replaceReducer": [Function],
+            "subscribe": [Function],
+          },
+          "unsubscribe": [Function],
+        },
+        "token": "",
+        "topArtists": Array [],
+        "userInfo": Object {},
+      },
+      "ref": null,
+      "rendered": null,
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

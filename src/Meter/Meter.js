@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Meter = (props) => {
+export const Meter = (props) => {
   var {
     percent = 0,         // a number between 0 and 1, inclusive
     width = 100,         // the overall width
@@ -48,5 +48,3 @@ Meter.propTypes = {
   animate: PropTypes.bool,
   label: PropTypes.number,
 };
-
-export default Meter;
