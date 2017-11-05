@@ -5,7 +5,7 @@ import Playlist from '../Playlist/Playlist';
 import { Login } from '../Login/Login';
 import './App.scss';
 
-const App = () => (
+export const App = () => (
   <div className="App">
     <header>
       <h1>Statify</h1>
@@ -22,5 +22,3 @@ const App = () => (
     </main>
   </div>
 );
-
-export default App;
