@@ -1,5 +1,9 @@
 import { accessToken, topArtists, userInfo } from './Login-reducer';
-import { mockAccessToken, mockTopArtists, mockUserInfo } from '../Utilities/mockData';
+import { 
+  mockAccessToken, 
+  mockTopArtists, 
+  mockUserInfo, 
+} from '../Utilities/mockData';
 
 describe('Login reducers', ()=> {
   it('should have a default state for access token reducer', ()=>{
@@ -30,6 +34,6 @@ describe('Login reducers', ()=> {
     const action = { type: 'USER_INFO', userInfo: mockUserInfo };
 
     expect(userInfo(undefined, action)).toEqual(mockUserInfo);
-  })
+  });
 
 });

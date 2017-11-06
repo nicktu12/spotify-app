@@ -1,6 +1,10 @@
 import { combineReducers } from 'redux';
 import { accessToken, topArtists, userInfo } from '../Login/Login-reducer';
-import { topSongs, topSongsShortTerm, topSongsAllTime } from '../Playlist/Playlist-reducer';
+import { 
+  topSongs, 
+  topSongsShortTerm, 
+  topSongsAllTime, 
+} from '../Playlist/Playlist-reducer';
 
 export default combineReducers({
   accessToken, 
