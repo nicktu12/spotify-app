@@ -10,7 +10,6 @@ import {
 class Playlist extends React.Component{
   componentDidMount(){
     if (!this.props.accessToken.length) {
-      console.log(this.props.history)
       this.props.history.push('/login');
       return;
     }
@@ -86,34 +85,34 @@ class Playlist extends React.Component{
         <h2>
           {this.showLoading()} Top 40 {this.showLoading()}
           <div>
-          <p 
-            className={
-              this.determineClass('month') ? 
-                'playlist-path-active' : 
-                null
-            } 
-            onClick={()=>this.props.history.push('/top40/month')}>
-            This month
-          </p>
-          <p 
-            className={
-              this.determineClass(null) ? 
-                'playlist-path-active' : 
-                null
-            } 
-            onClick={()=>this.props.history.push('/top40')}>
-             This year
-          </p>
-          <p 
-            className={
-              this.determineClass('alltime') ? 
-                'playlist-path-active' : 
-                null
-            } 
-            onClick={()=>this.props.history.push('/top40/alltime')}>
-              All Time
-          </p>
-        </div>
+            <button 
+              className={
+                this.determineClass('month') ? 
+                  'playlist-path-active' : 
+                  null
+              } 
+              onClick={()=>this.props.history.push('/top40/month')}>
+              This month
+            </button>
+            <button 
+              className={
+                this.determineClass(null) ? 
+                  'playlist-path-active' : 
+                  null
+              } 
+              onClick={()=>this.props.history.push('/top40')}>
+               This year
+            </button>
+            <button 
+              className={
+                this.determineClass('alltime') ? 
+                  'playlist-path-active' : 
+                  null
+              } 
+              onClick={()=>this.props.history.push('/top40/alltime')}>
+                All Time
+            </button>
+          </div>
         </h2>
         <ol>
           {this.props.topSongs && this.renderSongs()}

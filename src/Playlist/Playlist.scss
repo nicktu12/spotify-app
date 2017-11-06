@@ -17,7 +17,9 @@
 	font-size: 32px;
 }
 
-h2 div p {
+h2 div button {
+  background-color: rgba(0,0,0,0);
+  border: none;
   display: inline-block;
   font-family: $body-font;
   color: $white;
@@ -27,7 +29,7 @@ h2 div p {
   transition: all 200ms ease-in;
 }
 
-h2 div p:hover {
+h2 div button:hover {
   cursor: pointer;
   color: $dark-bg;
   transition: all 200ms ease-in;
