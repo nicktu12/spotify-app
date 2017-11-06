@@ -17,7 +17,6 @@
 }
 
 ol:hover {
-  cursor: ns-resize;
 }
 
 .home-div ol {		
@@ -50,6 +49,12 @@ li button {
   background-color: rgba(0,0,0,0);
   width: 100%;
   text-align: left;
+  height: 42px;
+  outline-color: $pop-accent;
+}
+
+li button:hover {
+  cursor: pointer;
 }
 
 .artists .plus-icon, .artists .minus-icon {
