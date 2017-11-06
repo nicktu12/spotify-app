@@ -9,6 +9,11 @@ import {
 
 class Playlist extends React.Component{
   componentDidMount(){
+    if (!this.props.accessToken.length) {
+      console.log(this.props.history)
+      this.props.history.push('/login');
+      return;
+    }
     if (this.props.match.path === '/top40/month') {
       return this.props.topSongsShortTerm.length ?
         null :
@@ -142,7 +147,7 @@ Playlist.propTypes = {
   loadSongs: PropTypes.func,
   loadSongsShortTerm: PropTypes.func,
   loadSongsAllTime: PropTypes.func,
-  history: PropTypes.obj,
+  history: PropTypes.oneOfType([PropTypes.object]),
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Playlist);
