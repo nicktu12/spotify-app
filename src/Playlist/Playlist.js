@@ -79,7 +79,8 @@ class Playlist extends React.Component{
     return (   
       <div className='playlist-div'>
         <h2>
-          Top 40 {this.showLoading()}
+          {this.showLoading()} Top 40 {this.showLoading()}
+          <div>
           <p 
             className={
               this.determineClass('month') ? 
@@ -107,6 +108,7 @@ class Playlist extends React.Component{
             onClick={()=>this.props.history.push('/top40/alltime')}>
               All Time
           </p>
+        </div>
         </h2>
         <ol>
           {this.props.topSongs && this.renderSongs()}

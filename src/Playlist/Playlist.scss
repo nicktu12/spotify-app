@@ -3,40 +3,38 @@
 .playlist-div {
 	height: calc(100vh - 90px);
 	box-sizing: border-box;
-	padding: 10px;	
 	border-radius: 0px 0px $border-rad $border-rad;
 }
 
 .playlist-div h2 {
-  @include linear-grad($dark-bg-o, $dark-bg);
+  background-color: $pop-accent-o;
   color: $white;
-  text-align: left;
-  padding-left: 10px;
-  padding-top: 50px;
+  text-align: center;
+  padding-top: 10px;
 	height: 91px;
 	box-sizing: border-box;
 	font-family: $header-font;
 	font-size: 32px;
 }
 
-h2 p {
+h2 div p {
   display: inline-block;
   font-family: $body-font;
-  color: $light-3;
+  color: $white;
   vertical-align: middle;
   font-size: 16px;
-  padding-left: 30px;
+  padding: 0px 15px;
   transition: all 200ms ease-in;
 }
 
-h2 p:hover {
+h2 div p:hover {
   cursor: pointer;
-  color: $pop-accent;
+  color: $dark-bg;
   transition: all 200ms ease-in;
 }
 
 .playlist-path-active {
-  color: $pop-accent;
+  color: $dark-bg;
 }
 
 .playlist-div ol {
@@ -45,7 +43,7 @@ h2 p:hover {
   text-align: left;
   padding-left: 35px;
 	overflow: scroll;
-	height: calc(99vh - 191px);
+	height: calc(99vh - 174px);
 	border-radius: 0px 0px $border-rad $border-rad;
   line-height: 32px;
 	font-family: $body-font;

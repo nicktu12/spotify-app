@@ -105,7 +105,7 @@ class Home extends React.Component{
     return (
       <div className='home-div'>
         { this.renderInfoCard(this.props.topArtists[this.state.selected]) }
-        <h2>Top Artists {this.showLoading()}</h2>
+        <h2>{this.showLoading()} Top Artists {this.showLoading()}</h2>
         <ol>
           { this.props.topArtists && 
             this.renderTopArtists(this.props.topArtists)
