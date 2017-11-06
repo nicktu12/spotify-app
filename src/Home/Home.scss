@@ -6,7 +6,7 @@
 }
 
 .home-div h2 {
-  @include linear-grad($dark-bg-o, $dark-bg);
+  background-color: $pop-accent-o;
   color: $white;
   text-align: center;
   padding-top: 50px;
@@ -34,7 +34,6 @@ ol:hover {
 h2 img {
 	height: 20px;
 	width: 20px;
-  margin-right: -20px;
 }
 
 .home-div li {
@@ -95,13 +94,19 @@ section {
     font-family: $header-font;
     font-size: 24px;
     color: $white;
+    line-height: 50px;
   }
 	img {
-		width: 95%;
+		width: 24vw;
+    border: 2px solid $pop-accent;
+    border-radius: $border-rad / 4;
 	}
   p {
     color: $white;
+    text-align: left;
     font-family: $body-font;
+    padding: 0px 25px;
+    line-height: 25px;
   }
 	div {
 		display: inline-flex;
@@ -112,6 +117,8 @@ section {
 	}
 	div p {
 		font-family: $body-font;
+    padding: 0px 15px;
+    line-height: 25px;
 	}
 	div p span {
 		font-family: $body-font;
