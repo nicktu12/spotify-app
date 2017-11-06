@@ -45,6 +45,13 @@ h2 img {
   box-sizing: border-box;
 }
 
+li button {
+  border: none;
+  background-color: rgba(0,0,0,0);
+  width: 100%;
+  text-align: left;
+}
+
 .artists .plus-icon, .artists .minus-icon {
 	display: none;
 	color: $light-3;
@@ -87,6 +94,7 @@ section {
   top: 181px;
   height: calc(99vh - 191px);
   width: 30vw;
+  overflow: scroll;
 }
 
 section {

@@ -30,16 +30,17 @@ class Home extends React.Component{
     array.map((artist, index) => (
       <li 
         key={'top artists ' + index} 
-        onClick={()=>this.addSelected(index)} 
         className={ 
           this.state.selected === index ? 
             'selected artists' : 
             'unselected artists' }
       >
-        <span>{artist.name} 
-          <span className='plus-icon'>+</span>
-          <span className='minus-icon'>-</span>
-        </span>
+        <button onClick={()=>this.addSelected(index)}>
+          <span>{artist.name} 
+            <span className='plus-icon'>+</span>
+            <span className='minus-icon'>-</span>
+          </span>
+        </button>
       </li>
     ))      
   ) 

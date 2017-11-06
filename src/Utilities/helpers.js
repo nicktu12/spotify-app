@@ -51,7 +51,6 @@ export const getTopArtists = (token) => {
 };
 
 const cleanArtistRes = (json)  => {
-  console.log('top artists res: ', json.items);
   return json.items.map(item => 
     Object.assign({}, {
       name: item.name, 
@@ -103,7 +102,6 @@ export const getTopSongsAllTime = (token) => {
 };
 
 const cleanSongRes = (json) => {
-  console.log('top songs res: ', json);
   return json.items.map(song => 
     Object.assign({}, {
       title: song.name, 
@@ -132,7 +130,6 @@ export const getUserInfo = (token) => {
 };
 
 const cleanUserRes = (json) => {
-  console.log('user res: ', json);
   return Object.assign(
     {}, 
     {name: json.display_name, email: json.email, image: json.images[0].url},
