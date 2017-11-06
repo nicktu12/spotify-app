@@ -3,7 +3,6 @@
 .playlist-div {
 	height: calc(100vh - 90px);
 	box-sizing: border-box;
-	padding: 10px;	
 	border-radius: 0px 0px $border-rad $border-rad;
 }
 
@@ -45,7 +44,7 @@ h2 p:hover {
   text-align: left;
   padding-left: 35px;
 	overflow: scroll;
-	height: calc(99vh - 191px);
+	height: calc(99vh - 174px);
 	border-radius: 0px 0px $border-rad $border-rad;
   line-height: 32px;
 	font-family: $body-font;

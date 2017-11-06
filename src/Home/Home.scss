@@ -3,14 +3,12 @@
 .home-div {
 	height: calc(100vh - 90px);
 	box-sizing: border-box;
-	padding: 10px;
 }
 
 .home-div h2 {
   @include linear-grad($dark-bg-o, $dark-bg);
   color: $white;
-  text-align: left;
-  padding-left: calc(30vw + 10px);
+  text-align: center;
   padding-top: 50px;
 	height: 91px;
 	box-sizing: border-box;
@@ -28,7 +26,7 @@ ol:hover {
 	color: $light-3;
   padding-left: calc(30vw + 35px);
 	overflow: scroll;
-	height: calc(99vh - 191px);
+	height: calc(99vh - 174px);
 	border-radius: 0px 0px $border-rad $border-rad;
 	font-family: $body-font;
 }
@@ -50,7 +48,7 @@ h2 img {
 
 .artists .plus-icon, .artists .minus-icon {
 	display: none;
-	color: $pop-accent;
+	color: $light-3;
 }
 
 .home-div li:hover {
@@ -87,7 +85,8 @@ h2 img {
 
 section {
   position: absolute;
-  height: calc(99vh - 100px);
+  top: 181px;
+  height: calc(99vh - 191px);
   width: 30vw;
 }
 

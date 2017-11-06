@@ -14,11 +14,12 @@
 }
 
 header {
-  background-color: $dark-bg;
-  height: 50px;
+  background-color: $dark-bg-o;
+  height: 48px;
   padding: 20px;
   color: $white;
   text-align: left;
+  border-bottom: 2px solid $pop-accent;
 }
 
 header a {
@@ -41,7 +42,7 @@ h1 {
 	font-size: 40px;
   position: absolute;
   display: inline-block;
-  right: 20px;
+  right: 30px;
 }
 
 .App-title {
