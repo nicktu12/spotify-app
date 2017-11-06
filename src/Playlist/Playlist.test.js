@@ -8,20 +8,19 @@ describe('Playlist component tests', ()=>{
     const mockFunc = jest.fn();
     const mockStore = configureStore();
     const initialState = { 
-        accessToken: '',
-        topSongs: [],
-        topSongsShortTerm: [],
-        topSongsAllTime: [],
-        loadSongs: mockFunc,
-        loadSongsShortTerm: mockFunc,
-        loadSongsAllTime: mockFunc,
-    }
+      accessToken: '',
+      topSongs: [],
+      topSongsShortTerm: [],
+      topSongsAllTime: [],
+      loadSongs: mockFunc,
+      loadSongsShortTerm: mockFunc,
+      loadSongsAllTime: mockFunc,
+    };
     const store = mockStore(initialState);
     const wrapper = shallow(
       <Playlist store={store} />
     );
 
-    console.log(wrapper.debug());
     expect(wrapper).toMatchSnapshot();
-  })
-})
+  });
+});

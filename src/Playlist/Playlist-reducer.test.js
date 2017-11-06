@@ -1,5 +1,9 @@
-import { topSongs, topSongsShortTerm, topSongsAllTime } from './Playlist-reducer';
 import { mockTopSongs } from '../Utilities/mockData';
+import { 
+  topSongs, 
+  topSongsShortTerm, 
+  topSongsAllTime, 
+} from './Playlist-reducer';
 
 describe('Playlist reducers', ()=>{
   it('should have a default state for top songs reducer', ()=>{
@@ -17,7 +21,10 @@ describe('Playlist reducers', ()=>{
   });
 
   it('should return top songs short term when passed an action', ()=>{
-    const action = { type: 'TOP_SONGS_SHORT_TERM', topSongsShortTerm: mockTopSongs };
+    const action = { 
+      type: 'TOP_SONGS_SHORT_TERM', 
+      topSongsShortTerm: mockTopSongs 
+    };
 
     expect(topSongsShortTerm(undefined, action)).toEqual(mockTopSongs);
   });
@@ -27,7 +34,10 @@ describe('Playlist reducers', ()=>{
   });
 
   it('should return top songs all time when passed an action', ()=>{
-    const action = { type: 'TOP_SONGS_ALL_TIME', topSongsAllTime: mockTopSongs };
+    const action = { 
+      type: 'TOP_SONGS_ALL_TIME', 
+      topSongsAllTime: mockTopSongs 
+    };
 
     expect(topSongsAllTime(undefined, action)).toEqual(mockTopSongs);
   });

@@ -20,7 +20,7 @@ class Home extends React.Component{
     if (url.includes('code')) {
       this.props.authCodeToSagas(authCodeCleaner(url));
     } else if (url.includes('error')){
-      console.log('error with url')
+      alert('error with url');
     } else {
       this.redirectToLogin();
     }
@@ -28,7 +28,14 @@ class Home extends React.Component{
 
   renderTopArtists = (array) => (
     array.map((artist, index) => (
-      <li key={'top artists ' + index} onClick={()=>this.addSelected(index)} className={ this.state.selected === index ? 'selected artists' : 'unselected artists' }>
+      <li 
+        key={'top artists ' + index} 
+        onClick={()=>this.addSelected(index)} 
+        className={ 
+          this.state.selected === index ? 
+            'selected artists' : 
+            'unselected artists' }
+      >
         <span>{artist.name} 
           <span className='plus-icon'>+</span>
           <span className='minus-icon'>-</span>
@@ -46,7 +53,7 @@ class Home extends React.Component{
   updateSelected = (index) => {
     this.state.selected === index ?
       this.setState({ selected: null }) :
-      this.setState({ selected: index })
+      this.setState({ selected: index });
   }
 
   redirectToLogin = () => {
@@ -62,24 +69,36 @@ class Home extends React.Component{
 
   renderInfoCard = (info) => (
     info === undefined ?
-    <section>
-      <h4>{this.props.userInfo.name}</h4>
-      {
-        this.props.userInfo.image &&
-        <img src={this.props.userInfo.image} />
-      }
-      <p>{this.props.userInfo.email}</p>
-    </section>
-    :
-    <section>
-      <h4>{info.name}</h4>
-      <img src={info.photo.url} alt={info.name + ' photo'} />
-      <div>
-        <p><span>Followers:</span> <span className='alt-text'>{info.followers}</span></p>
-        <p><span>Popularity:</span> <span className='alt-text'><Meter percent={info.popularity / 100} rounded={false} /></span></p>
-        <p><span>Genres:</span> <span className='genres alt-text'>{info.genres}</span></p>
-      </div>
-    </section>
+      <section>
+        <h4>{this.props.userInfo.name}</h4>
+        {
+          this.props.userInfo.image &&
+          <img src={this.props.userInfo.image} alt='user' />
+        }
+        <p>{this.props.userInfo.email}</p>
+      </section>
+      :
+      <section>
+        <h4>{info.name}</h4>
+        <img src={info.photo.url} alt={info.name + ' photo'} />
+        <div>
+          <p>
+            <span>Followers:</span> <span className='alt-text'>
+              {info.followers}
+            </span>
+          </p>
+          <p>
+            <span>Popularity:</span> <span className='alt-text'>
+              <Meter percent={info.popularity / 100} rounded={false} />
+            </span>
+          </p>
+          <p>
+            <span>Genres:</span> <span className='genres alt-text'>
+              {info.genres}
+            </span>
+          </p>
+        </div>
+      </section>
   )
 
   render(){
@@ -115,6 +134,7 @@ Home.propTypes = {
   token: PropTypes.string,
   history: PropTypes.object,
   topArtists: PropTypes.arrayOf(PropTypes.object),
+  userInfo: PropTypes.object,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);

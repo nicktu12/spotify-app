@@ -7,5 +7,5 @@ describe('Login component tests', ()=>{
     const wrapper = shallow(<Login />);
 
     expect(wrapper).toMatchSnapshot();
-  })
-})
+  });
+});

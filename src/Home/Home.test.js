@@ -2,7 +2,11 @@ import React from 'react';
 import configureStore from 'redux-mock-store';
 import { shallow, mount } from 'enzyme';
 import Home from './Home';
-import { mockTopArtists, mockUserInfo, mockAccessToken } from '../Utilities/mockData';
+import { 
+  mockTopArtists, 
+  mockUserInfo, 
+  mockAccessToken,
+} from '../Utilities/mockData';
 
 
 describe('Home component tests', ()=>{
@@ -16,7 +20,7 @@ describe('Home component tests', ()=>{
       topSongsShortTerm: [],
       topSongsAllTime: [],
       userInfo: {},
-    }
+    };
     const store = mockStore(initialState);
     const wrapper = shallow(
       <Home 
@@ -27,11 +31,8 @@ describe('Home component tests', ()=>{
         userInfo={mockUserInfo}
         token={mockAccessToken}
       />
-    ) 
-
-    console.log(wrapper.debug())
-    console.log(wrapper.instance().renderTopArtists)
+    ); 
 
     expect(wrapper).toMatchSnapshot();
-  })
-})
+  });
+});

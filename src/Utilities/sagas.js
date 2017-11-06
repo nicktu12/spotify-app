@@ -1,5 +1,12 @@
 import { call, put, takeLatest } from 'redux-saga/effects';
-import { getAccessToken, getTopArtists, getTopSongs, getTopSongsShortTerm, getTopSongsAllTime, getUserInfo } from './helpers.js';
+import { 
+  getAccessToken,
+  getTopArtists, 
+  getTopSongs, 
+  getTopSongsShortTerm, 
+  getTopSongsAllTime, 
+  getUserInfo, 
+} from './helpers.js';
 
 function* getAccess (action) {
   try {
@@ -7,7 +14,7 @@ function* getAccess (action) {
     const userInfo = yield call(getUserInfo, accessToken);
     yield put({type: 'ACCESS_TOKENS', accessToken});
     const topArtists = yield call(getTopArtists, accessToken);
-    yield put({type: 'USER_INFO', userInfo})
+    yield put({type: 'USER_INFO', userInfo});
     yield put({type: 'TOP_ARTISTS', topArtists});
   } catch (error) {
     yield put({type: 'ACCESS_ERROR', message: error.message});
@@ -25,8 +32,8 @@ function* getSongs (action) {
 
 function* getSongsShortTerm (action) {
   try {
-    const topSongsShortTerm = yield call(getTopSongsShortTerm, action.token)
-    yield put({type: 'TOP_SONGS_SHORT_TERM', topSongsShortTerm})
+    const topSongsShortTerm = yield call(getTopSongsShortTerm, action.token);
+    yield put({type: 'TOP_SONGS_SHORT_TERM', topSongsShortTerm});
   } catch (error) {
     yield put({type: 'GET_SONGS_SHORT_TERM_ERROR', message: error.message});  
   }
@@ -35,7 +42,7 @@ function* getSongsShortTerm (action) {
 function* getSongsAllTime (action) {
   try {
     const topSongsAllTime = yield call(getTopSongsAllTime, action.token);
-    yield put({type: 'TOP_SONGS_ALL_TIME', topSongsAllTime})
+    yield put({type: 'TOP_SONGS_ALL_TIME', topSongsAllTime});
   } catch (error) {
     yield put({type: 'GET_SONGS_ALL_TIME_ERROR', message: error.message});
   } 

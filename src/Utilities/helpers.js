@@ -19,14 +19,16 @@ export const getAccessToken = (authCode) => {
     formBody.push(encodedKey + '=' + encodedValue);
   }
   formBody = formBody.join('&');
-  return fetch('https://galvanize-cors-proxy.herokuapp.com/https://accounts.spotify.com/api/token', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/x-www-form-urlencoded',
-      'Accept': 'application/json'
-    },
-    body: formBody
-  }).then(res => res.json())
+  return fetch(
+    `https://galvanize-cors-proxy.herokuapp.com/` + 
+    `https://accounts.spotify.com/api/token`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+        'Accept': 'application/json'
+      },
+      body: formBody
+    }).then(res => res.json())
     .then(jsonRes => accessTokenCleaner(jsonRes))
     .catch(error => alert(error));
 };
@@ -36,18 +38,20 @@ const accessTokenCleaner = (token) => {
 };
 
 export const getTopArtists = (token) => {
-  return fetch('https://galvanize-cors-proxy.herokuapp.com/https://api.spotify.com/v1/me/top/artists', {
-    headers: {
-      'Content-Type': 'application/json',
-      'Authorization': `Bearer ${token}`
-    }
-  }).then(res => res.json())
+  return fetch(
+    `https://galvanize-cors-proxy.herokuapp.com/` + 
+    `https://api.spotify.com/v1/me/top/artists`, {
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`
+      }
+    }).then(res => res.json())
     .then(jsonRes => cleanArtistRes(jsonRes))
     .catch(error => alert(error));
 };
 
 const cleanArtistRes = (json)  => {
-  console.log('top artists res: ', json.items)
+  console.log('top artists res: ', json.items);
   return json.items.map(item => 
     Object.assign({}, {
       name: item.name, 
@@ -60,40 +64,46 @@ const cleanArtistRes = (json)  => {
 };
 
 export const getTopSongs = (token) => {
-  return fetch('https://galvanize-cors-proxy.herokuapp.com/https://api.spotify.com/v1/me/top/tracks?limit=40', {
-    headers: {
-      'Content-Type': 'application/json',
-      'Authorization': `Bearer ${token}`
-    }
-  }).then(res => res.json())
+  return fetch(
+    `https://galvanize-cors-proxy.herokuapp.com/` + 
+    `https://api.spotify.com/v1/me/top/tracks?limit=40`, {
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`
+      }
+    }).then(res => res.json())
     .then(jsonRes => cleanSongRes(jsonRes))
     .catch(error => alert(error));
 };
 
 export const getTopSongsShortTerm = (token) => {
-  return fetch('https://galvanize-cors-proxy.herokuapp.com/https://api.spotify.com/v1/me/top/tracks?limit=40&time_range=short_term', {
-    headers: {
-      'Content-Type': 'application/json',
-      'Authorization': `Bearer ${token}`
-    }
-  }).then(res => res.json())
+  return fetch(
+    `https://galvanize-cors-proxy.herokuapp.com/` + 
+    `https://api.spotify.com/v1/me/top/tracks?limit=40&time_range=short_term`, {
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`
+      }
+    }).then(res => res.json())
     .then(jsonRes => cleanSongRes(jsonRes))
     .catch(error => alert(error));
 };
 
 export const getTopSongsAllTime = (token) => {
-  return fetch('https://galvanize-cors-proxy.herokuapp.com/https://api.spotify.com/v1/me/top/tracks?limit=40&time_range=long_term', {
-    headers: {
-      'Content-Type': 'application/json',
-      'Authorization': `Bearer ${token}`
-    }
-  }).then(res => res.json())
+  return fetch(
+    `https://galvanize-cors-proxy.herokuapp.com/` + 
+    `https://api.spotify.com/v1/me/top/tracks?limit=40&time_range=long_term`, {
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`
+      }
+    }).then(res => res.json())
     .then(jsonRes => cleanSongRes(jsonRes))
     .catch(error => alert(error));
 };
 
 const cleanSongRes = (json) => {
-  console.log('top songs res: ', json)
+  console.log('top songs res: ', json);
   return json.items.map(song => 
     Object.assign({}, {
       title: song.name, 
@@ -109,17 +119,22 @@ const cleanSongArtist = (array) => {
 const cleanStringArray = (array) => array.join(', ');
 
 export const getUserInfo = (token) => {
-  return fetch('https://galvanize-cors-proxy.herokuapp.com/https://api.spotify.com/v1/me/', {
-    headers: {
-      'Content-Type': 'application/json',
-      'Authorization': `Bearer ${token}`
-    }
-  }).then(res => res.json())
+  return fetch(
+    `https://galvanize-cors-proxy.herokuapp.com/` + 
+    `https://api.spotify.com/v1/me/`, {
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`
+      }
+    }).then(res => res.json())
     .then(jsonRes => cleanUserRes(jsonRes))
     .catch(error => alert(error));
-}
+};
 
 const cleanUserRes = (json) => {
-  console.log('user res: ', json)
-  return Object.assign({}, {name: json.display_name, email: json.email, image: json.images[0].url})
-}
+  console.log('user res: ', json);
+  return Object.assign(
+    {}, 
+    {name: json.display_name, email: json.email, image: json.images[0].url},
+  );
+};
