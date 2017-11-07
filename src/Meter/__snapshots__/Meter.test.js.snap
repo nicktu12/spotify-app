@@ -1,0 +1,149 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Meter test should match snapshot render 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Meter />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "aria-label": null,
+      "children": Array [
+        <rect
+          fill="rgb(22,21,21)"
+          height={10}
+          rx={5}
+          ry={5}
+          width={100}
+        />,
+        <rect
+          fill="rgb(255,150,36)"
+          height={10}
+          rx={5}
+          ry={5}
+          style={null}
+          width={0}
+        />,
+      ],
+      "height": 10,
+      "width": 100,
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "fill": "rgb(22,21,21)",
+          "height": 10,
+          "rx": 5,
+          "ry": 5,
+          "width": 100,
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "rect",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "fill": "rgb(255,150,36)",
+          "height": 10,
+          "rx": 5,
+          "ry": 5,
+          "style": null,
+          "width": 0,
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "rect",
+      },
+    ],
+    "type": "svg",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "aria-label": null,
+        "children": Array [
+          <rect
+            fill="rgb(22,21,21)"
+            height={10}
+            rx={5}
+            ry={5}
+            width={100}
+          />,
+          <rect
+            fill="rgb(255,150,36)"
+            height={10}
+            rx={5}
+            ry={5}
+            style={null}
+            width={0}
+          />,
+        ],
+        "height": 10,
+        "width": 100,
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "fill": "rgb(22,21,21)",
+            "height": 10,
+            "rx": 5,
+            "ry": 5,
+            "width": 100,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "rect",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "fill": "rgb(255,150,36)",
+            "height": 10,
+            "rx": 5,
+            "ry": 5,
+            "style": null,
+            "width": 0,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "rect",
+        },
+      ],
+      "type": "svg",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

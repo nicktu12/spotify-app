@@ -5,9 +5,9 @@ import {
   loadSongsAction, 
   loadSongsShortTerm, 
   loadSongsAllTime, 
-} from './Playlist-actions';
+} from './TopSongs-actions';
 
-class Playlist extends React.Component{
+class TopSongs extends React.Component{
   componentDidMount(){
     if (!this.props.accessToken.length) {
       this.props.history.push('/login');
@@ -137,7 +137,7 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-Playlist.propTypes = {
+TopSongs.propTypes = {
   accessToken: PropTypes.string,
   match: PropTypes.object,
   topSongsShortTerm: PropTypes.arrayOf(PropTypes.object),
@@ -149,4 +149,4 @@ Playlist.propTypes = {
   history: PropTypes.oneOfType([PropTypes.object]),
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Playlist);
+export default connect(mapStateToProps, mapDispatchToProps)(TopSongs);

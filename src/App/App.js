@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Link } from 'react-router-dom';
-import Home from '../Home/Home';
-import Playlist from '../Playlist/Playlist';
+import TopArtists from '../TopArtists/TopArtists';
+import TopSongs from '../TopSongs/TopSongs';
 import { Login } from '../Login/Login';
 import './App.scss';
 
@@ -14,10 +14,10 @@ export const App = () => (
       <Link to="/login">Login</Link>
     </header>
     <main>
-      <Route exact path="/" component={Home} />
-      <Route exact path="/top40" component={Playlist} />
-      <Route exact path="/top40/month" component={Playlist} />
-      <Route exact path="/top40/alltime" component={Playlist} />
+      <Route exact path="/" component={TopArtists} />
+      <Route exact path="/top40" component={TopSongs} />
+      <Route exact path="/top40/month" component={TopSongs} />
+      <Route exact path="/top40/alltime" component={TopSongs} />
       <Route exact path="/login" component={Login} />
     </main>
   </div>

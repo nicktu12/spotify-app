@@ -1,7 +1,7 @@
 import React from 'react';
 import configureStore from 'redux-mock-store';
 import { shallow } from 'enzyme';
-import Home from './Home';
+import TopArtists from './TopArtists';
 import { 
   mockTopArtists, 
   mockUserInfo, 
@@ -9,7 +9,7 @@ import {
 } from '../Utilities/mockData';
 
 
-describe('Home component tests', ()=>{
+describe('TopArtists component tests', ()=>{
   it('should match snapshot render', ()=>{
     const mockFunc = jest.fn();
     const mockStore = configureStore();
@@ -23,7 +23,7 @@ describe('Home component tests', ()=>{
     };
     const store = mockStore(initialState);
     const wrapper = shallow(
-      <Home 
+      <TopArtists 
         history={[]}
         store={store}
         authCodeToSagas={mockFunc}

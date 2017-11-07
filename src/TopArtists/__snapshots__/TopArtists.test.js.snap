@@ -1,10 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Home component tests should match snapshot render 1`] = `
+exports[`TopArtists component tests should match snapshot render 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Connect(Home)
+  Symbol(enzyme.__unrendered__): <Connect(TopArtists)
     authCodeToSagas={[Function]}
     history={Array []}
     store={

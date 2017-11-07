@@ -55,7 +55,7 @@ const cleanArtistRes = (json)  => {
     Object.assign({}, {
       name: item.name, 
       photo: item.images[0], 
-      followers: item.followers.total, 
+      followers: item.followers.total.toLocaleString(), 
       popularity: item.popularity,
       genres: cleanStringArray(item.genres)
     })  

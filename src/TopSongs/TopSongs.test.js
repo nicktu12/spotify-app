@@ -1,9 +1,9 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import configureStore from 'redux-mock-store';
-import Playlist from './Playlist';
+import TopSongs from './TopSongs';
 
-describe('Playlist component tests', ()=>{
+describe('TopSongs component tests', ()=>{
   it('should match snapshot', ()=> {
     const mockFunc = jest.fn();
     const mockStore = configureStore();
@@ -18,7 +18,7 @@ describe('Playlist component tests', ()=>{
     };
     const store = mockStore(initialState);
     const wrapper = shallow(
-      <Playlist store={store} />
+      <TopSongs store={store} />
     );
 
     expect(wrapper).toMatchSnapshot();

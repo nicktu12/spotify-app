@@ -1,7 +1,7 @@
-import * as actions from './Playlist-actions';
+import * as actions from './TopSongs-actions';
 import { mockAccessToken } from '../Utilities/mockData';
 
-describe('Playlist actions', ()=>{
+describe('TopSongs actions', ()=>{
   it('should create an action to detect token when songs are loading', ()=>{
     const expectedAction = {
       type: 'LOAD_SONGS',
