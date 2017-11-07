@@ -7,9 +7,33 @@ export const mockAccessToken = "BxxxxxxxU8xxxxxxxvK5xxxxxxxxxsBrtbsaM_37uIB1yaFC
 export const mockAuthUrl = "http://localhost:3000/?code=pa5JzPajt3zwO9laGX...&state=34fFs29kd09";
 
 export const mockTopArtists = [
-  { name: 'Snoop Dogg' },
-  { name: 'The Grateful Dead' },
-  { name: 'Solange' }
+  { 
+    name: 'Snoop Dogg',
+    followers: 420000,
+    genres: 'rap, hip-hop, old school',
+    popularity: 99,
+    photo: {
+      url: 'https://i.scdn.co/image/161c5814dec9daab21b4ec563575628b11214472',
+    },
+  },
+  { 
+    name: 'The Grateful Dead',
+    followers: 374000,
+    genres: 'jam, folk, rock',
+    popularity: 69,
+    photo: {
+      url: 'https:/ai.srcdn.co/amage/161c5814dec9daab21b4ec563575628b11214472',
+    },
+  },
+  { 
+    name: 'Solange',
+    followers: 333400,
+    genres: 'soul, r&b, hip-hop',
+    popularity: 89,
+    photo: {
+      url: 'https:/ai.srcdn.to/amttttt61c58ttdec9daab21b4ec563575628b11214472',
+    },
+  },
 ];
 
 export const mockTopSongs = [
