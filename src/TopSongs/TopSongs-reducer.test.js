@@ -3,9 +3,9 @@ import {
   topSongs, 
   topSongsShortTerm, 
   topSongsAllTime, 
-} from './Playlist-reducer';
+} from './TopSongs-reducer';
 
-describe('Playlist reducers', ()=>{
+describe('TopSongs reducers', ()=>{
   it('should have a default state for top songs reducer', ()=>{
     expect(topSongs(undefined, {})).toEqual([]);
   });

@@ -4,7 +4,7 @@ import {
   topSongs, 
   topSongsShortTerm, 
   topSongsAllTime, 
-} from '../Playlist/Playlist-reducer';
+} from '../TopSongs/TopSongs-reducer';
 
 export default combineReducers({
   accessToken, 
