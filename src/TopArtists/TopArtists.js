@@ -133,7 +133,7 @@ const mapDispatchToProps = dispatch => {
 TopArtists.propTypes = {
   authCodeToSagas: PropTypes.func,
   token: PropTypes.string,
-  history: PropTypes.object,
+  history: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
   topArtists: PropTypes.arrayOf(PropTypes.object),
   userInfo: PropTypes.object,
 };
