@@ -4,30 +4,37 @@ exports[`TopArtists component tests should match snapshot render 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Connect(TopArtists)
+  Symbol(enzyme.__unrendered__): <TopArtists
     authCodeToSagas={[Function]}
-    history={Array []}
-    store={
-      Object {
-        "clearActions": [Function],
-        "dispatch": [Function],
-        "getActions": [Function],
-        "getState": [Function],
-        "replaceReducer": [Function],
-        "subscribe": [Function],
-      }
-    }
     token="BxxxxxxxU8xxxxxxxvK5xxxxxxxxxsBrtbsaM_37uIB1yaFCPApS0Iczif6KIKq8EXAwXtoQyG8FduappKkTi0JYNO-a4E7ioKBNlpMmCI9zf4KiMd9_ZN3YpFXv0TRUhCuxq_WXHLoRn-M-cSPJ5AYZdRFrB7_dwkwtLsOr"
     topArtists={
       Array [
         Object {
+          "followers": 420000,
+          "genres": "rap, hip-hop, old school",
           "name": "Snoop Dogg",
+          "photo": Object {
+            "url": "https://i.scdn.co/image/161c5814dec9daab21b4ec563575628b11214472",
+          },
+          "popularity": 99,
         },
         Object {
+          "followers": 374000,
+          "genres": "jam, folk, rock",
           "name": "The Grateful Dead",
+          "photo": Object {
+            "url": "https:/ai.srcdn.co/amage/161c5814dec9daab21b4ec563575628b11214472",
+          },
+          "popularity": 69,
         },
         Object {
+          "followers": 333400,
+          "genres": "soul, r&b, hip-hop",
           "name": "Solange",
+          "photo": Object {
+            "url": "https:/ai.srcdn.to/amttttt61c58ttdec9daab21b4ec563575628b11214472",
+          },
+          "popularity": 89,
         },
       ]
     }
@@ -49,87 +56,1089 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "class",
+    "nodeType": "host",
     "props": Object {
-      "authCodeToSagas": [Function],
-      "history": Array [],
-      "store": Object {
-        "clearActions": [Function],
-        "dispatch": [Function],
-        "getActions": [Function],
-        "getState": [Function],
-        "replaceReducer": [Function],
-        "subscribe": [Function],
-      },
-      "storeSubscription": Subscription {
-        "listeners": Object {
-          "clear": [Function],
-          "get": [Function],
-          "notify": [Function],
-          "subscribe": [Function],
-        },
-        "onStateChange": [Function],
-        "parentSub": undefined,
-        "store": Object {
-          "clearActions": [Function],
-          "dispatch": [Function],
-          "getActions": [Function],
-          "getState": [Function],
-          "replaceReducer": [Function],
-          "subscribe": [Function],
-        },
-        "unsubscribe": [Function],
-      },
-      "token": "",
-      "topArtists": Array [],
-      "userInfo": Object {},
+      "children": Array [
+        <section>
+          <h4>
+            Edgar the Cat
+          </h4>
+          <img
+            alt="user"
+            src="https://scontent.xx.fbcdn.net/v/t1.0-1/aaaaaaaaaaaaaa558a1aaaaa0aaaaaa5063aaaa4aaaa12218136501_n.jpg?oh=53ef504a0ba139726593f4497886fa16&oe=5A721441"
+          />
+          <p>
+            edgarthecat@cats.com
+          </p>
+        </section>,
+        <h2>
+           Top Artists 
+        </h2>,
+        <ol>
+          <li
+            className="unselected artists"
+          >
+            <button
+              onClick={[Function]}
+            >
+              <span>
+                Snoop Dogg
+                <span
+                  className="plus-icon"
+                >
+                  +
+                </span>
+                <span
+                  className="minus-icon"
+                >
+                  -
+                </span>
+              </span>
+            </button>
+          </li>
+          <li
+            className="unselected artists"
+          >
+            <button
+              onClick={[Function]}
+            >
+              <span>
+                The Grateful Dead
+                <span
+                  className="plus-icon"
+                >
+                  +
+                </span>
+                <span
+                  className="minus-icon"
+                >
+                  -
+                </span>
+              </span>
+            </button>
+          </li>
+          <li
+            className="unselected artists"
+          >
+            <button
+              onClick={[Function]}
+            >
+              <span>
+                Solange
+                <span
+                  className="plus-icon"
+                >
+                  +
+                </span>
+                <span
+                  className="minus-icon"
+                >
+                  -
+                </span>
+              </span>
+            </button>
+          </li>
+        </ol>,
+      ],
+      "className": "home-div",
     },
     "ref": null,
-    "rendered": null,
-    "type": [Function],
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <h4>
+              Edgar the Cat
+            </h4>,
+            <img
+              alt="user"
+              src="https://scontent.xx.fbcdn.net/v/t1.0-1/aaaaaaaaaaaaaa558a1aaaaa0aaaaaa5063aaaa4aaaa12218136501_n.jpg?oh=53ef504a0ba139726593f4497886fa16&oe=5A721441"
+            />,
+            <p>
+              edgarthecat@cats.com
+            </p>,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Edgar the Cat",
+            },
+            "ref": null,
+            "rendered": "Edgar the Cat",
+            "type": "h4",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "alt": "user",
+              "src": "https://scontent.xx.fbcdn.net/v/t1.0-1/aaaaaaaaaaaaaa558a1aaaaa0aaaaaa5063aaaa4aaaa12218136501_n.jpg?oh=53ef504a0ba139726593f4497886fa16&oe=5A721441",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "img",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "edgarthecat@cats.com",
+            },
+            "ref": null,
+            "rendered": "edgarthecat@cats.com",
+            "type": "p",
+          },
+        ],
+        "type": "section",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            false,
+            " Top Artists ",
+            false,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          false,
+          " Top Artists ",
+          false,
+        ],
+        "type": "h2",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <li
+              className="unselected artists"
+            >
+              <button
+                onClick={[Function]}
+              >
+                <span>
+                  Snoop Dogg
+                  <span
+                    className="plus-icon"
+                  >
+                    +
+                  </span>
+                  <span
+                    className="minus-icon"
+                  >
+                    -
+                  </span>
+                </span>
+              </button>
+            </li>,
+            <li
+              className="unselected artists"
+            >
+              <button
+                onClick={[Function]}
+              >
+                <span>
+                  The Grateful Dead
+                  <span
+                    className="plus-icon"
+                  >
+                    +
+                  </span>
+                  <span
+                    className="minus-icon"
+                  >
+                    -
+                  </span>
+                </span>
+              </button>
+            </li>,
+            <li
+              className="unselected artists"
+            >
+              <button
+                onClick={[Function]}
+              >
+                <span>
+                  Solange
+                  <span
+                    className="plus-icon"
+                  >
+                    +
+                  </span>
+                  <span
+                    className="minus-icon"
+                  >
+                    -
+                  </span>
+                </span>
+              </button>
+            </li>,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": "top artists 0",
+            "nodeType": "host",
+            "props": Object {
+              "children": <button
+                onClick={[Function]}
+              >
+                <span>
+                  Snoop Dogg
+                  <span
+                    className="plus-icon"
+                  >
+                    +
+                  </span>
+                  <span
+                    className="minus-icon"
+                  >
+                    -
+                  </span>
+                </span>
+              </button>,
+              "className": "unselected artists",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <span>
+                  Snoop Dogg
+                  <span
+                    className="plus-icon"
+                  >
+                    +
+                  </span>
+                  <span
+                    className="minus-icon"
+                  >
+                    -
+                  </span>
+                </span>,
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    "Snoop Dogg",
+                    <span
+                      className="plus-icon"
+                    >
+                      +
+                    </span>,
+                    <span
+                      className="minus-icon"
+                    >
+                      -
+                    </span>,
+                  ],
+                },
+                "ref": null,
+                "rendered": Array [
+                  "Snoop Dogg",
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "+",
+                      "className": "plus-icon",
+                    },
+                    "ref": null,
+                    "rendered": "+",
+                    "type": "span",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "-",
+                      "className": "minus-icon",
+                    },
+                    "ref": null,
+                    "rendered": "-",
+                    "type": "span",
+                  },
+                ],
+                "type": "span",
+              },
+              "type": "button",
+            },
+            "type": "li",
+          },
+          Object {
+            "instance": null,
+            "key": "top artists 1",
+            "nodeType": "host",
+            "props": Object {
+              "children": <button
+                onClick={[Function]}
+              >
+                <span>
+                  The Grateful Dead
+                  <span
+                    className="plus-icon"
+                  >
+                    +
+                  </span>
+                  <span
+                    className="minus-icon"
+                  >
+                    -
+                  </span>
+                </span>
+              </button>,
+              "className": "unselected artists",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <span>
+                  The Grateful Dead
+                  <span
+                    className="plus-icon"
+                  >
+                    +
+                  </span>
+                  <span
+                    className="minus-icon"
+                  >
+                    -
+                  </span>
+                </span>,
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    "The Grateful Dead",
+                    <span
+                      className="plus-icon"
+                    >
+                      +
+                    </span>,
+                    <span
+                      className="minus-icon"
+                    >
+                      -
+                    </span>,
+                  ],
+                },
+                "ref": null,
+                "rendered": Array [
+                  "The Grateful Dead",
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "+",
+                      "className": "plus-icon",
+                    },
+                    "ref": null,
+                    "rendered": "+",
+                    "type": "span",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "-",
+                      "className": "minus-icon",
+                    },
+                    "ref": null,
+                    "rendered": "-",
+                    "type": "span",
+                  },
+                ],
+                "type": "span",
+              },
+              "type": "button",
+            },
+            "type": "li",
+          },
+          Object {
+            "instance": null,
+            "key": "top artists 2",
+            "nodeType": "host",
+            "props": Object {
+              "children": <button
+                onClick={[Function]}
+              >
+                <span>
+                  Solange
+                  <span
+                    className="plus-icon"
+                  >
+                    +
+                  </span>
+                  <span
+                    className="minus-icon"
+                  >
+                    -
+                  </span>
+                </span>
+              </button>,
+              "className": "unselected artists",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <span>
+                  Solange
+                  <span
+                    className="plus-icon"
+                  >
+                    +
+                  </span>
+                  <span
+                    className="minus-icon"
+                  >
+                    -
+                  </span>
+                </span>,
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    "Solange",
+                    <span
+                      className="plus-icon"
+                    >
+                      +
+                    </span>,
+                    <span
+                      className="minus-icon"
+                    >
+                      -
+                    </span>,
+                  ],
+                },
+                "ref": null,
+                "rendered": Array [
+                  "Solange",
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "+",
+                      "className": "plus-icon",
+                    },
+                    "ref": null,
+                    "rendered": "+",
+                    "type": "span",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "-",
+                      "className": "minus-icon",
+                    },
+                    "ref": null,
+                    "rendered": "-",
+                    "type": "span",
+                  },
+                ],
+                "type": "span",
+              },
+              "type": "button",
+            },
+            "type": "li",
+          },
+        ],
+        "type": "ol",
+      },
+    ],
+    "type": "div",
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "class",
+      "nodeType": "host",
       "props": Object {
-        "authCodeToSagas": [Function],
-        "history": Array [],
-        "store": Object {
-          "clearActions": [Function],
-          "dispatch": [Function],
-          "getActions": [Function],
-          "getState": [Function],
-          "replaceReducer": [Function],
-          "subscribe": [Function],
-        },
-        "storeSubscription": Subscription {
-          "listeners": Object {
-            "clear": [Function],
-            "get": [Function],
-            "notify": [Function],
-            "subscribe": [Function],
-          },
-          "onStateChange": [Function],
-          "parentSub": undefined,
-          "store": Object {
-            "clearActions": [Function],
-            "dispatch": [Function],
-            "getActions": [Function],
-            "getState": [Function],
-            "replaceReducer": [Function],
-            "subscribe": [Function],
-          },
-          "unsubscribe": [Function],
-        },
-        "token": "",
-        "topArtists": Array [],
-        "userInfo": Object {},
+        "children": Array [
+          <section>
+            <h4>
+              Edgar the Cat
+            </h4>
+            <img
+              alt="user"
+              src="https://scontent.xx.fbcdn.net/v/t1.0-1/aaaaaaaaaaaaaa558a1aaaaa0aaaaaa5063aaaa4aaaa12218136501_n.jpg?oh=53ef504a0ba139726593f4497886fa16&oe=5A721441"
+            />
+            <p>
+              edgarthecat@cats.com
+            </p>
+          </section>,
+          <h2>
+             Top Artists 
+          </h2>,
+          <ol>
+            <li
+              className="unselected artists"
+            >
+              <button
+                onClick={[Function]}
+              >
+                <span>
+                  Snoop Dogg
+                  <span
+                    className="plus-icon"
+                  >
+                    +
+                  </span>
+                  <span
+                    className="minus-icon"
+                  >
+                    -
+                  </span>
+                </span>
+              </button>
+            </li>
+            <li
+              className="unselected artists"
+            >
+              <button
+                onClick={[Function]}
+              >
+                <span>
+                  The Grateful Dead
+                  <span
+                    className="plus-icon"
+                  >
+                    +
+                  </span>
+                  <span
+                    className="minus-icon"
+                  >
+                    -
+                  </span>
+                </span>
+              </button>
+            </li>
+            <li
+              className="unselected artists"
+            >
+              <button
+                onClick={[Function]}
+              >
+                <span>
+                  Solange
+                  <span
+                    className="plus-icon"
+                  >
+                    +
+                  </span>
+                  <span
+                    className="minus-icon"
+                  >
+                    -
+                  </span>
+                </span>
+              </button>
+            </li>
+          </ol>,
+        ],
+        "className": "home-div",
       },
       "ref": null,
-      "rendered": null,
-      "type": [Function],
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <h4>
+                Edgar the Cat
+              </h4>,
+              <img
+                alt="user"
+                src="https://scontent.xx.fbcdn.net/v/t1.0-1/aaaaaaaaaaaaaa558a1aaaaa0aaaaaa5063aaaa4aaaa12218136501_n.jpg?oh=53ef504a0ba139726593f4497886fa16&oe=5A721441"
+              />,
+              <p>
+                edgarthecat@cats.com
+              </p>,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Edgar the Cat",
+              },
+              "ref": null,
+              "rendered": "Edgar the Cat",
+              "type": "h4",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "alt": "user",
+                "src": "https://scontent.xx.fbcdn.net/v/t1.0-1/aaaaaaaaaaaaaa558a1aaaaa0aaaaaa5063aaaa4aaaa12218136501_n.jpg?oh=53ef504a0ba139726593f4497886fa16&oe=5A721441",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "img",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "edgarthecat@cats.com",
+              },
+              "ref": null,
+              "rendered": "edgarthecat@cats.com",
+              "type": "p",
+            },
+          ],
+          "type": "section",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              false,
+              " Top Artists ",
+              false,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            false,
+            " Top Artists ",
+            false,
+          ],
+          "type": "h2",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <li
+                className="unselected artists"
+              >
+                <button
+                  onClick={[Function]}
+                >
+                  <span>
+                    Snoop Dogg
+                    <span
+                      className="plus-icon"
+                    >
+                      +
+                    </span>
+                    <span
+                      className="minus-icon"
+                    >
+                      -
+                    </span>
+                  </span>
+                </button>
+              </li>,
+              <li
+                className="unselected artists"
+              >
+                <button
+                  onClick={[Function]}
+                >
+                  <span>
+                    The Grateful Dead
+                    <span
+                      className="plus-icon"
+                    >
+                      +
+                    </span>
+                    <span
+                      className="minus-icon"
+                    >
+                      -
+                    </span>
+                  </span>
+                </button>
+              </li>,
+              <li
+                className="unselected artists"
+              >
+                <button
+                  onClick={[Function]}
+                >
+                  <span>
+                    Solange
+                    <span
+                      className="plus-icon"
+                    >
+                      +
+                    </span>
+                    <span
+                      className="minus-icon"
+                    >
+                      -
+                    </span>
+                  </span>
+                </button>
+              </li>,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": "top artists 0",
+              "nodeType": "host",
+              "props": Object {
+                "children": <button
+                  onClick={[Function]}
+                >
+                  <span>
+                    Snoop Dogg
+                    <span
+                      className="plus-icon"
+                    >
+                      +
+                    </span>
+                    <span
+                      className="minus-icon"
+                    >
+                      -
+                    </span>
+                  </span>
+                </button>,
+                "className": "unselected artists",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <span>
+                    Snoop Dogg
+                    <span
+                      className="plus-icon"
+                    >
+                      +
+                    </span>
+                    <span
+                      className="minus-icon"
+                    >
+                      -
+                    </span>
+                  </span>,
+                  "onClick": [Function],
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      "Snoop Dogg",
+                      <span
+                        className="plus-icon"
+                      >
+                        +
+                      </span>,
+                      <span
+                        className="minus-icon"
+                      >
+                        -
+                      </span>,
+                    ],
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    "Snoop Dogg",
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "+",
+                        "className": "plus-icon",
+                      },
+                      "ref": null,
+                      "rendered": "+",
+                      "type": "span",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "-",
+                        "className": "minus-icon",
+                      },
+                      "ref": null,
+                      "rendered": "-",
+                      "type": "span",
+                    },
+                  ],
+                  "type": "span",
+                },
+                "type": "button",
+              },
+              "type": "li",
+            },
+            Object {
+              "instance": null,
+              "key": "top artists 1",
+              "nodeType": "host",
+              "props": Object {
+                "children": <button
+                  onClick={[Function]}
+                >
+                  <span>
+                    The Grateful Dead
+                    <span
+                      className="plus-icon"
+                    >
+                      +
+                    </span>
+                    <span
+                      className="minus-icon"
+                    >
+                      -
+                    </span>
+                  </span>
+                </button>,
+                "className": "unselected artists",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <span>
+                    The Grateful Dead
+                    <span
+                      className="plus-icon"
+                    >
+                      +
+                    </span>
+                    <span
+                      className="minus-icon"
+                    >
+                      -
+                    </span>
+                  </span>,
+                  "onClick": [Function],
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      "The Grateful Dead",
+                      <span
+                        className="plus-icon"
+                      >
+                        +
+                      </span>,
+                      <span
+                        className="minus-icon"
+                      >
+                        -
+                      </span>,
+                    ],
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    "The Grateful Dead",
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "+",
+                        "className": "plus-icon",
+                      },
+                      "ref": null,
+                      "rendered": "+",
+                      "type": "span",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "-",
+                        "className": "minus-icon",
+                      },
+                      "ref": null,
+                      "rendered": "-",
+                      "type": "span",
+                    },
+                  ],
+                  "type": "span",
+                },
+                "type": "button",
+              },
+              "type": "li",
+            },
+            Object {
+              "instance": null,
+              "key": "top artists 2",
+              "nodeType": "host",
+              "props": Object {
+                "children": <button
+                  onClick={[Function]}
+                >
+                  <span>
+                    Solange
+                    <span
+                      className="plus-icon"
+                    >
+                      +
+                    </span>
+                    <span
+                      className="minus-icon"
+                    >
+                      -
+                    </span>
+                  </span>
+                </button>,
+                "className": "unselected artists",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <span>
+                    Solange
+                    <span
+                      className="plus-icon"
+                    >
+                      +
+                    </span>
+                    <span
+                      className="minus-icon"
+                    >
+                      -
+                    </span>
+                  </span>,
+                  "onClick": [Function],
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      "Solange",
+                      <span
+                        className="plus-icon"
+                      >
+                        +
+                      </span>,
+                      <span
+                        className="minus-icon"
+                      >
+                        -
+                      </span>,
+                    ],
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    "Solange",
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "+",
+                        "className": "plus-icon",
+                      },
+                      "ref": null,
+                      "rendered": "+",
+                      "type": "span",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "-",
+                        "className": "minus-icon",
+                      },
+                      "ref": null,
+                      "rendered": "-",
+                      "type": "span",
+                    },
+                  ],
+                  "type": "span",
+                },
+                "type": "button",
+              },
+              "type": "li",
+            },
+          ],
+          "type": "ol",
+        },
+      ],
+      "type": "div",
     },
   ],
   Symbol(enzyme.__options__): Object {

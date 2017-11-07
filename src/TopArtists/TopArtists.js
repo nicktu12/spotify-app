@@ -5,7 +5,7 @@ import { authCodeCleaner } from '../Utilities/helpers';
 import { saveAuthCodeAction } from './TopArtists-actions'; 
 import { Meter } from '../Meter/Meter';
 
-class TopArtists extends React.Component{
+export class TopArtists extends React.Component{
 
   constructor(){
     super();
