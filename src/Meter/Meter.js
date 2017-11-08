@@ -23,7 +23,7 @@ export const Meter = (props) => {
       <rect 
         width={width} 
         height={height} 
-        fill="rgb(22,21,21)" 
+        fill="rgb(62,61,61)" 
         rx={round} 
         ry={round}
       />
