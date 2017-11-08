@@ -103,13 +103,12 @@ export const getTopSongsAllTime = (token) => {
 };
 
 const cleanSongRes = (json) => {
-  console.log(json)
   return json.items.map(song => 
     Object.assign({}, {
       title: song.name, 
       artists: cleanSongArtist(song.artists),
       album: song.album.name,
-      image: song.album.image[0].url,
+      image: song.album.images[0].url,
       popularity: song.popularity,
     })
   );
@@ -135,8 +134,16 @@ export const getUserInfo = (token) => {
 };
 
 const cleanUserRes = (json) => {
+  console.log(json)
   return Object.assign(
     {}, 
-    {name: json.display_name, email: json.email, image: json.images[0].url},
+    {
+      name: json.display_name, 
+      email: json.email, 
+      image: json.images[0].url,
+      id: json.id,
+      followers: json.followers.total,
+      plan: json.product,
+    },
   );
 };

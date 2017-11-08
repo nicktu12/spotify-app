@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { Meter } from '../Meter/Meter';
 import { 
   loadSongsAction, 
   loadSongsShortTerm, 
@@ -42,7 +43,13 @@ class TopSongs extends React.Component{
   renderSongs = () => {
     if (this.props.match.path === '/top40') {
       return this.props.topSongs.map((song, index) => (
-        <li key={'top songs ' + index}>
+        <li 
+          key={'top songs ' + index}
+          className={
+            this.state.selected === index ?
+              'selected songs' :
+              'unselected songs' }
+        >
           <button onClick={()=>this.addSelected(index)}>
             <span>{song.title}</span> {song.artists}
           </button>
@@ -115,12 +122,44 @@ class TopSongs extends React.Component{
           this.props.userInfo.image &&
           <img src={this.props.userInfo.image} alt='user' />
         }
-        <p>{this.props.userInfo.email}</p>
+        <p>
+          {
+            this.props.userInfo.id &&
+            <span>{ this.props.userInfo.email + ' / ' + this.props.userInfo.id }</span>
+          }
+        </p>
+        <p>
+          {
+            this.props.userInfo.followers &&
+            <div>
+              <span>Followers:</span> <span className='alt-text'>
+                {this.props.userInfo.followers}
+              </span>
+            </div>
+          }
+        </p>
       </section>
       :
       <section>
         <h4>{info.title}</h4>
-        <p>{info.artists}</p>
+        <img src={info.image} alt={info.album + 'album art'} />
+        <div>
+          <p>
+            <span>Album:</span> <span className='alt-text'>
+              {info.album}
+            </span>
+          </p>
+          <p>
+            <span>Artist:</span> <span className='alt-text'>
+              {info.artists}
+            </span>
+          </p>
+          <p>
+            <span>Popularity:</span> <span className='alt-text'>
+              <Meter percent={info.popularity / 100} rounded={true} />
+            </span>
+          </p>
+        </div>
       </section>
   )
 

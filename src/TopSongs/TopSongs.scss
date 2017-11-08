@@ -46,14 +46,25 @@ h2 div button:hover {
   padding-left: calc(30vw + 35px);
 	overflow: scroll;
 	height: calc(99vh - 174px);
-	border-radius: 0px 0px $border-rad $border-rad;
-  line-height: 32px;
-	font-family: $body-font;
 }
 
+.playlist-div li {
+ font-family: $header-font; 
+ border-radius: 1px;
+ box-sizing: border-box;
+ height: 42px;
+ margin: 4px 0px;
+}
+
+.playlist-div li:hover {
+  background-color: $dark;
+  box-sizing: border-box;
+  border-bottom: 2px solid $pop-accent;
+}
 
 li span {
 	color: $white;
 	font-size: 20px;
 	font-family: $header-font;
+  padding-left: 10px;
 }

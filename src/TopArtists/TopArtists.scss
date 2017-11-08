@@ -2,7 +2,6 @@
 
 .home-div {
 	height: calc(100vh - 90px);
-	box-sizing: border-box;
 }
 
 .home-div h2 {
@@ -23,8 +22,6 @@
   padding-left: calc(30vw + 35px);
 	overflow: scroll;
 	height: calc(99vh - 174px);
-	border-radius: 0px 0px $border-rad $border-rad;
-	font-family: $body-font;
 }
 
 h2 img {
@@ -33,7 +30,6 @@ h2 img {
 }
 
 .home-div li {
-  line-height: 42px;
   height: 42px;
 	margin: 4px 0px;
 	font-family: $header-font;
@@ -48,6 +44,9 @@ li button {
   text-align: left;
   height: 42px;
   outline-color: $pop-accent;
+  font-family: $body-font;
+  color: $light-3;
+  font-size: 16px;
 }
 
 li button:hover {
@@ -104,7 +103,7 @@ section {
     font-family: $header-font;
     font-size: 24px;
     color: $white;
-    line-height: 50px;
+    padding: 15px;
   }
 	img {
 		width: 24vw;
@@ -115,8 +114,9 @@ section {
     color: $white;
     text-align: left;
     font-family: $body-font;
-    padding: 0px 25px;
     line-height: 25px;
+    width: 22vw;
+    margin: auto;
   }
 	div {
     width: 22vw;
@@ -127,7 +127,6 @@ section {
 	}
 	div p {
 		font-family: $body-font;
-    padding: 0px 15px;
     line-height: 25px;
 	}
 	div p span {

@@ -76,7 +76,22 @@ export class TopArtists extends React.Component{
           this.props.userInfo.image &&
           <img src={this.props.userInfo.image} alt='user' />
         }
-        <p>{this.props.userInfo.email}</p>
+        <p>
+          {
+            this.props.userInfo.id &&
+            <span>{ this.props.userInfo.email + ' / ' + this.props.userInfo.id }</span>
+          }
+        </p>
+        <p>
+          {
+            this.props.userInfo.followers &&
+            <div>
+              <span>Followers:</span> <span className='alt-text'>
+                {this.props.userInfo.followers}
+              </span>
+            </div>
+          }
+        </p>
       </section>
       :
       <section>
