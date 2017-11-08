@@ -62,9 +62,17 @@ h2 div button:hover {
   border-bottom: 2px solid $pop-accent;
 }
 
+.playlist-div li:hover button {
+  color: #E1B484;
+}
+
+.selected button {
+  color: #E1B484;
+}
+
 li span {
 	color: $white;
 	font-size: 20px;
 	font-family: $header-font;
-  padding-left: 10px;
+  padding: 0px 3px 0px 10px;
 }
