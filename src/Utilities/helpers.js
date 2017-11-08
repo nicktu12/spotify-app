@@ -40,7 +40,7 @@ const accessTokenCleaner = (token) => {
 export const getTopArtists = (token) => {
   return fetch(
     `https://galvanize-cors-proxy.herokuapp.com/` + 
-    `https://api.spotify.com/v1/me/top/artists`, {
+    `https://api.spotify.com/v1/me/top/artists?limit=100`, {
       headers: {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${token}`
@@ -102,6 +102,7 @@ export const getTopSongsAllTime = (token) => {
 };
 
 const cleanSongRes = (json) => {
+  console.log(json)
   return json.items.map(song => 
     Object.assign({}, {
       title: song.name, 
