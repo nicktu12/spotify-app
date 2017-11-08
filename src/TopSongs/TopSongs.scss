@@ -76,3 +76,21 @@ li span {
 	font-family: $header-font;
   padding: 0px 3px 0px 10px;
 }
+
+.post-btn {
+  display: none;
+}
+
+.display-post-btn {
+  display: initial;
+  position: absolute;
+  right: 25px;
+  top: 206px;
+  background-color: $spotify-green;
+  border: none;
+  color: $white;
+  font-size: 16px;
+  font-family: $header-font;
+  outline-color: $spotify-green;
+  padding: 2px 30px;
+}

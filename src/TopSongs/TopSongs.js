@@ -212,11 +212,14 @@ class TopSongs extends React.Component{
               onClick={()=>this.props.history.push('/top40/alltime')}>
                 All Time
             </button>
-            <button onClick={()=>this.props.postPlaylist(this.props.accessToken, this.props.userInfo.id, this.getSongUriArray(this.props.topSongs))}>
-              test
-            </button>
           </div>
         </h2>
+        <button 
+          onClick={()=>this.props.postPlaylist(this.props.accessToken, this.props.userInfo.id, this.getSongUriArray(this.props.topSongs))}
+          className={this.props.match.path === '/top40' ? 'post-btn display-post-btn' : 'post-btn'}
+        >
+          Add to Spotify
+        </button>
         <ol>
           {this.props.topSongs && this.renderSongs()}
         </ol>
