@@ -8,6 +8,15 @@ import {
 } from './TopSongs-actions';
 
 class TopSongs extends React.Component{
+
+  constructor(){
+    super();
+
+    this.state = {
+      selected: null,
+    };
+  } 
+
   componentDidMount(){
     if (!this.props.accessToken.length) {
       this.props.history.push('/login');
@@ -34,25 +43,44 @@ class TopSongs extends React.Component{
     if (this.props.match.path === '/top40') {
       return this.props.topSongs.map((song, index) => (
         <li key={'top songs ' + index}>
-          <span>{song.title}</span> {song.artists}
+          <button onClick={()=>this.addSelected(index)}>
+            <span>{song.title}</span> {song.artists}
+          </button>
         </li>
       ));
     }
     if (this.props.match.path === '/top40/month') {
       return this.props.topSongsShortTerm.map((song, index) => (
         <li key={'top songs ' + index}>
-          <span>{song.title}</span> {song.artists}
+          <button onClick={()=>this.addSelected(index)}>
+            <span>{song.title}</span> {song.artists}
+          </button>
         </li>
       ));
     }
     if (this.props.match.path === '/top40/alltime') {
       return this.props.topSongsAllTime.map((song, index) => (
         <li key={'top songs ' + index}>
-          <span>{song.title}</span> {song.artists}
+          <button onClick={()=>this.addSelected(index)}>
+            <span>{song.title}</span> {song.artists}
+          </button>
         </li>
       ));
     }
   }
+
+  addSelected = (index) => (
+    this.state.selected === null ? 
+      this.setState({ selected: index}) : 
+      this.updateSelected(index)
+  )
+
+  updateSelected = (index) => {
+    this.state.selected === index ?
+      this.setState({ selected: null }) :
+      this.setState({ selected: index });
+  }
+
 
   showLoading = () => { 
     if (this.props.match.path === '/top40/month') {
@@ -79,9 +107,39 @@ class TopSongs extends React.Component{
     return window.location.href.includes(path);
   }
 
+  renderInfoCard = (info) => (
+    info === undefined ?
+      <section>
+        <h4>{this.props.userInfo.name}</h4>
+        {
+          this.props.userInfo.image &&
+          <img src={this.props.userInfo.image} alt='user' />
+        }
+        <p>{this.props.userInfo.email}</p>
+      </section>
+      :
+      <section>
+        <h4>{info.title}</h4>
+        <p>{info.artists}</p>
+      </section>
+  )
+
+  renderInfoCardSwitch = (path) => {
+    if (path === '/top40') {
+      return this.renderInfoCard(this.props.topSongs[this.state.selected])
+    }
+    if (path === '/top40/month') {
+      return this.renderInfoCard(this.props.topSongsShortTerm[this.state.selected])
+    }
+    if (path === '/top40/alltime') {
+      return this.renderInfoCard(this.props.topSongsAllTime[this.state.selected])
+    }
+  }
+
   render(){
     return (   
       <div className='playlist-div'>
+        { this.renderInfoCardSwitch(this.props.match.path) }
         <h2>
           {this.showLoading()} Top 40 {this.showLoading()}
           <div>
@@ -127,6 +185,7 @@ const mapStateToProps = store => ({
   topSongs: store.topSongs,
   topSongsShortTerm: store.topSongsShortTerm,
   topSongsAllTime: store.topSongsAllTime,
+  userInfo: store.userInfo,
 });
 
 const mapDispatchToProps = dispatch => {
@@ -147,6 +206,7 @@ TopSongs.propTypes = {
   loadSongsShortTerm: PropTypes.func,
   loadSongsAllTime: PropTypes.func,
   history: PropTypes.oneOfType([PropTypes.object]),
+  userInfo: PropTypes.object,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(TopSongs);
