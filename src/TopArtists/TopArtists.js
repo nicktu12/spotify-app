@@ -90,7 +90,7 @@ export class TopArtists extends React.Component{
           </p>
           <p>
             <span>Popularity:</span> <span className='alt-text'>
-              <Meter percent={info.popularity / 100} rounded={false} />
+              <Meter percent={info.popularity / 100} rounded={true} />
             </span>
           </p>
           <p>
