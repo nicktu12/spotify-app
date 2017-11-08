@@ -6,6 +6,7 @@ import {
   loadSongsAction, 
   loadSongsShortTerm, 
   loadSongsAllTime, 
+  postPlaylist,
 } from './TopSongs-actions';
 
 class TopSongs extends React.Component{
@@ -175,6 +176,8 @@ class TopSongs extends React.Component{
     }
   }
 
+  getSongUriArray = songs => songs.map(song=>(song.uri));
+
   render(){
     return (   
       <div className='playlist-div'>
@@ -209,6 +212,9 @@ class TopSongs extends React.Component{
               onClick={()=>this.props.history.push('/top40/alltime')}>
                 All Time
             </button>
+            <button onClick={()=>this.props.postPlaylist(this.props.accessToken, this.props.userInfo.id, this.getSongUriArray(this.props.topSongs))}>
+              test
+            </button>
           </div>
         </h2>
         <ol>
@@ -232,6 +238,7 @@ const mapDispatchToProps = dispatch => {
     loadSongs: (token) => dispatch(loadSongsAction(token)),
     loadSongsShortTerm: (token) => dispatch(loadSongsShortTerm(token)),
     loadSongsAllTime: (token) => dispatch(loadSongsAllTime(token)),
+    postPlaylist: (token, id, array) => dispatch(postPlaylist(token, id, array))
   };
 };
 
