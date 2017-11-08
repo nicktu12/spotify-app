@@ -108,6 +108,9 @@ const cleanSongRes = (json) => {
     Object.assign({}, {
       title: song.name, 
       artists: cleanSongArtist(song.artists),
+      album: song.album.name,
+      image: song.album.image[0].url,
+      popularity: song.popularity,
     })
   );
 };
