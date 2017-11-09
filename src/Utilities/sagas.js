@@ -52,9 +52,8 @@ function* getSongsAllTime (action) {
 
 function* postPlaylistToProfile (action) {
   try {
-    const playlistId = yield call(createPlaylist, action.payload);
-    console.log('sagas', action.payload, playlistId)
-    yield call(addTracksToPlaylist, playlistId, action.payload);
+    const playlistId = yield call(createPlaylist, action.actionPayload);
+    yield call(addTracksToPlaylist, playlistId, action.actionPayload);
   } catch (error) {
     yield put({type: 'POST_PLAYLIST_ERROR', message: error.message});
   }
@@ -77,7 +76,7 @@ function* listenForLoadSongsAllTime() {
 }
 
 function* listenForPostPlaylist() {
-  yield takeLatest('POST_PLAYLIST', postPlaylistToProfile)
+  yield takeLatest('POST_PLAYLIST', postPlaylistToProfile);
 }
 
 export default [

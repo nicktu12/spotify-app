@@ -125,12 +125,6 @@ export class TopSongs extends React.Component{
         }
         <p className='user-info'>
           {
-            this.props.userInfo.id &&
-            <span>{ this.props.userInfo.email + ' / ' + this.props.userInfo.id }</span>
-          }
-        </p>
-        <p>
-          {
             this.props.userInfo.followers &&
             <span>
               <span>Followers:</span> <span className='alt-text'>
@@ -166,17 +160,23 @@ export class TopSongs extends React.Component{
 
   renderInfoCardSwitch = (path) => {
     if (path === '/top40') {
-      return this.renderInfoCard(this.props.topSongs[this.state.selected])
+      return this.renderInfoCard(this.props.topSongs[this.state.selected]);
     }
     if (path === '/top40/month') {
-      return this.renderInfoCard(this.props.topSongsShortTerm[this.state.selected])
+      return this.renderInfoCard(
+        this.props.topSongsShortTerm[this.state.selected]
+      );
     }
     if (path === '/top40/alltime') {
-      return this.renderInfoCard(this.props.topSongsAllTime[this.state.selected])
+      return this.renderInfoCard(
+        this.props.topSongsAllTime[this.state.selected]
+      );
     }
   }
 
   getSongUriArray = songs => songs.map(song=>(song.uri));
+
+  disableBtn = () => this.refs.btn.setAttribute('disabled', 'disabled');
 
   render(){
     return (   
@@ -215,8 +215,20 @@ export class TopSongs extends React.Component{
           </div>
         </h2>
         <button 
-          onClick={()=>this.props.postPlaylist(this.props.accessToken, this.props.userInfo.id, this.getSongUriArray(this.props.topSongs))}
-          className={this.props.match.path === '/top40' ? 'post-btn display-post-btn' : 'post-btn'}
+          ref="btn"
+          onClick={()=>{
+            this.props.postPlaylist(
+              this.props.accessToken, 
+              this.props.userInfo.id, 
+              this.getSongUriArray(this.props.topSongs)
+            );
+            this.disableBtn();
+          }}
+          className={
+            this.props.match.path === '/top40' ? 
+              'post-btn display-post-btn' : 
+              'post-btn'
+          }
         >
           Add to Spotify
         </button>
@@ -256,6 +268,7 @@ TopSongs.propTypes = {
   loadSongsAllTime: PropTypes.func,
   history: PropTypes.oneOfType([PropTypes.object]),
   userInfo: PropTypes.object,
+  postPlaylist: PropTypes.func,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(TopSongs);

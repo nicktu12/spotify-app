@@ -85,7 +85,7 @@ li span {
   display: initial;
   position: absolute;
   right: 25px;
-  top: 206px;
+  top: 125px;
   background-color: $spotify-green;
   border: none;
   color: $white;
@@ -93,4 +93,12 @@ li span {
   font-family: $header-font;
   outline-color: $spotify-green;
   padding: 2px 30px;
+}
+
+.display-post-btn:hover {
+  background-color: $spotify-green-hover;
+}
+
+.display-post-btn:disabled {
+  background-color: $spotify-green-disabled;
 }
