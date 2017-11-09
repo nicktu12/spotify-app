@@ -110,6 +110,7 @@ const cleanSongRes = (json) => {
       album: song.album.name,
       image: song.album.images[0].url,
       popularity: song.popularity,
+      uri: song.uri,
     })
   );
 };
@@ -147,3 +148,38 @@ const cleanUserRes = (json) => {
     },
   );
 };
+
+export const createPlaylist = payload => {
+  return fetch(`https://api.spotify.com/v1/users/${payload.id}/playlists`, {
+    body: JSON.stringify({
+      name: `${payload.id}'s Top 40`,
+      description: `Your Top 40 tracks from this year. Brought to you by Statify.`
+    }),
+    headers: {
+      "Accept": "application/json",
+      "Authorization": `Bearer ${payload.token}`,
+      "Content-Type": "application/json"
+    },
+    method: "POST"
+  })
+    .then(res=>res.json())
+    .then(res=>res.id)
+    .catch(error => alert(error))
+}
+
+export const addTracksToPlaylist = (playlistId, action) => {
+  return fetch(`https://api.spotify.com/v1/users/${action.id}/playlists/${playlistId}/tracks`, {
+    body: JSON.stringify({
+      uris: action.array,
+    }),
+    headers: {
+      "Accept": "application/json",
+      "Authorization": `Bearer ${action.token}`,
+      "Content-Type": "application/json"
+    },
+    method: "POST"
+  })
+    .then(res=>res.json())
+    .then(res=>res.id)
+    .catch(error => alert(error))
+}

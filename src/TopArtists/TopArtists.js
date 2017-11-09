@@ -76,7 +76,7 @@ export class TopArtists extends React.Component{
           this.props.userInfo.image &&
           <img src={this.props.userInfo.image} alt='user' />
         }
-        <p>
+        <p className='user-info'>
           {
             this.props.userInfo.id &&
             <span>{ this.props.userInfo.email + ' / ' + this.props.userInfo.id }</span>
@@ -85,11 +85,11 @@ export class TopArtists extends React.Component{
         <p>
           {
             this.props.userInfo.followers &&
-            <div>
+            <span>
               <span>Followers:</span> <span className='alt-text'>
                 {this.props.userInfo.followers}
               </span>
-            </div>
+            </span>
           }
         </p>
       </section>

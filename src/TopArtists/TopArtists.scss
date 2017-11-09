@@ -98,6 +98,10 @@ section {
   overflow: scroll;
 }
 
+.user-info {
+  margin-top: 15px;
+}
+
 section {
   h4 {
     font-family: $header-font;
@@ -122,6 +126,7 @@ section {
     width: 22vw;
     margin: auto;
 		vertical-align: top;
+    padding: 15px 0px;
 		flex-direction: column;
 		justify-content: space-around;
 	}

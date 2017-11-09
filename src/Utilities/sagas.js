@@ -6,6 +6,8 @@ import {
   getTopSongsShortTerm, 
   getTopSongsAllTime, 
   getUserInfo, 
+  createPlaylist,
+  addTracksToPlaylist,
 } from './helpers.js';
 
 function* getAccess (action) {
@@ -48,6 +50,16 @@ function* getSongsAllTime (action) {
   } 
 }
 
+function* postPlaylistToProfile (action) {
+  try {
+    const playlistId = yield call(createPlaylist, action.payload);
+    console.log('sagas', action.payload, playlistId)
+    yield call(addTracksToPlaylist, playlistId, action.payload);
+  } catch (error) {
+    yield put({type: 'POST_PLAYLIST_ERROR', message: error.message});
+  }
+}
+
 function* listenForAuth() {
   yield takeLatest('AUTH_CODE', getAccess);
 }
@@ -64,9 +76,14 @@ function* listenForLoadSongsAllTime() {
   yield takeLatest('LOAD_SONGS_ALL_TIME', getSongsAllTime);
 }
 
+function* listenForPostPlaylist() {
+  yield takeLatest('POST_PLAYLIST', postPlaylistToProfile)
+}
+
 export default [
   listenForAuth,
   listenForLoadSongs,
   listenForLoadSongsShortTerm,
-  listenForLoadSongsAllTime
+  listenForLoadSongsAllTime,
+  listenForPostPlaylist,
 ];

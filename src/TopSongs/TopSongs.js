@@ -6,6 +6,7 @@ import {
   loadSongsAction, 
   loadSongsShortTerm, 
   loadSongsAllTime, 
+  postPlaylist,
 } from './TopSongs-actions';
 
 class TopSongs extends React.Component{
@@ -122,7 +123,7 @@ class TopSongs extends React.Component{
           this.props.userInfo.image &&
           <img src={this.props.userInfo.image} alt='user' />
         }
-        <p>
+        <p className='user-info'>
           {
             this.props.userInfo.id &&
             <span>{ this.props.userInfo.email + ' / ' + this.props.userInfo.id }</span>
@@ -131,11 +132,11 @@ class TopSongs extends React.Component{
         <p>
           {
             this.props.userInfo.followers &&
-            <div>
+            <span>
               <span>Followers:</span> <span className='alt-text'>
                 {this.props.userInfo.followers}
               </span>
-            </div>
+            </span>
           }
         </p>
       </section>
@@ -175,6 +176,8 @@ class TopSongs extends React.Component{
     }
   }
 
+  getSongUriArray = songs => songs.map(song=>(song.uri));
+
   render(){
     return (   
       <div className='playlist-div'>
@@ -211,6 +214,12 @@ class TopSongs extends React.Component{
             </button>
           </div>
         </h2>
+        <button 
+          onClick={()=>this.props.postPlaylist(this.props.accessToken, this.props.userInfo.id, this.getSongUriArray(this.props.topSongs))}
+          className={this.props.match.path === '/top40' ? 'post-btn display-post-btn' : 'post-btn'}
+        >
+          Add to Spotify
+        </button>
         <ol>
           {this.props.topSongs && this.renderSongs()}
         </ol>
@@ -232,6 +241,7 @@ const mapDispatchToProps = dispatch => {
     loadSongs: (token) => dispatch(loadSongsAction(token)),
     loadSongsShortTerm: (token) => dispatch(loadSongsShortTerm(token)),
     loadSongsAllTime: (token) => dispatch(loadSongsAllTime(token)),
+    postPlaylist: (token, id, array) => dispatch(postPlaylist(token, id, array))
   };
 };
 
