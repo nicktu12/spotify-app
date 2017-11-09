@@ -67,9 +67,10 @@ ShallowWrapper {
             alt="user"
             src="https://scontent.xx.fbcdn.net/v/t1.0-1/aaaaaaaaaaaaaa558a1aaaaa0aaaaaa5063aaaa4aaaa12218136501_n.jpg?oh=53ef504a0ba139726593f4497886fa16&oe=5A721441"
           />
-          <p>
-            edgarthecat@cats.com
-          </p>
+          <p
+            className="user-info"
+          />
+          <p />
         </section>,
         <h2>
            Top Artists 
@@ -157,9 +158,10 @@ ShallowWrapper {
               alt="user"
               src="https://scontent.xx.fbcdn.net/v/t1.0-1/aaaaaaaaaaaaaa558a1aaaaa0aaaaaa5063aaaa4aaaa12218136501_n.jpg?oh=53ef504a0ba139726593f4497886fa16&oe=5A721441"
             />,
-            <p>
-              edgarthecat@cats.com
-            </p>,
+            <p
+              className="user-info"
+            />,
+            <p />,
           ],
         },
         "ref": null,
@@ -192,10 +194,22 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "edgarthecat@cats.com",
+              "children": undefined,
+              "className": "user-info",
             },
             "ref": null,
-            "rendered": "edgarthecat@cats.com",
+            "rendered": null,
+            "type": "p",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": undefined,
+            },
+            "ref": null,
+            "rendered": null,
             "type": "p",
           },
         ],
@@ -611,9 +625,10 @@ ShallowWrapper {
               alt="user"
               src="https://scontent.xx.fbcdn.net/v/t1.0-1/aaaaaaaaaaaaaa558a1aaaaa0aaaaaa5063aaaa4aaaa12218136501_n.jpg?oh=53ef504a0ba139726593f4497886fa16&oe=5A721441"
             />
-            <p>
-              edgarthecat@cats.com
-            </p>
+            <p
+              className="user-info"
+            />
+            <p />
           </section>,
           <h2>
              Top Artists 
@@ -701,9 +716,10 @@ ShallowWrapper {
                 alt="user"
                 src="https://scontent.xx.fbcdn.net/v/t1.0-1/aaaaaaaaaaaaaa558a1aaaaa0aaaaaa5063aaaa4aaaa12218136501_n.jpg?oh=53ef504a0ba139726593f4497886fa16&oe=5A721441"
               />,
-              <p>
-                edgarthecat@cats.com
-              </p>,
+              <p
+                className="user-info"
+              />,
+              <p />,
             ],
           },
           "ref": null,
@@ -736,10 +752,22 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "edgarthecat@cats.com",
+                "children": undefined,
+                "className": "user-info",
               },
               "ref": null,
-              "rendered": "edgarthecat@cats.com",
+              "rendered": null,
+              "type": "p",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": undefined,
+              },
+              "ref": null,
+              "rendered": null,
               "type": "p",
             },
           ],

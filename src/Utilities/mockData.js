@@ -37,9 +37,9 @@ export const mockTopArtists = [
 ];
 
 export const mockTopSongs = [
-  { title: 'In Da Club', artists: ['50 Cent'] },
-  { title: 'Cranes In The Sky', artists: ['Solange'] },
-  { title: 'Huron River Drive', artists: ['Shigeto'] }
+  { title: 'In Da Club', artists: ['50 Cent'], album: 'Half a Dollar', image: 'https://i.scdn.co/imaaeaabaaaaaaacaff4a0d7a879b265ef692b7307ea50', popularity: 88, uri: 'spotify:trackt6tCtLttcttt5HttttJgUBA', },
+  { title: 'Cranes In The Sky', artists: ['Solange'], album: 'A Seat at the Table', image: 'https://i.scdn.co/jdhshjdfgjhgsfdj', popularity: 77, uri: 'spotify.track34534hj34jh4', },
+  { title: 'Huron River Drive', artists: ['Shigeto'], album: 'Shigeto', image: 'https://i.scden.com/asdfasd', popularity: 54, uri: 'spotify.track55h5j5j5', },
 ];
 
 export const mockUserInfo = {

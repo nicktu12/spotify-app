@@ -29,7 +29,7 @@ ShallowWrapper {
           </p>
           <p>
             <a
-              href="https://accounts.spotify.com/authorize/?client_id=6f67e11fa50a413f9bf17697789322aa&response_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&scope=user-read-private%20user-read-email%20user-top-read&state=34fFs29kd09"
+              href="https://accounts.spotify.com/authorize/?client_id=6f67e11fa50a413f9bf17697789322aa&response_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&scope=user-read-private%20user-read-email%20user-top-read%20playlist-modify-public%20playlist-modify-private&state=34fFs29kd09"
             >
               <button>
                 Login
@@ -66,7 +66,7 @@ ShallowWrapper {
             </p>,
             <p>
               <a
-                href="https://accounts.spotify.com/authorize/?client_id=6f67e11fa50a413f9bf17697789322aa&response_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&scope=user-read-private%20user-read-email%20user-top-read&state=34fFs29kd09"
+                href="https://accounts.spotify.com/authorize/?client_id=6f67e11fa50a413f9bf17697789322aa&response_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&scope=user-read-private%20user-read-email%20user-top-read%20playlist-modify-public%20playlist-modify-private&state=34fFs29kd09"
               >
                 <button>
                   Login
@@ -110,7 +110,7 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "children": <a
-                href="https://accounts.spotify.com/authorize/?client_id=6f67e11fa50a413f9bf17697789322aa&response_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&scope=user-read-private%20user-read-email%20user-top-read&state=34fFs29kd09"
+                href="https://accounts.spotify.com/authorize/?client_id=6f67e11fa50a413f9bf17697789322aa&response_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&scope=user-read-private%20user-read-email%20user-top-read%20playlist-modify-public%20playlist-modify-private&state=34fFs29kd09"
               >
                 <button>
                   Login
@@ -126,7 +126,7 @@ ShallowWrapper {
                 "children": <button>
                   Login
                 </button>,
-                "href": "https://accounts.spotify.com/authorize/?client_id=6f67e11fa50a413f9bf17697789322aa&response_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&scope=user-read-private%20user-read-email%20user-top-read&state=34fFs29kd09",
+                "href": "https://accounts.spotify.com/authorize/?client_id=6f67e11fa50a413f9bf17697789322aa&response_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&scope=user-read-private%20user-read-email%20user-top-read%20playlist-modify-public%20playlist-modify-private&state=34fFs29kd09",
               },
               "ref": null,
               "rendered": Object {
@@ -168,7 +168,7 @@ ShallowWrapper {
             </p>
             <p>
               <a
-                href="https://accounts.spotify.com/authorize/?client_id=6f67e11fa50a413f9bf17697789322aa&response_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&scope=user-read-private%20user-read-email%20user-top-read&state=34fFs29kd09"
+                href="https://accounts.spotify.com/authorize/?client_id=6f67e11fa50a413f9bf17697789322aa&response_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&scope=user-read-private%20user-read-email%20user-top-read%20playlist-modify-public%20playlist-modify-private&state=34fFs29kd09"
               >
                 <button>
                   Login
@@ -205,7 +205,7 @@ ShallowWrapper {
               </p>,
               <p>
                 <a
-                  href="https://accounts.spotify.com/authorize/?client_id=6f67e11fa50a413f9bf17697789322aa&response_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&scope=user-read-private%20user-read-email%20user-top-read&state=34fFs29kd09"
+                  href="https://accounts.spotify.com/authorize/?client_id=6f67e11fa50a413f9bf17697789322aa&response_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&scope=user-read-private%20user-read-email%20user-top-read%20playlist-modify-public%20playlist-modify-private&state=34fFs29kd09"
                 >
                   <button>
                     Login
@@ -249,7 +249,7 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": <a
-                  href="https://accounts.spotify.com/authorize/?client_id=6f67e11fa50a413f9bf17697789322aa&response_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&scope=user-read-private%20user-read-email%20user-top-read&state=34fFs29kd09"
+                  href="https://accounts.spotify.com/authorize/?client_id=6f67e11fa50a413f9bf17697789322aa&response_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&scope=user-read-private%20user-read-email%20user-top-read%20playlist-modify-public%20playlist-modify-private&state=34fFs29kd09"
                 >
                   <button>
                     Login
@@ -265,7 +265,7 @@ ShallowWrapper {
                   "children": <button>
                     Login
                   </button>,
-                  "href": "https://accounts.spotify.com/authorize/?client_id=6f67e11fa50a413f9bf17697789322aa&response_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&scope=user-read-private%20user-read-email%20user-top-read&state=34fFs29kd09",
+                  "href": "https://accounts.spotify.com/authorize/?client_id=6f67e11fa50a413f9bf17697789322aa&response_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&scope=user-read-private%20user-read-email%20user-top-read%20playlist-modify-public%20playlist-modify-private&state=34fFs29kd09",
                 },
                 "ref": null,
                 "rendered": Object {

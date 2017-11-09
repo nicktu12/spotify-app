@@ -20,7 +20,7 @@ ShallowWrapper {
       "aria-label": null,
       "children": Array [
         <rect
-          fill="rgb(22,21,21)"
+          fill="rgb(62,61,61)"
           height={10}
           rx={5}
           ry={5}
@@ -45,7 +45,7 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "fill": "rgb(22,21,21)",
+          "fill": "rgb(62,61,61)",
           "height": 10,
           "rx": 5,
           "ry": 5,
@@ -83,7 +83,7 @@ ShallowWrapper {
         "aria-label": null,
         "children": Array [
           <rect
-            fill="rgb(22,21,21)"
+            fill="rgb(62,61,61)"
             height={10}
             rx={5}
             ry={5}
@@ -108,7 +108,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "fill": "rgb(22,21,21)",
+            "fill": "rgb(62,61,61)",
             "height": 10,
             "rx": 5,
             "ry": 5,
