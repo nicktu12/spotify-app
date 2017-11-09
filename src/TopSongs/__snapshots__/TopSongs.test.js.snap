@@ -1,18 +1,55 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`TopSongs component tests should match snapshot 1`] = `
+exports[`TopSongs component tests should match snapshot render 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Connect(TopSongs)
-    store={
+  Symbol(enzyme.__unrendered__): <TopSongs
+    accessToken="BxxxxxxxU8xxxxxxxvK5xxxxxxxxxsBrtbsaM_37uIB1yaFCPApS0Iczif6KIKq8EXAwXtoQyG8FduappKkTi0JYNO-a4E7ioKBNlpMmCI9zf4KiMd9_ZN3YpFXv0TRUhCuxq_WXHLoRn-M-cSPJ5AYZdRFrB7_dwkwtLsOr"
+    match={
       Object {
-        "clearActions": [Function],
-        "dispatch": [Function],
-        "getActions": [Function],
-        "getState": [Function],
-        "replaceReducer": [Function],
-        "subscribe": [Function],
+        "path": "/top40",
+      }
+    }
+    topSongs={
+      Array [
+        Object {
+          "album": "Half a Dollar",
+          "artists": Array [
+            "50 Cent",
+          ],
+          "image": "https://i.scdn.co/imaaeaabaaaaaaacaff4a0d7a879b265ef692b7307ea50",
+          "popularity": 88,
+          "title": "In Da Club",
+          "uri": "spotify:trackt6tCtLttcttt5HttttJgUBA",
+        },
+        Object {
+          "album": "A Seat at the Table",
+          "artists": Array [
+            "Solange",
+          ],
+          "image": "https://i.scdn.co/jdhshjdfgjhgsfdj",
+          "popularity": 77,
+          "title": "Cranes In The Sky",
+          "uri": "spotify.track34534hj34jh4",
+        },
+        Object {
+          "album": "Shigeto",
+          "artists": Array [
+            "Shigeto",
+          ],
+          "image": "https://i.scden.com/asdfasd",
+          "popularity": 54,
+          "title": "Huron River Drive",
+          "uri": "spotify.track55h5j5j5",
+        },
+      ]
+    }
+    userInfo={
+      Object {
+        "email": "edgarthecat@cats.com",
+        "image": "https://scontent.xx.fbcdn.net/v/t1.0-1/aaaaaaaaaaaaaa558a1aaaaa0aaaaaa5063aaaa4aaaa12218136501_n.jpg?oh=53ef504a0ba139726593f4497886fa16&oe=5A721441",
+        "name": "Edgar the Cat",
       }
     }
   />,
@@ -26,91 +63,1003 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "class",
+    "nodeType": "host",
     "props": Object {
-      "accessToken": "",
-      "loadSongs": [Function],
-      "loadSongsAllTime": [Function],
-      "loadSongsShortTerm": [Function],
-      "store": Object {
-        "clearActions": [Function],
-        "dispatch": [Function],
-        "getActions": [Function],
-        "getState": [Function],
-        "replaceReducer": [Function],
-        "subscribe": [Function],
-      },
-      "storeSubscription": Subscription {
-        "listeners": Object {
-          "clear": [Function],
-          "get": [Function],
-          "notify": [Function],
-          "subscribe": [Function],
-        },
-        "onStateChange": [Function],
-        "parentSub": undefined,
-        "store": Object {
-          "clearActions": [Function],
-          "dispatch": [Function],
-          "getActions": [Function],
-          "getState": [Function],
-          "replaceReducer": [Function],
-          "subscribe": [Function],
-        },
-        "unsubscribe": [Function],
-      },
-      "topSongs": Array [],
-      "topSongsAllTime": Array [],
-      "topSongsShortTerm": Array [],
+      "children": Array [
+        <section>
+          <h4>
+            Edgar the Cat
+          </h4>
+          <img
+            alt="user"
+            src="https://scontent.xx.fbcdn.net/v/t1.0-1/aaaaaaaaaaaaaa558a1aaaaa0aaaaaa5063aaaa4aaaa12218136501_n.jpg?oh=53ef504a0ba139726593f4497886fa16&oe=5A721441"
+          />
+          <p
+            className="user-info"
+          />
+          <p />
+        </section>,
+        <h2>
+           Top 40 
+          <div>
+            <button
+              className={null}
+              onClick={[Function]}
+            >
+              This month
+            </button>
+            <button
+              className={null}
+              onClick={[Function]}
+            >
+              This year
+            </button>
+            <button
+              className={null}
+              onClick={[Function]}
+            >
+              All Time
+            </button>
+          </div>
+        </h2>,
+        <button
+          className="post-btn display-post-btn"
+          onClick={[Function]}
+        >
+          Add to Spotify
+        </button>,
+        <ol>
+          <li
+            className="unselected songs"
+          >
+            <button
+              onClick={[Function]}
+            >
+              <span>
+                In Da Club
+              </span>
+               
+              50 Cent
+            </button>
+          </li>
+          <li
+            className="unselected songs"
+          >
+            <button
+              onClick={[Function]}
+            >
+              <span>
+                Cranes In The Sky
+              </span>
+               
+              Solange
+            </button>
+          </li>
+          <li
+            className="unselected songs"
+          >
+            <button
+              onClick={[Function]}
+            >
+              <span>
+                Huron River Drive
+              </span>
+               
+              Shigeto
+            </button>
+          </li>
+        </ol>,
+      ],
+      "className": "playlist-div",
     },
     "ref": null,
-    "rendered": null,
-    "type": [Function],
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <h4>
+              Edgar the Cat
+            </h4>,
+            <img
+              alt="user"
+              src="https://scontent.xx.fbcdn.net/v/t1.0-1/aaaaaaaaaaaaaa558a1aaaaa0aaaaaa5063aaaa4aaaa12218136501_n.jpg?oh=53ef504a0ba139726593f4497886fa16&oe=5A721441"
+            />,
+            <p
+              className="user-info"
+            />,
+            <p />,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Edgar the Cat",
+            },
+            "ref": null,
+            "rendered": "Edgar the Cat",
+            "type": "h4",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "alt": "user",
+              "src": "https://scontent.xx.fbcdn.net/v/t1.0-1/aaaaaaaaaaaaaa558a1aaaaa0aaaaaa5063aaaa4aaaa12218136501_n.jpg?oh=53ef504a0ba139726593f4497886fa16&oe=5A721441",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "img",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": undefined,
+              "className": "user-info",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "p",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": undefined,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "p",
+          },
+        ],
+        "type": "section",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            null,
+            " Top 40 ",
+            null,
+            <div>
+              <button
+                className={null}
+                onClick={[Function]}
+              >
+                This month
+              </button>
+              <button
+                className={null}
+                onClick={[Function]}
+              >
+                This year
+              </button>
+              <button
+                className={null}
+                onClick={[Function]}
+              >
+                All Time
+              </button>
+            </div>,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          null,
+          " Top 40 ",
+          null,
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <button
+                  className={null}
+                  onClick={[Function]}
+                >
+                  This month
+                </button>,
+                <button
+                  className={null}
+                  onClick={[Function]}
+                >
+                  This year
+                </button>,
+                <button
+                  className={null}
+                  onClick={[Function]}
+                >
+                  All Time
+                </button>,
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "This month",
+                  "className": null,
+                  "onClick": [Function],
+                },
+                "ref": null,
+                "rendered": "This month",
+                "type": "button",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "This year",
+                  "className": null,
+                  "onClick": [Function],
+                },
+                "ref": null,
+                "rendered": "This year",
+                "type": "button",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "All Time",
+                  "className": null,
+                  "onClick": [Function],
+                },
+                "ref": null,
+                "rendered": "All Time",
+                "type": "button",
+              },
+            ],
+            "type": "div",
+          },
+        ],
+        "type": "h2",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Add to Spotify",
+          "className": "post-btn display-post-btn",
+          "onClick": [Function],
+        },
+        "ref": null,
+        "rendered": "Add to Spotify",
+        "type": "button",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <li
+              className="unselected songs"
+            >
+              <button
+                onClick={[Function]}
+              >
+                <span>
+                  In Da Club
+                </span>
+                 
+                50 Cent
+              </button>
+            </li>,
+            <li
+              className="unselected songs"
+            >
+              <button
+                onClick={[Function]}
+              >
+                <span>
+                  Cranes In The Sky
+                </span>
+                 
+                Solange
+              </button>
+            </li>,
+            <li
+              className="unselected songs"
+            >
+              <button
+                onClick={[Function]}
+              >
+                <span>
+                  Huron River Drive
+                </span>
+                 
+                Shigeto
+              </button>
+            </li>,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": "top songs 0",
+            "nodeType": "host",
+            "props": Object {
+              "children": <button
+                onClick={[Function]}
+              >
+                <span>
+                  In Da Club
+                </span>
+                 
+                50 Cent
+              </button>,
+              "className": "unselected songs",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <span>
+                    In Da Club
+                  </span>,
+                  " ",
+                  Array [
+                    "50 Cent",
+                  ],
+                ],
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "In Da Club",
+                  },
+                  "ref": null,
+                  "rendered": "In Da Club",
+                  "type": "span",
+                },
+                " ",
+                "50 Cent",
+              ],
+              "type": "button",
+            },
+            "type": "li",
+          },
+          Object {
+            "instance": null,
+            "key": "top songs 1",
+            "nodeType": "host",
+            "props": Object {
+              "children": <button
+                onClick={[Function]}
+              >
+                <span>
+                  Cranes In The Sky
+                </span>
+                 
+                Solange
+              </button>,
+              "className": "unselected songs",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <span>
+                    Cranes In The Sky
+                  </span>,
+                  " ",
+                  Array [
+                    "Solange",
+                  ],
+                ],
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Cranes In The Sky",
+                  },
+                  "ref": null,
+                  "rendered": "Cranes In The Sky",
+                  "type": "span",
+                },
+                " ",
+                "Solange",
+              ],
+              "type": "button",
+            },
+            "type": "li",
+          },
+          Object {
+            "instance": null,
+            "key": "top songs 2",
+            "nodeType": "host",
+            "props": Object {
+              "children": <button
+                onClick={[Function]}
+              >
+                <span>
+                  Huron River Drive
+                </span>
+                 
+                Shigeto
+              </button>,
+              "className": "unselected songs",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <span>
+                    Huron River Drive
+                  </span>,
+                  " ",
+                  Array [
+                    "Shigeto",
+                  ],
+                ],
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Huron River Drive",
+                  },
+                  "ref": null,
+                  "rendered": "Huron River Drive",
+                  "type": "span",
+                },
+                " ",
+                "Shigeto",
+              ],
+              "type": "button",
+            },
+            "type": "li",
+          },
+        ],
+        "type": "ol",
+      },
+    ],
+    "type": "div",
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "class",
+      "nodeType": "host",
       "props": Object {
-        "accessToken": "",
-        "loadSongs": [Function],
-        "loadSongsAllTime": [Function],
-        "loadSongsShortTerm": [Function],
-        "store": Object {
-          "clearActions": [Function],
-          "dispatch": [Function],
-          "getActions": [Function],
-          "getState": [Function],
-          "replaceReducer": [Function],
-          "subscribe": [Function],
-        },
-        "storeSubscription": Subscription {
-          "listeners": Object {
-            "clear": [Function],
-            "get": [Function],
-            "notify": [Function],
-            "subscribe": [Function],
-          },
-          "onStateChange": [Function],
-          "parentSub": undefined,
-          "store": Object {
-            "clearActions": [Function],
-            "dispatch": [Function],
-            "getActions": [Function],
-            "getState": [Function],
-            "replaceReducer": [Function],
-            "subscribe": [Function],
-          },
-          "unsubscribe": [Function],
-        },
-        "topSongs": Array [],
-        "topSongsAllTime": Array [],
-        "topSongsShortTerm": Array [],
+        "children": Array [
+          <section>
+            <h4>
+              Edgar the Cat
+            </h4>
+            <img
+              alt="user"
+              src="https://scontent.xx.fbcdn.net/v/t1.0-1/aaaaaaaaaaaaaa558a1aaaaa0aaaaaa5063aaaa4aaaa12218136501_n.jpg?oh=53ef504a0ba139726593f4497886fa16&oe=5A721441"
+            />
+            <p
+              className="user-info"
+            />
+            <p />
+          </section>,
+          <h2>
+             Top 40 
+            <div>
+              <button
+                className={null}
+                onClick={[Function]}
+              >
+                This month
+              </button>
+              <button
+                className={null}
+                onClick={[Function]}
+              >
+                This year
+              </button>
+              <button
+                className={null}
+                onClick={[Function]}
+              >
+                All Time
+              </button>
+            </div>
+          </h2>,
+          <button
+            className="post-btn display-post-btn"
+            onClick={[Function]}
+          >
+            Add to Spotify
+          </button>,
+          <ol>
+            <li
+              className="unselected songs"
+            >
+              <button
+                onClick={[Function]}
+              >
+                <span>
+                  In Da Club
+                </span>
+                 
+                50 Cent
+              </button>
+            </li>
+            <li
+              className="unselected songs"
+            >
+              <button
+                onClick={[Function]}
+              >
+                <span>
+                  Cranes In The Sky
+                </span>
+                 
+                Solange
+              </button>
+            </li>
+            <li
+              className="unselected songs"
+            >
+              <button
+                onClick={[Function]}
+              >
+                <span>
+                  Huron River Drive
+                </span>
+                 
+                Shigeto
+              </button>
+            </li>
+          </ol>,
+        ],
+        "className": "playlist-div",
       },
       "ref": null,
-      "rendered": null,
-      "type": [Function],
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <h4>
+                Edgar the Cat
+              </h4>,
+              <img
+                alt="user"
+                src="https://scontent.xx.fbcdn.net/v/t1.0-1/aaaaaaaaaaaaaa558a1aaaaa0aaaaaa5063aaaa4aaaa12218136501_n.jpg?oh=53ef504a0ba139726593f4497886fa16&oe=5A721441"
+              />,
+              <p
+                className="user-info"
+              />,
+              <p />,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Edgar the Cat",
+              },
+              "ref": null,
+              "rendered": "Edgar the Cat",
+              "type": "h4",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "alt": "user",
+                "src": "https://scontent.xx.fbcdn.net/v/t1.0-1/aaaaaaaaaaaaaa558a1aaaaa0aaaaaa5063aaaa4aaaa12218136501_n.jpg?oh=53ef504a0ba139726593f4497886fa16&oe=5A721441",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "img",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": undefined,
+                "className": "user-info",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "p",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": undefined,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "p",
+            },
+          ],
+          "type": "section",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              null,
+              " Top 40 ",
+              null,
+              <div>
+                <button
+                  className={null}
+                  onClick={[Function]}
+                >
+                  This month
+                </button>
+                <button
+                  className={null}
+                  onClick={[Function]}
+                >
+                  This year
+                </button>
+                <button
+                  className={null}
+                  onClick={[Function]}
+                >
+                  All Time
+                </button>
+              </div>,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            null,
+            " Top 40 ",
+            null,
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <button
+                    className={null}
+                    onClick={[Function]}
+                  >
+                    This month
+                  </button>,
+                  <button
+                    className={null}
+                    onClick={[Function]}
+                  >
+                    This year
+                  </button>,
+                  <button
+                    className={null}
+                    onClick={[Function]}
+                  >
+                    All Time
+                  </button>,
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "This month",
+                    "className": null,
+                    "onClick": [Function],
+                  },
+                  "ref": null,
+                  "rendered": "This month",
+                  "type": "button",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "This year",
+                    "className": null,
+                    "onClick": [Function],
+                  },
+                  "ref": null,
+                  "rendered": "This year",
+                  "type": "button",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "All Time",
+                    "className": null,
+                    "onClick": [Function],
+                  },
+                  "ref": null,
+                  "rendered": "All Time",
+                  "type": "button",
+                },
+              ],
+              "type": "div",
+            },
+          ],
+          "type": "h2",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Add to Spotify",
+            "className": "post-btn display-post-btn",
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": "Add to Spotify",
+          "type": "button",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <li
+                className="unselected songs"
+              >
+                <button
+                  onClick={[Function]}
+                >
+                  <span>
+                    In Da Club
+                  </span>
+                   
+                  50 Cent
+                </button>
+              </li>,
+              <li
+                className="unselected songs"
+              >
+                <button
+                  onClick={[Function]}
+                >
+                  <span>
+                    Cranes In The Sky
+                  </span>
+                   
+                  Solange
+                </button>
+              </li>,
+              <li
+                className="unselected songs"
+              >
+                <button
+                  onClick={[Function]}
+                >
+                  <span>
+                    Huron River Drive
+                  </span>
+                   
+                  Shigeto
+                </button>
+              </li>,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": "top songs 0",
+              "nodeType": "host",
+              "props": Object {
+                "children": <button
+                  onClick={[Function]}
+                >
+                  <span>
+                    In Da Club
+                  </span>
+                   
+                  50 Cent
+                </button>,
+                "className": "unselected songs",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <span>
+                      In Da Club
+                    </span>,
+                    " ",
+                    Array [
+                      "50 Cent",
+                    ],
+                  ],
+                  "onClick": [Function],
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "In Da Club",
+                    },
+                    "ref": null,
+                    "rendered": "In Da Club",
+                    "type": "span",
+                  },
+                  " ",
+                  "50 Cent",
+                ],
+                "type": "button",
+              },
+              "type": "li",
+            },
+            Object {
+              "instance": null,
+              "key": "top songs 1",
+              "nodeType": "host",
+              "props": Object {
+                "children": <button
+                  onClick={[Function]}
+                >
+                  <span>
+                    Cranes In The Sky
+                  </span>
+                   
+                  Solange
+                </button>,
+                "className": "unselected songs",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <span>
+                      Cranes In The Sky
+                    </span>,
+                    " ",
+                    Array [
+                      "Solange",
+                    ],
+                  ],
+                  "onClick": [Function],
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "Cranes In The Sky",
+                    },
+                    "ref": null,
+                    "rendered": "Cranes In The Sky",
+                    "type": "span",
+                  },
+                  " ",
+                  "Solange",
+                ],
+                "type": "button",
+              },
+              "type": "li",
+            },
+            Object {
+              "instance": null,
+              "key": "top songs 2",
+              "nodeType": "host",
+              "props": Object {
+                "children": <button
+                  onClick={[Function]}
+                >
+                  <span>
+                    Huron River Drive
+                  </span>
+                   
+                  Shigeto
+                </button>,
+                "className": "unselected songs",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <span>
+                      Huron River Drive
+                    </span>,
+                    " ",
+                    Array [
+                      "Shigeto",
+                    ],
+                  ],
+                  "onClick": [Function],
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "Huron River Drive",
+                    },
+                    "ref": null,
+                    "rendered": "Huron River Drive",
+                    "type": "span",
+                  },
+                  " ",
+                  "Shigeto",
+                ],
+                "type": "button",
+              },
+              "type": "li",
+            },
+          ],
+          "type": "ol",
+        },
+      ],
+      "type": "div",
     },
   ],
   Symbol(enzyme.__options__): Object {

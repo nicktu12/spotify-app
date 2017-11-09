@@ -9,7 +9,7 @@ import {
   postPlaylist,
 } from './TopSongs-actions';
 
-class TopSongs extends React.Component{
+export class TopSongs extends React.Component{
 
   constructor(){
     super();
