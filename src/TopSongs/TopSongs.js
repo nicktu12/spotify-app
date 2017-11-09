@@ -172,6 +172,8 @@ export class TopSongs extends React.Component{
 
   getSongUriArray = songs => songs.map(song=>(song.uri));
 
+  disableBtn = () => this.refs.btn.setAttribute('disabled', 'disabled');
+
   render(){
     return (   
       <div className='playlist-div'>
@@ -209,7 +211,11 @@ export class TopSongs extends React.Component{
           </div>
         </h2>
         <button 
-          onClick={()=>this.props.postPlaylist(this.props.accessToken, this.props.userInfo.id, this.getSongUriArray(this.props.topSongs))}
+          ref="btn"
+          onClick={()=>{
+            this.props.postPlaylist(this.props.accessToken, this.props.userInfo.id, this.getSongUriArray(this.props.topSongs))
+            this.disableBtn()
+          }}
           className={this.props.match.path === '/top40' ? 'post-btn display-post-btn' : 'post-btn'}
         >
           Add to Spotify

@@ -98,3 +98,7 @@ li span {
 .display-post-btn:hover {
   background-color: $spotify-green-hover;
 }
+
+.display-post-btn:disabled {
+  background-color: $spotify-green-disabled;
+}
