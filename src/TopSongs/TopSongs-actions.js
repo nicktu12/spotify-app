@@ -22,6 +22,6 @@ export const loadSongsAllTime = (token) => {
 export const postPlaylist = (token, id, array) => {
   return {
     type: 'POST_PLAYLIST',
-    payload: {token, id, array}
-  }
-}
+    actionPayload: {token, id, array}
+  };
+};

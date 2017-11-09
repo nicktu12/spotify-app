@@ -160,13 +160,17 @@ export class TopSongs extends React.Component{
 
   renderInfoCardSwitch = (path) => {
     if (path === '/top40') {
-      return this.renderInfoCard(this.props.topSongs[this.state.selected])
+      return this.renderInfoCard(this.props.topSongs[this.state.selected]);
     }
     if (path === '/top40/month') {
-      return this.renderInfoCard(this.props.topSongsShortTerm[this.state.selected])
+      return this.renderInfoCard(
+        this.props.topSongsShortTerm[this.state.selected]
+      );
     }
     if (path === '/top40/alltime') {
-      return this.renderInfoCard(this.props.topSongsAllTime[this.state.selected])
+      return this.renderInfoCard(
+        this.props.topSongsAllTime[this.state.selected]
+      );
     }
   }
 
@@ -213,10 +217,18 @@ export class TopSongs extends React.Component{
         <button 
           ref="btn"
           onClick={()=>{
-            this.props.postPlaylist(this.props.accessToken, this.props.userInfo.id, this.getSongUriArray(this.props.topSongs))
-            this.disableBtn()
+            this.props.postPlaylist(
+              this.props.accessToken, 
+              this.props.userInfo.id, 
+              this.getSongUriArray(this.props.topSongs)
+            );
+            this.disableBtn();
           }}
-          className={this.props.match.path === '/top40' ? 'post-btn display-post-btn' : 'post-btn'}
+          className={
+            this.props.match.path === '/top40' ? 
+              'post-btn display-post-btn' : 
+              'post-btn'
+          }
         >
           Add to Spotify
         </button>
@@ -256,6 +268,7 @@ TopSongs.propTypes = {
   loadSongsAllTime: PropTypes.func,
   history: PropTypes.oneOfType([PropTypes.object]),
   userInfo: PropTypes.object,
+  postPlaylist: PropTypes.func,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(TopSongs);

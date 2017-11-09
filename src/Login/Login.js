@@ -15,7 +15,8 @@ export const Login = () => (
           `?client_id=${spotifyClientId}&` +
           `response_type=code&` + 
           `redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F` +
-          `&scope=user-read-private%20user-read-email%20user-top-read%20playlist-modify-public%20playlist-modify-private` +
+          `&scope=user-read-private%20user-read-email%20` + 
+          `user-top-read%20playlist-modify-public%20playlist-modify-private` +
           `&state=34fFs29kd09`}
         > 
           <button>Login</button>

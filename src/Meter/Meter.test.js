@@ -4,8 +4,8 @@ import { Meter } from './Meter';
 
 describe('Meter test', ()=>{
   it('should match snapshot render', ()=>{
-    const wrapper = shallow(<Meter />)
+    const wrapper = shallow(<Meter />);
 
     expect(wrapper).toMatchSnapshot();
-  })
-})
+  });
+});

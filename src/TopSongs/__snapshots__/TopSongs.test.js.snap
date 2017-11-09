@@ -77,7 +77,6 @@ ShallowWrapper {
           <p
             className="user-info"
           />
-          <p />
         </section>,
         <h2>
            Top 40 
@@ -170,7 +169,6 @@ ShallowWrapper {
             <p
               className="user-info"
             />,
-            <p />,
           ],
         },
         "ref": null,
@@ -205,17 +203,6 @@ ShallowWrapper {
             "props": Object {
               "children": undefined,
               "className": "user-info",
-            },
-            "ref": null,
-            "rendered": null,
-            "type": "p",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": undefined,
             },
             "ref": null,
             "rendered": null,
@@ -342,7 +329,7 @@ ShallowWrapper {
           "className": "post-btn display-post-btn",
           "onClick": [Function],
         },
-        "ref": null,
+        "ref": "btn",
         "rendered": "Add to Spotify",
         "type": "button",
       },
@@ -578,7 +565,6 @@ ShallowWrapper {
             <p
               className="user-info"
             />
-            <p />
           </section>,
           <h2>
              Top 40 
@@ -671,7 +657,6 @@ ShallowWrapper {
               <p
                 className="user-info"
               />,
-              <p />,
             ],
           },
           "ref": null,
@@ -706,17 +691,6 @@ ShallowWrapper {
               "props": Object {
                 "children": undefined,
                 "className": "user-info",
-              },
-              "ref": null,
-              "rendered": null,
-              "type": "p",
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": undefined,
               },
               "ref": null,
               "rendered": null,
@@ -843,7 +817,7 @@ ShallowWrapper {
             "className": "post-btn display-post-btn",
             "onClick": [Function],
           },
-          "ref": null,
+          "ref": "btn",
           "rendered": "Add to Spotify",
           "type": "button",
         },
