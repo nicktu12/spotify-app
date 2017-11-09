@@ -14,11 +14,3 @@ $dark-accent: rgba(152, 131, 121, 1);
 $body-font: 'Roboto', sans-serif; 
 $header-font: 'Work Sans', sans-serif;
 $border-rad: 10px;
-
-@mixin linear-grad($top, $bottom) {
-  background: $top;
-  background: -webkit-linear-gradient($top, $bottom);
-  background: -o-linear-gradient($top, $bottom);
-  background: -moz-linear-gradient($top, $bottom);
-  background: linear-gradient($top, $bottom);
-}
