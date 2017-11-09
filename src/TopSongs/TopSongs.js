@@ -125,12 +125,6 @@ export class TopSongs extends React.Component{
         }
         <p className='user-info'>
           {
-            this.props.userInfo.id &&
-            <span>{ this.props.userInfo.email + ' / ' + this.props.userInfo.id }</span>
-          }
-        </p>
-        <p>
-          {
             this.props.userInfo.followers &&
             <span>
               <span>Followers:</span> <span className='alt-text'>
