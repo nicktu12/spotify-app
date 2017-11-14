@@ -35,7 +35,11 @@ h1 {
   font-size: 40px;
   position: absolute;
   display: inline-block;
-  right: 30px; }
+  right: 30px;
+  transition: all 400ms ease-out; }
+
+h1:hover {
+  text-shadow: 1px 1px #ff9624, 2px 2px #ff9624, 3px 3px #ff9624, 4px 4px #ff9624; }
 
 .App-title {
   font-size: 1.5em; }
