@@ -43,6 +43,14 @@ h1 {
   position: absolute;
   display: inline-block;
   right: 30px;
+  transition: all 400ms ease-out;
+}
+
+h1:hover {
+  text-shadow: 1px 1px $pop-accent,
+    2px 2px $pop-accent,
+    3px 3px $pop-accent,
+    4px 4px $pop-accent
 }
 
 .App-title {
