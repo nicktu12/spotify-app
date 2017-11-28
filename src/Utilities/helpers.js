@@ -147,6 +147,30 @@ const cleanUserRes = (json) => {
   );
 };
 
+export const getRecentlyPlayed = (token) => {
+  return fetch(
+    `https://galvanize-cors-proxy.herokuapp.com/` + 
+    `https://api.spotify.com/v1/me/player/recently-played`, {
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`
+      }
+    }).then(res => res.json())
+    .then(jsonRes => recentlyPlayedCleaner(jsonRes))
+    .catch(error => alert(error));
+};
+
+const recentlyPlayedCleaner = (json) => {
+  console.log('res', json.items)
+  return json.items.map(song =>
+    Object.assign({}, {
+      title: song.track.name,
+      artists: cleanSongArtist(song.track.artists)
+    },
+    )
+  )
+};
+
 export const createPlaylist = actionPayload => {
   return fetch(
     `https://api.spotify.com/v1/users/${actionPayload.id}/playlists`, 

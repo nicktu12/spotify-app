@@ -68,6 +68,14 @@ export class TopArtists extends React.Component{
     <img src={require('../Assets/bars.svg')} alt="loading icon"  />
   )
 
+  renderRecentlyPlayed = (songArray) => (
+    songArray.map(song => (
+      <li>
+        { song.title } - { song.artists }
+      </li> 
+    ))
+  )
+
   renderInfoCard = (info) => (
     info === undefined ?
       <section>
@@ -82,6 +90,10 @@ export class TopArtists extends React.Component{
             <span>
               <span>Followers:</span> <span className='alt-text'>
                 {this.props.userInfo.followers}
+                <h5>Recently Played:</h5>
+                <ol className='recently-played-list'>
+                 { this.renderRecentlyPlayed(this.props.recentlyPlayed) }
+                </ol>
               </span>
             </span>
           }
@@ -131,6 +143,7 @@ const mapStateToProps = store => ({
   topArtists: store.topArtists,
   userInfo: store.userInfo,
   token: store.accessToken,
+  recentlyPlayed: store.recentlyPlayed,
 });
 
 const mapDispatchToProps = dispatch => {

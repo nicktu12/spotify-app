@@ -24,3 +24,12 @@ export function userInfo(state={}, action){
     return state;
   }
 }
+
+export function recentlyPlayed(state={}, action){
+  switch (action.type) {
+  case 'RECENTLY_PLAYED':
+    return action.recentlyPlayed;
+  default:
+    return state;
+  }
+}
