@@ -90,7 +90,8 @@ export class TopArtists extends React.Component{
             <span>
               <span>Followers:</span> <span className='alt-text'>
                 {this.props.userInfo.followers}
-                <ol>
+                <h5>Recently Played:</h5>
+                <ol className='recently-played-list'>
                  { this.renderRecentlyPlayed(this.props.recentlyPlayed) }
                 </ol>
               </span>
