@@ -8,6 +8,7 @@ import {
   getUserInfo, 
   createPlaylist,
   addTracksToPlaylist,
+  getRecentlyPlayed,
 } from './helpers.js';
 
 function* getAccess (action) {
@@ -17,6 +18,8 @@ function* getAccess (action) {
     yield put({type: 'ACCESS_TOKENS', accessToken});
     const topArtists = yield call(getTopArtists, accessToken);
     yield put({type: 'USER_INFO', userInfo});
+    const recentlyPlayed = yield call(getRecentlyPlayed, accessToken);
+    yield put({type: 'RECENTLY_PLAYED', recentlyPlayed});
     yield put({type: 'TOP_ARTISTS', topArtists});
   } catch (error) {
     yield put({type: 'ACCESS_ERROR', message: error.message});
