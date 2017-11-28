@@ -156,7 +156,7 @@ export const getRecentlyPlayed = (token) => {
         'Authorization': `Bearer ${token}`
       }
     }).then(res => res.json())
-    .then(jsonRes => console.log(recentlyPlayedCleaner(jsonRes)))
+    .then(jsonRes => recentlyPlayedCleaner(jsonRes))
     .catch(error => alert(error));
 };
 
