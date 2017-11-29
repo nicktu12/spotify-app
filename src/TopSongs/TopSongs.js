@@ -172,7 +172,9 @@ export class TopSongs extends React.Component{
 
   renderInfoCardSwitch = (path) => {
     if (path === '/top40') {
-      return this.renderInfoCard(this.props.topSongs[this.state.selected]);
+      return this.renderInfoCard(
+        this.props.topSongs[this.state.selected]
+      );
     }
     if (path === '/top40/month') {
       return this.renderInfoCard(
@@ -183,6 +185,33 @@ export class TopSongs extends React.Component{
       return this.renderInfoCard(
         this.props.topSongsAllTime[this.state.selected]
       );
+    }
+  }
+
+  postPlaylist = (path) => {
+    if (path === '/top40') {
+      this.props.postPlaylist(
+        this.props.accessToken, 
+        this.props.userInfo.id, 
+        this.getSongUriArray(this.props.topSongs)
+      );
+      this.disableBtn();
+    }
+    if (path === '/top40/month') {
+      this.props.postPlaylist(
+        this.props.accessToken, 
+        this.props.userInfo.id, 
+        this.getSongUriArray(this.props.topSongsShortTerm)
+      );
+      this.disableBtn();
+    }
+    if (path === '/top40/alltime') {
+      this.props.postPlaylist(
+        this.props.accessToken, 
+        this.props.userInfo.id, 
+        this.getSongUriArray(this.props.topSongsAllTime)
+      );
+      this.disableBtn();
     }
   }
 
@@ -228,19 +257,8 @@ export class TopSongs extends React.Component{
         </h2>
         <button 
           ref="btn"
-          onClick={()=>{
-            this.props.postPlaylist(
-              this.props.accessToken, 
-              this.props.userInfo.id, 
-              this.getSongUriArray(this.props.topSongs)
-            );
-            this.disableBtn();
-          }}
-          className={
-            this.props.match.path === '/top40' ? 
-              'post-btn display-post-btn' : 
-              'post-btn'
-          }
+          onClick={()=>this.postPlaylist(this.props.match.path)}
+          className={'post-btn display-post-btn'}
         >
           Add to Spotify
         </button>
