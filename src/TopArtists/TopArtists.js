@@ -88,13 +88,10 @@ export class TopArtists extends React.Component{
           {
             this.props.userInfo.followers &&
             <span>
-              <span>Followers:</span> <span className='alt-text'>
-                {this.props.userInfo.followers}
-                <h5>Recently Played:</h5>
-                <ol className='recently-played-list'>
-                 { this.renderRecentlyPlayed(this.props.recentlyPlayed) }
-                </ol>
-              </span>
+              <h5>Recently Played</h5>
+              <ol className='recently-played-list'>
+               { this.renderRecentlyPlayed(this.props.recentlyPlayed) }
+              </ol>
             </span>
           }
         </p>

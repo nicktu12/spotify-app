@@ -53,6 +53,8 @@ export class TopSongs extends React.Component{
         >
           <button onClick={()=>this.addSelected(index)}>
             <span>{song.title}</span> {song.artists}
+            <span className='plus-icon'>+</span>
+            <span className='minus-icon'>-</span>
           </button>
         </li>
       ));
@@ -115,6 +117,14 @@ export class TopSongs extends React.Component{
     return window.location.href.includes(path);
   }
 
+  renderRecentlyPlayed = (songArray) => (
+    songArray.map(song => (
+      <li>
+        { song.title } - { song.artists }
+      </li> 
+    ))
+  )
+
   renderInfoCard = (info) => (
     info === undefined ?
       <section>
@@ -127,13 +137,15 @@ export class TopSongs extends React.Component{
           {
             this.props.userInfo.followers &&
             <span>
-              <span>Followers:</span> <span className='alt-text'>
-                {this.props.userInfo.followers}
-              </span>
+              <h5>Recently Played</h5>
+              <ol className='recently-played-list'>
+               { this.renderRecentlyPlayed(this.props.recentlyPlayed) }
+              </ol>
             </span>
           }
         </p>
       </section>
+
       :
       <section>
         <h4>{info.title}</h4>
@@ -246,6 +258,7 @@ const mapStateToProps = store => ({
   topSongsShortTerm: store.topSongsShortTerm,
   topSongsAllTime: store.topSongsAllTime,
   userInfo: store.userInfo,
+  recentlyPlayed: store.recentlyPlayed,
 });
 
 const mapDispatchToProps = dispatch => {
