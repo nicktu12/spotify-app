@@ -70,6 +70,19 @@ h2 div button:hover {
   color: #E1B484;
 }
 
+.plus-icon, .minus-icon {
+  display: none;
+  color: $light-3;
+}
+
+.unselected:hover .plus-icon {
+	display: inline;
+}
+
+.selected:hover .minus-icon {
+	display: inline;
+}
+
 li span {
 	color: $white;
 	font-size: 20px;
@@ -101,4 +114,27 @@ li span {
 
 .display-post-btn:disabled {
   background-color: $spotify-green-disabled;
+}
+
+span .recently-played-list {
+  padding-left: initial;
+  list-style-position: inside;
+  background-color: initial;
+  height: initial;
+}
+
+h5 {
+  font-size: 16px;
+  text-align: center;
+}
+
+.recently-played-list li {
+  height: auto;
+  font-size: 12px;
+  font-family: $body-font; 
+}
+
+.recently-played-list li:hover {
+  background-color: initial;
+  border-bottom: none;
 }
