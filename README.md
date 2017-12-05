@@ -4,16 +4,39 @@ Statify is an application build to display a Spotify user's listening statistics
 
 ![statify giphy](https://user-images.githubusercontent.com/26471447/32617849-58a3fa90-c533-11e7-85ff-1a921a268e9e.gif)
 
-## Stack
+## Getting Started
 
-Statify was build using React, Redux and Router, with Sagas-Redux handling the asynchronous function calls to the Spotify API.
+Clone down this repository and install npm. Execute the following command in your CLI.
 
-## In Progress
+```
+npm install
+```
+API calls to the Spotify database are accomplished with a secret application key that is hidden from this public repository.
 
--Add recently played to user info card
--Sagas testing
--Responsiveness
--Refactor
--Dive into deeper analytics
+## Running the tests
 
-This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
+All React components, Redux actions and reducers and javascript functions are tested using the command
+
+```
+npm run test
+```
+
+## Built With
+
+* [React](https://reactjs.org/) - The javascript framework used
+* [Redux](https://redux.js.org/) - State management for React
+* [Router](https://github.com/reactjs/react-router-redux) - URL Routing for React
+* [Sagas](https://redux-saga.js.org/) - Redux Middleware management
+* This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
+
+## Authors
+
+* **Nick Teets** [Github](https://github.com/nicktu12)
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
+## Acknowledgments
+
+* Inspiration - [Visualify](https://visualify.io/)
