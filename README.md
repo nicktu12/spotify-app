@@ -29,6 +29,12 @@ npm run test
 * [Sagas](https://redux-saga.js.org/) - Redux Middleware management
 * This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
+## Extensions
+
+* Build backend with Node.js and Express
+* Integrate additional streaming services
+* Explore Spotify musical analysis api
+
 ## Authors
 
 * **Nick Teets** [Github](https://github.com/nicktu12)
