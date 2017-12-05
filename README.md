@@ -13,6 +13,11 @@ npm install
 ```
 API calls to the Spotify database are accomplished with a secret application key that is hidden from this public repository.
 
+To start the application on localhost:3000, enter the following command. 
+```
+npm start
+```
+
 ## Running the tests
 
 All React components, Redux actions and reducers and javascript functions are tested using the command
