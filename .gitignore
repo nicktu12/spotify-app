@@ -24,9 +24,10 @@ yarn-error.log*
 apiKey.js
 
 # ignore swap files
-
 *.swp
 
 # ignore css files (will be written on startup)
-
 src/**/*.css
+
+#ignore vscode config
+.vscode
