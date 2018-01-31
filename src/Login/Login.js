@@ -11,14 +11,7 @@ export const Login = () => (
       </p>
       <p>
         <a href={
-          `https://accounts.spotify.com/authorize/` + 
-          `?client_id=${spotifyClientId}&` +
-          `response_type=code&` + 
-          `redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F` +
-          `&scope=user-read-private%20user-read-email%20` + 
-          `user-top-read%20playlist-modify-public%20playlist-modify-private` +
-          `%20user-read-recently-played` +
-          `&state=34fFs29kd09`}
+          `http://localhost:4000/login`}
         > 
           <button>Login</button>
         </a>
