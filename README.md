@@ -1,6 +1,6 @@
 # Statify
 
-Statify is an application build to display a Spotify user's listening statistics on a visual and interactive dashboard. Using the Spotify API, users are able to see different data sets over different periods of time. Statify was build using React, Redux and Router, with asynchronous API calls managed through Redux-Sagas. 
+Statify is an application built to display a Spotify user's listening statistics on a visual and interactive dashboard. Using the Spotify API, users are able to see different data sets over different periods of time. Statify was build using React, Redux and Router, with asynchronous API calls managed through Redux-Sagas. 
 
 ![statify](https://user-images.githubusercontent.com/26471447/33585724-ed249c3a-d922-11e7-9782-0d7ff1ce8545.gif)
 
