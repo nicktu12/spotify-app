@@ -10,40 +10,41 @@ export const getAccessToken = (authCode) => {
     },
     body: JSON.stringify({authCode}),
   }).then(res => res.json())
-    .then(jsonRes => accessTokenCleaner(jsonRes))
+    .then(res => accessTokenCleaner(res))
     .catch(error => alert(error));
 };
 
-const accessTokenCleaner = (jsonResponse) => {
-  return jsonResponse.body.access_token;
+const accessTokenCleaner = (response) => {
+  console.log(response.body)
+  return response.body.access_token;
 };
 
-export const getUserInfo = (token) => {
-  return fetch(
-    `https://galvanize-cors-proxy.herokuapp.com/` + 
-    `https://api.spotify.com/v1/me/`, {
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`
-      }
-    }).then(res => res.json())
-    .then(jsonRes => cleanUserRes(jsonRes))
-    .catch(error => alert(error));
-};
+// export const getUserInfo = (token) => {
+//   return fetch(
+//     `https://galvanize-cors-proxy.herokuapp.com/` + 
+//     `https://api.spotify.com/v1/me/`, {
+//       headers: {
+//         'Content-Type': 'application/json',
+//         'Authorization': `Bearer ${token}`
+//       }
+//     }).then(res => res.json())
+//     .then(jsonRes => cleanUserRes(jsonRes))
+//     .catch(error => alert(error));
+// };
 
-const cleanUserRes = (json) => {
-  return Object.assign(
-    {}, 
-    {
-      name: json.display_name, 
-      email: json.email, 
-      image: json.images[0].url,
-      id: json.id,
-      followers: json.followers.total,
-      plan: json.product,
-    },
-  );
-};
+// const cleanUserRes = (json) => {
+//   return Object.assign(
+//     {}, 
+//     {
+//       name: json.display_name, 
+//       email: json.email, 
+//       image: json.images[0].url,
+//       id: json.id,
+//       followers: json.followers.total,
+//       plan: json.product,
+//     },
+//   );
+// };
 
 export const getTopArtists = (token) => {
   return fetch(
