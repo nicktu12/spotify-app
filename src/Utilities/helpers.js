@@ -46,30 +46,30 @@ const accessTokenCleaner = (response) => {
 //   );
 // };
 
-export const getTopArtists = (token) => {
-  return fetch(
-    `https://galvanize-cors-proxy.herokuapp.com/` + 
-    `https://api.spotify.com/v1/me/top/artists?limit=100`, {
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`
-      }
-    }).then(res => res.json())
-    .then(jsonRes => cleanArtistRes(jsonRes))
-    .catch(error => alert(error));
-};
+// export const getTopArtists = (token) => {
+//   return fetch(
+//     `https://galvanize-cors-proxy.herokuapp.com/` + 
+//     `https://api.spotify.com/v1/me/top/artists?limit=100`, {
+//       headers: {
+//         'Content-Type': 'application/json',
+//         'Authorization': `Bearer ${token}`
+//       }
+//     }).then(res => res.json())
+//     .then(jsonRes => cleanArtistRes(jsonRes))
+//     .catch(error => alert(error));
+// };
 
-const cleanArtistRes = (json)  => {
-  return json.items.map(item => 
-    Object.assign({}, {
-      name: item.name, 
-      photo: item.images[0], 
-      followers: item.followers.total.toLocaleString(), 
-      popularity: item.popularity,
-      genres: cleanStringArray(item.genres)
-    })  
-  );
-};
+// const cleanArtistRes = (json)  => {
+//   return json.items.map(item => 
+//     Object.assign({}, {
+//       name: item.name, 
+//       photo: item.images[0], 
+//       followers: item.followers.total.toLocaleString(), 
+//       popularity: item.popularity,
+//       genres: cleanStringArray(item.genres)
+//     })  
+//   );
+// };
 
 export const getTopSongs = (token) => {
   return fetch(
