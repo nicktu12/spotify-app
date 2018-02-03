@@ -14,6 +14,7 @@ import {
 function* getAccess (action) {
   try {
     const accessToken = yield call(getAccessToken, action.code);  
+    // we are here!
     const userInfo = yield call(getUserInfo, accessToken);
     const topArtists = yield call(getTopArtists, accessToken);
     const recentlyPlayed = yield call(getRecentlyPlayed, accessToken);

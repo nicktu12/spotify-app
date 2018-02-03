@@ -118,8 +118,8 @@ export class TopSongs extends React.Component{
   }
 
   renderRecentlyPlayed = (songArray) => (
-    songArray.map(song => (
-      <li>
+    songArray.map((song, index) => (
+      <li key={index + song.title}>
         { song.title } - { song.artists }
       </li> 
     ))
@@ -139,7 +139,7 @@ export class TopSongs extends React.Component{
             <span>
               <h5>Recently Played</h5>
               <ol className='recently-played-list'>
-               { this.renderRecentlyPlayed(this.props.recentlyPlayed) }
+                { this.renderRecentlyPlayed(this.props.recentlyPlayed) }
               </ol>
             </span>
           }
@@ -292,6 +292,9 @@ TopSongs.propTypes = {
   accessToken: PropTypes.string,
   match: PropTypes.object,
   topSongsShortTerm: PropTypes.arrayOf(PropTypes.object),
+  recentlyPlayed: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.object), PropTypes.object
+  ]),
   topSongs: PropTypes.arrayOf(PropTypes.object),
   topSongsAllTime: PropTypes.arrayOf(PropTypes.object),
   loadSongs: PropTypes.func,
