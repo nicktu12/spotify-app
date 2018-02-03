@@ -99,7 +99,10 @@ export class TopArtists extends React.Component{
       :
       <section>
         <h4>{info.name}</h4>
-        <img src={info.photo.url} alt={info.name + ' photo'} />
+        {
+          info.photo &&
+          <img src={info.photo.url} alt={info.name + ' photo'} />
+        }
         <div>
           <p>
             <span>Followers:</span> <span className='alt-text'>
