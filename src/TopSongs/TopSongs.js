@@ -187,7 +187,8 @@ export class TopSongs extends React.Component{
       this.props.postPlaylist(
         this.props.accessToken, 
         this.props.userInfo.id, 
-        this.getSongUriArray(this.props.topSongs)
+        this.getSongUriArray(this.props.topSongs[1]),
+        '(for this year)'
       );
       this.disableBtn();
     }
@@ -195,7 +196,8 @@ export class TopSongs extends React.Component{
       this.props.postPlaylist(
         this.props.accessToken, 
         this.props.userInfo.id, 
-        this.getSongUriArray(this.props.topSongsShortTerm)
+        this.getSongUriArray(this.props.topSongs[0]),
+        '(for this month)'
       );
       this.disableBtn();
     }
@@ -203,7 +205,8 @@ export class TopSongs extends React.Component{
       this.props.postPlaylist(
         this.props.accessToken, 
         this.props.userInfo.id, 
-        this.getSongUriArray(this.props.topSongsAllTime)
+        this.getSongUriArray(this.props.topSongs[2]),
+        '(of all time!)'
       );
       this.disableBtn();
     }
@@ -276,7 +279,7 @@ const mapStateToProps = store => ({
 const mapDispatchToProps = dispatch => {
   return {
     loadSongs: (token) => dispatch(loadSongsAction(token)),
-    postPlaylist: (token, id, array) => dispatch(postPlaylist(token, id, array))
+    postPlaylist: (token, id, array, message) => dispatch(postPlaylist(token, id, array, message))
   };
 };
 

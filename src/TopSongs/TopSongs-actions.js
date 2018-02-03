@@ -5,9 +5,9 @@ export const loadSongsAction = (token) => {
   };
 };
 
-export const postPlaylist = (token, id, array) => {
+export const postPlaylist = (token, id, array, message) => {
   return {
     type: 'POST_PLAYLIST',
-    actionPayload: {token, id, array}
+    actionPayload: {token, id, array, message}
   };
 };

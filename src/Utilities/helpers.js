@@ -169,9 +169,9 @@ export const createPlaylist = actionPayload => {
     `https://api.spotify.com/v1/users/${actionPayload.id}/playlists`, 
     {
       body: JSON.stringify({
-        name: `${actionPayload.id}'s Top 40`,
+        name: `${actionPayload.id}'s Top 40 ${actionPayload.message}`,
         description: 
-        `Your Top 40 tracks from this year. Brought to you by Statify.`,
+        `Your Top 40 tracks ${actionPayload.message}. Brought to you by Statify.`,
       }),
       headers: {
         "Accept": "application/json",
