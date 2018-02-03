@@ -7,16 +7,12 @@ import {
 } from '../Login/Access-reducer';
 import { 
   topSongs, 
-  topSongsShortTerm, 
-  topSongsAllTime, 
 } from '../TopSongs/TopSongs-reducer';
 
 export default combineReducers({
   accessToken, 
   topArtists,
   topSongs,
-  topSongsShortTerm,
-  topSongsAllTime,
   userInfo,
   recentlyPlayed,
 });

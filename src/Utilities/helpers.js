@@ -79,7 +79,7 @@ export const getTopSongs = (token) => {
     },
     body: JSON.stringify({token}),
   }).then(res => res.json())
-    .then(res => {console.log(res)})
+    .then(res => res)
     .catch(error => alert(error));
 };
 
