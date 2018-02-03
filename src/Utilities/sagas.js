@@ -2,8 +2,8 @@ import { call, put, takeLatest } from 'redux-saga/effects';
 import { 
   getAccessToken,
   getTopSongs, 
-  getTopSongsShortTerm, 
-  getTopSongsAllTime, 
+  // getTopSongsShortTerm, 
+  // getTopSongsAllTime, 
   createPlaylist,
   addTracksToPlaylist,
 } from './helpers.js';
@@ -33,23 +33,23 @@ function* getSongs (action) {
   }
 }
 
-function* getSongsShortTerm (action) {
-  try {
-    const topSongsShortTerm = yield call(getTopSongsShortTerm, action.token);
-    yield put({type: 'TOP_SONGS_SHORT_TERM', topSongsShortTerm});
-  } catch (error) {
-    yield put({type: 'GET_SONGS_SHORT_TERM_ERROR', message: error.message});  
-  }
-}
+// function* getSongsShortTerm (action) {
+//   try {
+//     const topSongsShortTerm = yield call(getTopSongsShortTerm, action.token);
+//     yield put({type: 'TOP_SONGS_SHORT_TERM', topSongsShortTerm});
+//   } catch (error) {
+//     yield put({type: 'GET_SONGS_SHORT_TERM_ERROR', message: error.message});  
+//   }
+// }
 
-function* getSongsAllTime (action) {
-  try {
-    const topSongsAllTime = yield call(getTopSongsAllTime, action.token);
-    yield put({type: 'TOP_SONGS_ALL_TIME', topSongsAllTime});
-  } catch (error) {
-    yield put({type: 'GET_SONGS_ALL_TIME_ERROR', message: error.message});
-  } 
-}
+// function* getSongsAllTime (action) {
+//   try {
+//     const topSongsAllTime = yield call(getTopSongsAllTime, action.token);
+//     yield put({type: 'TOP_SONGS_ALL_TIME', topSongsAllTime});
+//   } catch (error) {
+//     yield put({type: 'GET_SONGS_ALL_TIME_ERROR', message: error.message});
+//   } 
+// }
 
 function* postPlaylistToProfile (action) {
   try {
@@ -68,13 +68,13 @@ function* listenForLoadSongs() {
   yield takeLatest('LOAD_SONGS', getSongs);
 }
 
-function* listenForLoadSongsShortTerm() {
-  yield takeLatest('LOAD_SONGS_SHORT_TERM', getSongsShortTerm);
-}
+// function* listenForLoadSongsShortTerm() {
+//   yield takeLatest('LOAD_SONGS_SHORT_TERM', getSongsShortTerm);
+// }
 
-function* listenForLoadSongsAllTime() {
-  yield takeLatest('LOAD_SONGS_ALL_TIME', getSongsAllTime);
-}
+// function* listenForLoadSongsAllTime() {
+//   yield takeLatest('LOAD_SONGS_ALL_TIME', getSongsAllTime);
+// }
 
 function* listenForPostPlaylist() {
   yield takeLatest('POST_PLAYLIST', postPlaylistToProfile);
@@ -83,7 +83,7 @@ function* listenForPostPlaylist() {
 export default [
   listenForAuth,
   listenForLoadSongs,
-  listenForLoadSongsShortTerm,
-  listenForLoadSongsAllTime,
+  // listenForLoadSongsShortTerm,
+  // listenForLoadSongsAllTime,
   listenForPostPlaylist,
 ];

@@ -3,7 +3,7 @@ export const authCodeCleaner = (url) => {
 };
 
 export const getAccessToken = (authCode) => {
-  return fetch(`http://localhost:4000/top-songs`, {
+  return fetch(`http://localhost:4000/top-artists`, {
     method: 'POST',
     headers: {
       'Content-type': 'application/json',
@@ -72,62 +72,74 @@ export const getAccessToken = (authCode) => {
 // };
 
 export const getTopSongs = (token) => {
-  return fetch(
-    `https://galvanize-cors-proxy.herokuapp.com/` + 
-    `https://api.spotify.com/v1/me/top/tracks?limit=40`, {
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`
-      }
-    }).then(res => res.json())
-    .then(jsonRes => cleanSongRes(jsonRes))
+  return fetch(`http://localhost:4000/top-songs`, {
+    method: 'POST',
+    headers: {
+      'Content-type': 'application/json',
+    },
+    body: JSON.stringify({token}),
+  }).then(res => res.json())
+    .then(res => {console.log(res)})
     .catch(error => alert(error));
 };
 
-export const getTopSongsShortTerm = (token) => {
-  return fetch(
-    `https://galvanize-cors-proxy.herokuapp.com/` + 
-    `https://api.spotify.com/v1/me/top/tracks?limit=40&time_range=short_term`, {
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`
-      }
-    }).then(res => res.json())
-    .then(jsonRes => cleanSongRes(jsonRes))
-    .catch(error => alert(error));
-};
+// export const getTopSongs = (token) => {
+//   return fetch(
+//     `https://galvanize-cors-proxy.herokuapp.com/` + 
+//     `https://api.spotify.com/v1/me/top/tracks?limit=40`, {
+//       headers: {
+//         'Content-Type': 'application/json',
+//         'Authorization': `Bearer ${token}`
+//       }
+//     }).then(res => res.json())
+//     .then(jsonRes => cleanSongRes(jsonRes))
+//     .catch(error => alert(error));
+// };
 
-export const getTopSongsAllTime = (token) => {
-  return fetch(
-    `https://galvanize-cors-proxy.herokuapp.com/` + 
-    `https://api.spotify.com/v1/me/top/tracks?limit=40&time_range=long_term`, {
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`
-      }
-    }).then(res => res.json())
-    .then(jsonRes => cleanSongRes(jsonRes))
-    .catch(error => alert(error));
-};
+// export const getTopSongsShortTerm = (token) => {
+//   return fetch(
+//     `https://galvanize-cors-proxy.herokuapp.com/` + 
+//     `https://api.spotify.com/v1/me/top/tracks?limit=40&time_range=short_term`, {
+//       headers: {
+//         'Content-Type': 'application/json',
+//         'Authorization': `Bearer ${token}`
+//       }
+//     }).then(res => res.json())
+//     .then(jsonRes => cleanSongRes(jsonRes))
+//     .catch(error => alert(error));
+// };
 
-const cleanSongRes = (json) => {
-  return json.items.map(song => 
-    Object.assign({}, {
-      title: song.name, 
-      artists: cleanSongArtist(song.artists),
-      album: song.album.name,
-      image: song.album.images[0].url,
-      popularity: song.popularity,
-      uri: song.uri,
-    })
-  );
-};
+// export const getTopSongsAllTime = (token) => {
+//   return fetch(
+//     `https://galvanize-cors-proxy.herokuapp.com/` + 
+//     `https://api.spotify.com/v1/me/top/tracks?limit=40&time_range=long_term`, {
+//       headers: {
+//         'Content-Type': 'application/json',
+//         'Authorization': `Bearer ${token}`
+//       }
+//     }).then(res => res.json())
+//     .then(jsonRes => cleanSongRes(jsonRes))
+//     .catch(error => alert(error));
+// };
 
-const cleanSongArtist = (array) => {
-  return cleanStringArray(array.map(artist => artist.name));
-};
+// const cleanSongRes = (json) => {
+//   return json.items.map(song => 
+//     Object.assign({}, {
+//       title: song.name, 
+//       artists: cleanSongArtist(song.artists),
+//       album: song.album.name,
+//       image: song.album.images[0].url,
+//       popularity: song.popularity,
+//       uri: song.uri,
+//     })
+//   );
+// };
 
-const cleanStringArray = (array) => array.join(', ');
+// const cleanSongArtist = (array) => {
+//   return cleanStringArray(array.map(artist => artist.name));
+// };
+
+// const cleanStringArray = (array) => array.join(', ');
 
 // export const getRecentlyPlayed = (token) => {
 //   return fetch(
