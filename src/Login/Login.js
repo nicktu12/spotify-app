@@ -1,5 +1,4 @@
 import React from 'react';
-import { spotifyClientId } from '../Utilities/apiKey';
 
 export const Login = () => (
   <div className='login-div'>

@@ -69,8 +69,8 @@ export class TopArtists extends React.Component{
   )
 
   renderRecentlyPlayed = (songArray) => (
-    songArray.map(song => (
-      <li>
+    songArray.map((song, index) => (
+      <li key={index + song.title}>
         { song.title } - { song.artists }
       </li> 
     ))
@@ -90,7 +90,7 @@ export class TopArtists extends React.Component{
             <span>
               <h5>Recently Played</h5>
               <ol className='recently-played-list'>
-               { this.renderRecentlyPlayed(this.props.recentlyPlayed) }
+                { this.renderRecentlyPlayed(this.props.recentlyPlayed) }
               </ol>
             </span>
           }
@@ -151,6 +151,9 @@ const mapDispatchToProps = dispatch => {
 
 TopArtists.propTypes = {
   authCodeToSagas: PropTypes.func,
+  recentlyPlayed: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.object), PropTypes.object
+  ]),
   token: PropTypes.string,
   history: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
   topArtists: PropTypes.arrayOf(PropTypes.object),
