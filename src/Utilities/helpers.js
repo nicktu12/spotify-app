@@ -165,42 +165,56 @@ export const getTopSongs = (token) => {
 // };
 
 export const createPlaylist = actionPayload => {
-  return fetch(
-    `https://api.spotify.com/v1/users/${actionPayload.id}/playlists`, 
-    {
-      body: JSON.stringify({
-        name: `${actionPayload.id}'s Top 40 ${actionPayload.message}`,
-        description: 
-        `Your Top 40 tracks ${actionPayload.message}. Brought to you by Statify.`,
-      }),
-      headers: {
-        "Accept": "application/json",
-        "Authorization": `Bearer ${actionPayload.token}`,
-        "Content-Type": "application/json"
-      },
-      method: "POST"
-    })
-    .then(res=>res.json())
-    .then(res=>res.id)
-    .catch(error => alert(error));
-};
+  console.log(actionPayload)
+  return fetch (`http://localhost:4000/post-playlist`, {
+    headers: {
+      'Content-type': 'application/json',
+    },
+    method: 'POST',
+    body: JSON.stringify(actionPayload)
+  })
+  .then(res => res.json())
+  .then(res => res)
+  .catch(error => alert(error));
+}
 
-export const addTracksToPlaylist = (playlistId, action) => {
-  return fetch(
-    `https://api.spotify.com/v1/users/` + 
-    `${action.id}/playlists/${playlistId}/tracks`, 
-    {
-      body: JSON.stringify({
-        uris: action.array,
-      }),
-      headers: {
-        "Accept": "application/json",
-        "Authorization": `Bearer ${action.token}`,
-        "Content-Type": "application/json"
-      },
-      method: "POST"
-    })
-    .then(res=>res.json())
-    .then(res=>res.id)
-    .catch(error => alert(error));
-};
+// export const createPlaylist = actionPayload => {
+//   return fetch(
+//     `https://api.spotify.com/v1/users/${actionPayload.id}/playlists`, 
+//     {
+//       body: JSON.stringify({
+//         name: `${actionPayload.id}'s Top 40 ${actionPayload.message}`,
+//         description: 
+//         `Your Top 40 tracks ${actionPayload.message}. Brought to you by Statify.`,
+//       }),
+//       headers: {
+//         "Accept": "application/json",
+//         "Authorization": `Bearer ${actionPayload.token}`,
+//         "Content-Type": "application/json"
+//       },
+//       method: "POST"
+//     })
+//     .then(res=>res.json())
+//     .then(res=>res.id)
+//     .catch(error => alert(error));
+// };
+
+// export const addTracksToPlaylist = (playlistId, action) => {
+//   return fetch(
+//     `https://api.spotify.com/v1/users/` + 
+//     `${action.id}/playlists/${playlistId}/tracks`, 
+//     {
+//       body: JSON.stringify({
+//         uris: action.array,
+//       }),
+//       headers: {
+//         "Accept": "application/json",
+//         "Authorization": `Bearer ${action.token}`,
+//         "Content-Type": "application/json"
+//       },
+//       method: "POST"
+//     })
+//     .then(res=>res.json())
+//     .then(res=>res.id)
+//     .catch(error => alert(error));
+// };

@@ -6,13 +6,15 @@ import {
   recentlyPlayed,
 } from '../Login/Access-reducer';
 import { 
-  topSongs, 
+  topSongs,
+  postPlaylist,
 } from '../TopSongs/TopSongs-reducer';
 
 export default combineReducers({
   accessToken, 
   topArtists,
   topSongs,
+  postPlaylist,
   userInfo,
   recentlyPlayed,
 });

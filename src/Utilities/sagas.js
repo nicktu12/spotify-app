@@ -3,7 +3,7 @@ import {
   getAccessToken,
   getTopSongs, 
   createPlaylist,
-  addTracksToPlaylist,
+  // addTracksToPlaylist,
 } from './helpers.js';
 
 function* getAccessAndInitialData (action) {
@@ -34,7 +34,7 @@ function* getSongs (action) {
 function* postPlaylistToProfile (action) {
   try {
     const playlistId = yield call(createPlaylist, action.actionPayload);
-    yield call(addTracksToPlaylist, playlistId, action.actionPayload);
+    yield put({type: 'POST_PLAYLIST_SUCCESS', playlistId});
   } catch (error) {
     yield put({type: 'POST_PLAYLIST_ERROR', message: error.message});
   }
