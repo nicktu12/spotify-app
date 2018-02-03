@@ -4,7 +4,7 @@ import {
   topArtists, 
   userInfo,
   recentlyPlayed,
-} from '../Login/Login-reducer';
+} from '../Login/Access-reducer';
 import { 
   topSongs, 
   topSongsShortTerm, 

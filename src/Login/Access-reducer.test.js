@@ -1,4 +1,4 @@
-import { accessToken, topArtists, userInfo } from './Login-reducer';
+import { accessToken, topArtists, userInfo } from './Access-reducer';
 import { 
   mockAccessToken, 
   mockTopArtists, 

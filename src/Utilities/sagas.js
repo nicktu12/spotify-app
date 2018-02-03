@@ -1,27 +1,20 @@
 import { call, put, takeLatest } from 'redux-saga/effects';
 import { 
   getAccessToken,
-  getTopArtists, 
   getTopSongs, 
   getTopSongsShortTerm, 
   getTopSongsAllTime, 
-  getUserInfo, 
   createPlaylist,
   addTracksToPlaylist,
-  getRecentlyPlayed,
 } from './helpers.js';
 
-function* getAccessArtistsRecent (action) {
+function* getAccessAndInitialData (action) {
   try {
     const initialResponse = yield call(getAccessToken, action.code);  
     const accessToken = initialResponse.access_token;
     const recentlyPlayed = initialResponse.recentlyPlayed;
     const topArtists = initialResponse.topArtists;
     const userInfo = initialResponse.userInfo;
-    // const userInfo = yield call(getUserInfo, accessToken);
-    // const topArtists = yield call(getTopArtists, accessToken);
-    // we are here!
-    // const recentlyPlayed = yield call(getRecentlyPlayed, accessToken);
     yield put({type: 'ACCESS_TOKENS', accessToken});
     yield put({type: 'RECENTLY_PLAYED', recentlyPlayed});
     yield put({type: 'TOP_ARTISTS', topArtists});
@@ -68,7 +61,7 @@ function* postPlaylistToProfile (action) {
 }
 
 function* listenForAuth() {
-  yield takeLatest('AUTH_CODE', getAccessArtistsRecent);
+  yield takeLatest('AUTH_CODE', getAccessAndInitialData);
 }
 
 function* listenForLoadSongs() {
