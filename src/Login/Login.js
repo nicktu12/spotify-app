@@ -9,10 +9,7 @@ export const Login = () => (
         please sign in to Spotify below
       </p>
       <p>
-        <a href={
-          `http://localhost:4000/login`
-        }
-        > 
+        <a href={`http://localhost:4000/login`}> 
           <button>Login</button>
         </a>
       </p>
