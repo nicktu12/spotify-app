@@ -10,14 +10,14 @@ export const getAccessToken = (authCode) => {
     },
     body: JSON.stringify({authCode}),
   }).then(res => res.json())
-    .then(res => accessTokenCleaner(res))
+    .then(res => res.body)
     .catch(error => alert(error));
 };
 
-const accessTokenCleaner = (response) => {
-  console.log(response.body)
-  return response.body.access_token;
-};
+// const accessTokenCleaner = (response) => {
+//   console.log(response.body)
+//   return response.body;
+// };
 
 // export const getUserInfo = (token) => {
 //   return fetch(
@@ -129,28 +129,28 @@ const cleanSongArtist = (array) => {
 
 const cleanStringArray = (array) => array.join(', ');
 
-export const getRecentlyPlayed = (token) => {
-  return fetch(
-    `https://galvanize-cors-proxy.herokuapp.com/` + 
-    `https://api.spotify.com/v1/me/player/recently-played`, {
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`
-      }
-    }).then(res => res.json())
-    .then(jsonRes => recentlyPlayedCleaner(jsonRes))
-    .catch(error => alert(error));
-};
+// export const getRecentlyPlayed = (token) => {
+//   return fetch(
+//     `https://galvanize-cors-proxy.herokuapp.com/` + 
+//     `https://api.spotify.com/v1/me/player/recently-played`, {
+//       headers: {
+//         'Content-Type': 'application/json',
+//         'Authorization': `Bearer ${token}`
+//       }
+//     }).then(res => res.json())
+//     .then(jsonRes => recentlyPlayedCleaner(jsonRes))
+//     .catch(error => alert(error));
+// };
 
-const recentlyPlayedCleaner = (json) => {
-  return json.items.map(song =>
-    Object.assign({}, {
-      title: song.track.name,
-      artists: cleanSongArtist(song.track.artists)
-    },
-    )
-  );
-};
+// const recentlyPlayedCleaner = (json) => {
+//   return json.items.map(song =>
+//     Object.assign({}, {
+//       title: song.track.name,
+//       artists: cleanSongArtist(song.track.artists)
+//     },
+//     )
+//   );
+// };
 
 export const createPlaylist = actionPayload => {
   return fetch(

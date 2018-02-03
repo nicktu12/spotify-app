@@ -11,17 +11,21 @@ import {
   getRecentlyPlayed,
 } from './helpers.js';
 
-function* getAccess (action) {
+function* getAccessArtistsRecent (action) {
   try {
-    const accessToken = yield call(getAccessToken, action.code);  
+    const initialResponse = yield call(getAccessToken, action.code);  
+    const accessToken = initialResponse.access_token;
+    const recentlyPlayed = initialResponse.recentlyPlayed;
+    const topArtists = initialResponse.topArtists;
+    const userInfo = initialResponse.userInfo;
     // const userInfo = yield call(getUserInfo, accessToken);
     // const topArtists = yield call(getTopArtists, accessToken);
     // we are here!
     // const recentlyPlayed = yield call(getRecentlyPlayed, accessToken);
     yield put({type: 'ACCESS_TOKENS', accessToken});
-    // yield put({type: 'RECENTLY_PLAYED', recentlyPlayed});
-    // yield put({type: 'TOP_ARTISTS', topArtists});
-    // yield put({type: 'USER_INFO', userInfo});
+    yield put({type: 'RECENTLY_PLAYED', recentlyPlayed});
+    yield put({type: 'TOP_ARTISTS', topArtists});
+    yield put({type: 'USER_INFO', userInfo});
   } catch (error) {
     yield put({type: 'ACCESS_ERROR', message: error.message});
   }
@@ -64,7 +68,7 @@ function* postPlaylistToProfile (action) {
 }
 
 function* listenForAuth() {
-  yield takeLatest('AUTH_CODE', getAccess);
+  yield takeLatest('AUTH_CODE', getAccessArtistsRecent);
 }
 
 function* listenForLoadSongs() {
