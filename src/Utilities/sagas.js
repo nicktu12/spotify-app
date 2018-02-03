@@ -13,6 +13,7 @@ import {
 
 function* getAccess (action) {
   try {
+    // we are here!
     const accessToken = yield call(getAccessToken, action.code);  
     const userInfo = yield call(getUserInfo, accessToken);
     const topArtists = yield call(getTopArtists, accessToken);

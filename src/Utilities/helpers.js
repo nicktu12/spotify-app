@@ -5,33 +5,44 @@ export const authCodeCleaner = (url) => {
 };
 
 export const getAccessToken = (authCode) => {
-  const formData = {
-    'grant_type': 'authorization_code',
-    'code': authCode,
-    'redirect_uri': 'http://localhost:3000/',
-    'client_id': spotifyClientId,
-    'client_secret': spotifySecret
-  };
-  let formBody = [];
-  for (let property in formData) {
-    let encodedKey = encodeURIComponent(property);
-    let encodedValue = encodeURIComponent(formData[property]);
-    formBody.push(encodedKey + '=' + encodedValue);
-  }
-  formBody = formBody.join('&');
-  return fetch(
-    `https://galvanize-cors-proxy.herokuapp.com/` + 
-    `https://accounts.spotify.com/api/token`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-        'Accept': 'application/json'
-      },
-      body: formBody
-    }).then(res => res.json())
-    .then(jsonRes => accessTokenCleaner(jsonRes))
-    .catch(error => alert(error));
-};
+  console.log(authCode)
+  fetch(`http://localhost:4000/top-songs`, {
+    method: 'POST',
+    headers: {
+      'Content-type': 'application/json',
+    },
+    body: JSON.stringify({authCode}),
+  }).then(res => res.json())
+}
+
+// export const getAccessToken = (authCode) => {
+//   const formData = {
+//     'grant_type': 'authorization_code',
+//     'code': authCode,
+//     'redirect_uri': 'http://localhost:3000/',
+//     'client_id': spotifyClientId,
+//     'client_secret': spotifySecret
+//   };
+//   let formBody = [];
+//   for (let property in formData) {
+//     let encodedKey = encodeURIComponent(property);
+//     let encodedValue = encodeURIComponent(formData[property]);
+//     formBody.push(encodedKey + '=' + encodedValue);
+// }
+//   formBody = formBody.join('&');
+//   return fetch(
+//     `https://galvanize-cors-proxy.herokuapp.com/` + 
+//     `https://accounts.spotify.com/api/token`, {
+//       method: 'POST',
+//       headers: {
+//         'Content-Type': 'application/x-www-form-urlencoded',
+//         'Accept': 'application/json'
+//       },
+//       body: formBody
+//     }).then(res => res.json())
+//     .then(jsonRes => accessTokenCleaner(jsonRes))
+//     .catch(error => alert(error));
+// };
 
 const accessTokenCleaner = (token) => {
   return token.access_token;
