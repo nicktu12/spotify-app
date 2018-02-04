@@ -115,23 +115,23 @@ export class TopSongs extends React.Component{
 
   renderUserInfo = () => (
     <section>
-        <h4>{this.props.userInfo.name}</h4>
+      <h4>{this.props.userInfo.name}</h4>
+      {
+        this.props.userInfo.image &&
+        <img src={this.props.userInfo.image} alt='user' />
+      }
+      <p className='user-info'>
         {
-          this.props.userInfo.image &&
-          <img src={this.props.userInfo.image} alt='user' />
+          this.props.userInfo.followers &&
+          <span>
+            <h5>Recently Played</h5>
+            <ol className='recently-played-list'>
+              { this.renderRecentlyPlayed(this.props.recentlyPlayed) }
+            </ol>
+          </span>
         }
-        <p className='user-info'>
-          {
-            this.props.userInfo.followers &&
-            <span>
-              <h5>Recently Played</h5>
-              <ol className='recently-played-list'>
-                { this.renderRecentlyPlayed(this.props.recentlyPlayed) }
-              </ol>
-            </span>
-          }
-        </p>
-      </section>
+      </p>
+    </section>
   )
 
   renderInfoCard = (info) => (

@@ -165,18 +165,17 @@ export const getTopSongs = (token) => {
 // };
 
 export const createPlaylist = actionPayload => {
-  console.log(actionPayload)
-  return fetch (`http://localhost:4000/post-playlist`, {
+  return fetch(`http://localhost:4000/post-playlist`, {
     headers: {
       'Content-type': 'application/json',
     },
     method: 'POST',
     body: JSON.stringify(actionPayload)
   })
-  .then(res => res.json())
-  .then(res => res)
-  .catch(error => alert(error));
-}
+    .then(res => res.json())
+    .then(res => res)
+    .catch(error => alert(error));
+};
 
 // export const createPlaylist = actionPayload => {
 //   return fetch(
