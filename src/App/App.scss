@@ -53,15 +53,18 @@ h1:hover {
     4px 4px $pop-accent
 }
 
-.App-title {
-  font-size: 1.5em;
+@media only screen and (max-width: 620px) {
+
+  header {
+    height: initial;
+    padding: 20px 20px 0px 20px;
+  }
+
+  h1 {
+    position: initial;
+    text-align: center;
+    display: block;
+  }
+
 }
 
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}

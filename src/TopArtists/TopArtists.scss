@@ -172,4 +172,14 @@ section {
 	}
 }
 
+@media only screen and (max-width: 620px) {
 
+  section {
+    display: none;
+  }
+
+  .home-div ol {
+    padding-left: 35px;
+  }
+
+}

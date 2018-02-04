@@ -41,14 +41,11 @@ h1 {
 h1:hover {
   text-shadow: 1px 1px #ff9624, 2px 2px #ff9624, 3px 3px #ff9624, 4px 4px #ff9624; }
 
-.App-title {
-  font-size: 1.5em; }
-
-.App-intro {
-  font-size: large; }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg); }
-  to {
-    transform: rotate(360deg); } }
+@media only screen and (max-width: 620px) {
+  header {
+    height: initial;
+    padding: 20px 20px 0px 20px; }
+  h1 {
+    position: initial;
+    text-align: center;
+    display: block; } }
