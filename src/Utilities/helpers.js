@@ -3,7 +3,7 @@ export const authCodeCleaner = (url) => {
 };
 
 export const getAccessToken = (authCode) => {
-  return fetch(`http://localhost:4000/top-artists`, {
+  return fetch(`http://statify12.herokuapp.com/top-artists`, {
     method: 'POST',
     headers: {
       'Content-type': 'application/json',
@@ -72,7 +72,7 @@ export const getAccessToken = (authCode) => {
 // };
 
 export const getTopSongs = (token) => {
-  return fetch(`http://localhost:4000/top-songs`, {
+  return fetch(`http://statify12.herokuapp.com/top-songs`, {
     method: 'POST',
     headers: {
       'Content-type': 'application/json',
@@ -165,7 +165,7 @@ export const getTopSongs = (token) => {
 // };
 
 export const createPlaylist = actionPayload => {
-  return fetch(`http://localhost:4000/post-playlist`, {
+  return fetch(`http://statify12.herokuapp.com/post-playlist`, {
     headers: {
       'Content-type': 'application/json',
     },
