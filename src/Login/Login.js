@@ -9,10 +9,10 @@ export const Login = () => (
         please sign in to Spotify below
       </p>
       <p>
-        <a href={`http://statify-be.herokuapp.com/login`}> 
+        <a href={`https://statify-be.herokuapp.com/login`}> 
           <button>Login</button>
         </a>
-      </p>
+    </p>
     </div>
   </div>
 );
