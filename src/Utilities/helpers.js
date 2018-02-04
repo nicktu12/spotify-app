@@ -3,7 +3,7 @@ export const authCodeCleaner = (url) => {
 };
 
 export const getAccessToken = (authCode) => {
-  return fetch(`http://statify-be.herokuapp.com/top-artists`, {
+  return fetch(`http://statify-be.herokuapp.com/top-artists/`, {
     method: 'POST',
     headers: {
       'Content-type': 'application/json',
