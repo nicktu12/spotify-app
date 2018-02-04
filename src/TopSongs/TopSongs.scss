@@ -141,8 +141,13 @@ h5 {
 
 @media only screen and (max-width: 620px) {
 
+  .playlist-div {
+    height: 100%;
+  }
+
   .playlist-div ol {
     padding-left: 35px;
+    height: calc(100vh - 247px);
   } 
 
   .playlist-div h2 {

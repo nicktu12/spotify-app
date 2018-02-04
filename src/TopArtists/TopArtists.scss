@@ -178,8 +178,13 @@ section {
     display: none;
   }
 
+  .home-div {
+    height: 100%;
+  }
+
   .home-div ol {
     padding-left: 35px;
+    height: calc(100vh - 210px);
   }
 
 }
