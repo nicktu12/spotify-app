@@ -138,3 +138,21 @@ h5 {
   background-color: initial;
   border-bottom: none;
 }
+
+@media only screen and (max-width: 620px) {
+
+  .playlist-div ol {
+    padding-left: 35px;
+  } 
+
+  .playlist-div h2 {
+    height: 130px;
+  }
+
+  .display-post-btn {
+    right: calc(50% - 100px);
+    top: 210px;
+    width: 200px;
+  }
+
+}
