@@ -100,7 +100,7 @@ export class TopSongs extends React.Component{
 
   determineClass = (path) =>  {
     if (path === null) {
-      return window.location.href === "http://localhost:3000/top40";
+      return window.location.href === "http://statify12.herokuapp.com/top40";
     }
     return window.location.href.includes(path);
   }
