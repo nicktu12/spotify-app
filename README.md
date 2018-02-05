@@ -11,7 +11,7 @@ Clone down this repository and install npm. Execute the following command in you
 ```
 npm install
 ```
-API calls to the Spotify database are accomplished with a secret application key that is hidden from this public repository.
+API calls to the Spotify database are accomplished with a [Node/Express backend](https://github.com/nicktu12/statify-backend). The client id and secret id are hidden using dotenv.
 
 To start the application on localhost:3000, enter the following command. 
 ```
@@ -20,7 +20,7 @@ npm start
 
 ## Running the tests
 
-All React components, Redux actions and reducers and javascript functions are tested using the command
+All React components, Redux actions and reducers and JavaScript functions are tested using the command
 
 ```
 npm run test
@@ -36,7 +36,6 @@ npm run test
 
 ## Extensions
 
-* Build backend with Node.js and Express
 * Integrate additional streaming services
 * Explore Spotify musical analysis api
 
