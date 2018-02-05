@@ -42,9 +42,16 @@
 }
 
 .login-div p {
-	padding-top: 4%;
 	font-family: $body-font;
 	text-align: center;
+}
+
+.about-link {
+  position: absolute;
+  bottom: 0px;
+  width: 200px;
+  right: calc(50% - 100px);
+  color: #a0a4a8;
 }
 
 @media only screen and (max-width: 620px) {

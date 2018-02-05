@@ -12,7 +12,12 @@ export const Login = () => (
         <a href={`https://statify-be.herokuapp.com/login`}> 
           <button>Login</button>
         </a>
-    </p>
+      </p>
+      <p>
+        <a href={`https://www.github.com/nicktu12/statify`} class='about-link'> 
+          About
+        </a>
+      </p>
     </div>
   </div>
 );
